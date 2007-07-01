@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Telekinesis - Remote
+	<meta name="viewport" content="width=320" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+	<script src="remote.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<br><p>
+<center><img src="remote.png" width="156" height="239" border="0" alt="" usemap="#remote_Map"></center>
+	<map name="remote_Map">
+		<area shape="circle" alt="" coords="78,204,27" onclick="loadURL('/telekinesis/runscript?path=scripts/Menu.scpt')" href="#">
+		<area shape="circle" alt="" coords="77,77,41" onclick="loadURL('/telekinesis/runscript?path=scripts/Play-Pause.scpt')" href="#">
+		<area shape="poly" alt="" coords="156,0, 78,77, 156,157" onclick="loadURL('/telekinesis/runscript?path=scripts/Next.scpt')" href="#">
+		<area shape="poly" alt="" coords="156,157, 78,77, 0,157" onclick="loadURL(/telekinesis/runscript?path=scripts/Minus.scpt)" href="#">
+		<area shape="poly" alt="" coords="0,157, 78,77, 0,0" onclick="loadURL(/telekinesis/runscript?path=scripts/Prev.scpt)" href="#">
+		<area shape="poly" alt="" coords="0,0, 156,0, 78,77" onclick="loadURL(/telekinesis/runscript?path=scripts/Plus.scpt)" href="#">
+	</map>
+	</div>
+</body>
+</html>
