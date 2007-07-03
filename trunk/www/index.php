@@ -31,7 +31,7 @@ foreach ($dirs as $dir) {
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
 			while (($file = readdir($dh)) !== false) {
-				if ($file!="." && $file!=".." && $file!=".DS_Store") {
+				if (substr($file, 0, 1) !=".") {
 					if ($i % 4 == 0) echo "</tr><tr>";
 					$i++;
 					
