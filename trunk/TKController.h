@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
 @class SimpleHTTPServer, SimpleHTTPConnection;
 
@@ -15,6 +16,7 @@
   NSTask *apacheTask;
   
   int region;
+  IBOutlet WebView *webView; 
 }
 
 - (void)setServer:(SimpleHTTPServer *)sv;

@@ -45,18 +45,39 @@ void CatchInterrupt (int signum) {
 - (id) init {
   self = [super init];
   if (self != nil) {
-    [self setServer:[[[SimpleHTTPServer alloc] initWithTCPPort:5001
+    [self setServer:[[[SimpleHTTPServer alloc] initWithTCPPort:5011
                                                       delegate:self] autorelease]];
     
     [self applicationSupportFolder];
     NSFileManager *fm = [NSFileManager defaultManager];
-    //    [fm createDirectoryAtPath:[self applicationSupportFolder] attributes:nil];
+      
+    [fm createDirectoryAtPath:[self applicationSupportFolder] attributes:nil];
+    [fm createDirectoryAtPath:[[self applicationSupportFolder] stringByAppendingPathComponent:@"apps"] attributes:nil];
     
     [self startApache];
   }
   return self;
 }
 
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+  [self goHome:nil];
+  return NO; 
+}
+
+- (void) goHome:(id)sender {
+  NSString *urlString = [NSString stringWithFormat:@"https://%@:%d", @"localhost", 5010];
+  [[NSWorkspace sharedWorkspace] openURLs:[NSArray arrayWithObject:[NSURL URLWithString:urlString]]
+                  withAppBundleIdentifier:@"com.apple.Safari"
+                                  options:nil additionalEventParamDescriptor:nil launchIdentifiers:nil];
+//
+//NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+//NSLog(@"request %@", urlString);
+//[[webView mainFrame] loadRequest:request];
+}
+
+- (void)applicationWillFinishLaunching:(NSNotification *)notification {
+  [self performSelector:@selector(goHome:) withObject:nil afterDelay:1.0];
+}
 - (void)dealloc
 {
   [apacheTask terminate];
@@ -73,18 +94,46 @@ void CatchInterrupt (int signum) {
 
 - (void) startApache {
   NSString *root = [[NSBundle mainBundle] resourcePath];
+  
+  NSString *documentRoot = root;
+  
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"useSourceWebDirectory"]) {
+   documentRoot =  @"/Volumes/Lux/telekinesis/trunk/";
+    NSLog(@"using lux root");
+  }
+    
   NSString *document = [[NSBundle mainBundle] pathForResource:@"www" ofType:nil];
   
-  NSString *config = [[NSBundle mainBundle] pathForResource:@"httpd.1.3.33" ofType:@"conf"];
+  
+  BOOL apache2= [[NSFileManager defaultManager] fileExistsAtPath:@"/etc/apache2/"];
+  NSString *config = [[NSBundle mainBundle] pathForResource:(apache2 ? @"httpd.2.0" : @"httpd.1.3.33") ofType:@"conf"];
+  
+  
+  NSMutableArray *arguments = [NSMutableArray arrayWithObjects:
+      @"-d", root,
+      @"-f", config,
+    nil];
+  
+  
+  NSMutableArray *directives = [NSMutableArray arrayWithObjects:
+    [NSString stringWithFormat:@"Alias /resources/ \"%@\"", root],
+    [NSString stringWithFormat:@"ErrorLog \"%@/Library/Logs/Telekinesis_error.log\"", NSHomeDirectory()],
+    [NSString stringWithFormat:@"CustomLog \"%@/Library/Logs/Telekinesis_access.log\" common", NSHomeDirectory()],
+    [NSString stringWithFormat:@"DocumentRoot \"%@/www/\"", documentRoot],
+    [NSString stringWithFormat:@"Alias /apps/ \"%@/Library/Application Support/Telekinesis/Apps/\"",  NSHomeDirectory()],
+    [NSString stringWithFormat:@"Alias /home/ \"%@/\"",  NSHomeDirectory()],
+    [NSString stringWithFormat:@"ScriptAlias /cgi/ \"%@/cgi-bin/\"",  documentRoot],
+    nil];
+      
+  NSEnumerator *e = [directives objectEnumerator];
+  id item;
+  while (item = [e nextObject]) {
+    [arguments addObject:@"-c"];
+    [arguments addObject:item];
+  }
+  
   apacheTask = [[NSTask launchedTaskWithLaunchPath:@"/usr/sbin/httpd"
-                                         arguments:[NSArray arrayWithObjects:
-                                           @"-d", root,
-                                           @"-f", config,
-                                           @"-c", [NSString stringWithFormat:@"Alias /resources/ \"%@\"", root],
-                                           @"-c", [NSString stringWithFormat:@"ErrorLog \"%@/Library/Logs/Telekinesis_error.log\"", NSHomeDirectory()],
-                                           @"-c", [NSString stringWithFormat:@"CustomLog \"%@/Library/Logs/Telekinesis_access.log\" common", NSHomeDirectory()],
-                                           @"-c", [NSString stringWithFormat:@"DocumentRoot \"%@/www/\"", root], //@"/Volumes/Lux/Telekinesis"],
-                                           nil]] retain];
+                                         arguments:arguments] retain];
 }
 
 - (void) stopApache {
@@ -228,7 +277,7 @@ void CatchInterrupt (int signum) {
   } else if ([[url path] hasPrefix:@"/runscript"]) {
     NSDictionary *params =  [url parameterDictionary];
     
-    NSString *path = [params objectForKey:@"path"];
+    NSString *path = [[params objectForKey:@"path"] stringByStandardizingPath];
     NSAppleScript *script = nil;
     if (path) {
       path = [path stringByStandardizingPath];
@@ -254,6 +303,20 @@ void CatchInterrupt (int signum) {
     [server replyWithStatusCode:200 message:@""];
     return;
     
+#pragma mark Get an icon
+  } else if ([[url path] hasPrefix:@"/icon"]) {
+    NSDictionary *params =  [url parameterDictionary];
+    
+    NSString *path = [[params objectForKey:@"path"] stringByStandardizingPath];
+    NSSize size = NSSizeFromString([params objectForKey:@"size"]);
+    
+    NSImage *image = [[NSWorkspace sharedWorkspace] iconForFile:path];
+    
+    if (!NSEqualSizes(size,NSZeroSize)) [image setSize:size];
+        
+        data = [[image bestRepresentationForDevice:nil] representationUsingType:NSPNGFileType properties:nil];
+   mime = @"image/png";    
+        
 #pragma mark click
   } else if ([[url path] hasPrefix: @"/click"]) {
     
@@ -267,6 +330,20 @@ void CatchInterrupt (int signum) {
     
     CGPostMouseEvent(p, 0, 1, 1);
     CGPostMouseEvent(p, 0, 1, 0);    
+    [server replyWithStatusCode:200 message:@""];
+    
+    return;
+#pragma mark move
+  } else if ([[url path] hasPrefix: @"/mousemove"]) {
+    
+    NSDictionary *params =  [url parameterDictionary];
+    //;hi?31,191
+    NSArray *points = [[url query] componentsSeparatedByString:@","];
+    CGPoint p;
+    p.x = [[params objectForKey:@"x"] intValue];
+    p.y = [[params objectForKey:@"y"] intValue];
+    CGWarpMouseCursorPosition(p);
+    
     [server replyWithStatusCode:200 message:@""];
     
     return;
