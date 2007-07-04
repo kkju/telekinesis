@@ -6,13 +6,14 @@ Adding functionality to telekinesis is simple, there are two approaches, basic w
 
 == Basic Web Page ==
 
-http://telekinesis.blacktree.com/Customapps.png
+  * Since access to pages will be restricted to the current user and the communications encrypted, you can feel free to blatantly disregard any normal security concerns in web pages. That's the whole point. :)
 
   * Create a simple web page in html/php, etc and install it in 
    `~/Library/Application Support/Telekinesis/Apps/<App Name>`
   * Give it a custom icon at
    `.../Apps/<App Name>/<App Name>.png`
-  * Since access to these pages will be restricted to the current user and the communications encrypted, you can feel free to blatantly disregard any normal security concerns in web pages. That's the whole point. :)
+
+http://telekinesis.blacktree.com/Customapps.png
 
 == Custom Servers ==
 
@@ -30,7 +31,6 @@ The Telekinesis server supports some basic functionality that may be useful in a
   * Move click: /t/click?x=100&y=100
   * Move mouse: /t/mousemove?x=100&y=100
   * File Icons: /t//icon?path=<Absolute path>
-
 
 
 
