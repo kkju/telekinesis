@@ -4,6 +4,8 @@
 
 Adding functionality to telekinesis is simple, there are two approaches, basic web pages and custom servers.
 
+Both of these are still very much in flux, advice and suggestions are welcome!
+
 == Basic Web Page ==
 
   * Since access to pages will be restricted to the current user and the communications encrypted, you can feel free to blatantly disregard any normal security concerns in web pages. That's the whole point. :)
