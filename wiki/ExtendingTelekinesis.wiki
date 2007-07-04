@@ -1,0 +1,32 @@
+#summary How to add functionality to Telekinesis
+
+= Introduction =
+
+Adding functionality to telekinesis is simple, there are two approaches, basic web pages and custom servers.
+
+== Basic Web Page ==
+
+  * Create a simple web page in html/php, etc and install it in 
+   `~/Library/Application Support/Telekinesis/Apps/<App Name>`
+  * Give it a custom icon at
+   `.../Apps/<App Name>/<App Name>.png`
+  * selecting
+
+=== Advanced functionality ===
+
+== Custom Servers ==
+
+For more advanced apps, you may want to provide web content directly.
+Currently this isn't supported, but will be soon. 
+Telekinesis will support proxying an application directory set up as above to your own application
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+
+
+
