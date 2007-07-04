@@ -12,7 +12,7 @@ Adding functionality to telekinesis is simple, there are two approaches, basic w
    `~/Library/Application Support/Telekinesis/Apps/<App Name>`
   * Give it a custom icon at
    `.../Apps/<App Name>/<App Name>.png`
-  * [http://telekinesis.blacktree.com/TappTemplates.png Icon template]
+  * [http://telekinesis.blacktree.com/TappTemplate.png Icon template]
 
 http://telekinesis.blacktree.com/Customapps.png
 
@@ -33,6 +33,5 @@ The Telekinesis server supports some basic functionality that may be useful in a
   * Move click: /t/click?x=100&y=100
   * Move mouse: /t/mousemove?x=100&y=100
   * File Icons: /t//icon?path=<Absolute path>
-
 
 
