@@ -1,38 +1,25 @@
 <html>
 <head>
 	<title>Telekinesis</title>
-	<meta name="viewport" content="width=320" />
-	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
+<meta name="viewport" content="width=320, height=418" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/css/menu.css" type="text/css" media="screen" charset="utf-8">
 <script src="/js/remote.js" type="text/javascript" charset="utf-8">
-window.scrollTo(0, 1);
 
 </script>
 </head>
-<body class="mainmenu" onload="setTimeout(function(){window.scrollTo(0, 1);}, 100);">
-<div class="title" align="center">
-<?php
-
-echo exec("whoami") . "@";
-$SERVER_NAME = $_SERVER["SERVER_NAME"];
-$IP = gethostbyname ($SERVER_NAME);
-$server = gethostbyaddr($IP);
-echo "$server";
-?>
-</div>
-<hr>
-<table width="100%"  border=0><tr>
+<body class="mainmenu" style="margin:0; padding:0;" onload="setTimeout(hideLocationBar,1000)">
+<div style="margin-left:10px;margin-right:10px;margin-top:20px;">
 <?php
 
 $dirs = array("ipps", $_ENV["HOME"]."/Library/Application Support/Telekinesis/apps");
 	$i = 0;
-
 	// Open a known directory, and proceed to read its contents
 foreach ($dirs as $dir) {
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
 			while (($file = readdir($dh)) !== false) {
 				if (substr($file, 0, 1) !=".") {
-					if ($i % 4 == 0) echo "</tr><tr>";
 					$i++;
 					
 					$basepath = basename($dir);
@@ -40,7 +27,7 @@ foreach ($dirs as $dir) {
 					$imagepath = "$basepath/$file/$file.png";
 					if (!file_exists($imagepath)) $imagepath = "/images/GenericApp.png";
 					?>
-					<td align="center"><a class="iconlink" target="app_<?=$file?>" href="<?=$app_path?>/"><img src="<?=$imagepath?>" width="56" height="56"><br><?=$file?></a></td>
+					<div style="float:left;width:75;height:90px;text-align:center;";><a class="iconlink" target="app_<?=$file?>" href="<?=$app_path?>/"><img src="<?=$imagepath?>" width="57" height="57"><br><?=$file?></a></div>
 					<?
 				}
 			}
@@ -50,6 +37,17 @@ foreach ($dirs as $dir) {
 }
 
 	?>
-</tr></table>
+</div>
+<br clear="all">
+<div class="title" align="center" style="opacity:0.5;color:#FFF; position:absolute; width:100%; bottom:0px; padding-bottom:10px;">
+<?php
+
+echo exec("whoami") . "@";
+$SERVER_NAME = $_SERVER["SERVER_NAME"];
+$IP = gethostbyname ($SERVER_NAME);
+$server = gethostbyaddr($IP);
+echo "$server";
+?>
+</div>
 </body>
 </html>

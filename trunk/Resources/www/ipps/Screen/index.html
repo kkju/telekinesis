@@ -24,7 +24,6 @@
 	
 	function screenLoaded(e) {
 		
-		alert(document.cookie);
 		$('cv').width = img.width;
 		$('cv').height = img.height;
 		$('cv').style.width = img.width;
@@ -43,7 +42,6 @@
 	}
 var img2;
 	function sendClick(e) {
-		//alert("/click?x=" + e.x + "&y=" + e.y);
 		img2 = new Image();
 		img2.onload = loadImage;
 		img2.src = "/t/click?x=" + e.x + "&y=" + e.y;

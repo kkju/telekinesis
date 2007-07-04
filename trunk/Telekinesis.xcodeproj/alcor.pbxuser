@@ -74,8 +74,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 205203095;
-			PBXWorkspaceStateSaveDate = 205203095;
+			PBXPerProjectTemplateStateSaveDate = 205226301;
+			PBXWorkspaceStateSaveDate = 205226301;
 		};
 		sourceControlManager = 7F2998BE0C224C3D00227C9E /* Source Control */;
 		userBuildSettings = {
@@ -149,13 +149,6 @@
 		name = TKController.h;
 		path = /Volumes/Lux/telekinesis/trunk/TKController.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {771, 495}}";
-			sepNavSelRange = "{567, 0}";
-			sepNavVisRange = "{0, 567}";
-			sepNavVisRect = "{{0, 0}, {710, 667}}";
-			sepNavWindowFrame = "{{725, 82}, {755, 796}}";
-		};
 	};
 	7F2998C60C224D7300227C9E /* TKController.m */ = {
 		isa = PBXFileReference;
@@ -164,13 +157,6 @@
 		name = TKController.m;
 		path = /Volumes/Lux/telekinesis/trunk/TKController.m;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 5726}}";
-			sepNavSelRange = "{4066, 0}";
-			sepNavVisRange = "{2591, 2597}";
-			sepNavVisRect = "{{0, 620}, {1011, 679}}";
-			sepNavWindowFrame = "{{255, 39}, {1056, 808}}";
-		};
 	};
 	7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */ = {
 		uiCtxt = {

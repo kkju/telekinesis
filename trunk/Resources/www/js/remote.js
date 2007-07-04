@@ -10,7 +10,9 @@ sendData({
 
 return false;
 }
-
+function hideLocationBar() {
+  window.scrollTo(0, 1);
+}
 function handleMouseEvent(e) {
 sendData({
   't' : e.type,

@@ -263,7 +263,6 @@
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1058C7A0FEA54F0111CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>7F362C5D0C3B792000B24988</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
@@ -376,9 +375,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7F362A570C3B26A000B24988</string>
+				<string>7F362D2D0C3B814000B24988</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>7F362A580C3B26A000B24988</string>
+				<string>7F362D2E0C3B814000B24988</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -512,14 +511,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
-		<string>7F362B620C3B3F6400B24988</string>
-		<string>7F362B630C3B3F6400B24988</string>
-		<string>7F0A03E90C35B8E2007B7494</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>7F362B260C3B38BF00B24988</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>7F30A88C0C2AD5EC00CF2882</string>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>/Volumes/Lux/telekinesis/trunk/Telekinesis.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -544,7 +537,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SimpleHTTPServer.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -561,8 +554,6 @@
 							<string>408pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -602,7 +593,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>7F30A88C0C2AD5EC00CF2882</string>
-				<string>7F362A5D0C3B2DCF00B24988</string>
+				<string>7F362D2F0C3B814000B24988</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -966,9 +957,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>7F362A5E0C3B2DCF00B24988</string>
+				<string>7F362D300C3B814000B24988</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>7F362A5F0C3B2DCF00B24988</string>
+				<string>7F362D310C3B814000B24988</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
@@ -977,7 +968,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
