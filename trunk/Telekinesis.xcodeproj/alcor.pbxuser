@@ -1,0 +1,257 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 7F2998B10C224C3700227C9E /* Telekinesis */;
+		activeTarget = 8D1107260486CEB800E47090 /* Telekinesis */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* Telekinesis */,
+		);
+		breakpoints = (
+			7FFBFF1C0C3749C200C1B8EB /* TKController.m:166 */,
+			7F1E07000C3941F40049F3DA /* TKController.h:29 */,
+		);
+		codeSenseManager = 7F2998BF0C224C3D00227C9E /* Code sense */;
+		executables = (
+			7F2998B10C224C3700227C9E /* Telekinesis */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					240,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Warnings_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					131,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					553,
+					10,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 205203095;
+			PBXWorkspaceStateSaveDate = 205203095;
+		};
+		sourceControlManager = 7F2998BE0C224C3D00227C9E /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	32CA4F630368D1EE00C91783 /* Telekinesis_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {735, 607}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 153}";
+		};
+	};
+	7F1E07000C3941F40049F3DA /* TKController.h:29 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 7F2998C50C224D7300227C9E /* TKController.h */;
+		hitCount = 1;
+		lineNumber = 29;
+		modificationTime = 205207641.494571;
+		state = 1;
+	};
+	7F2998B10C224C3700227C9E /* Telekinesis */ = {
+		isa = PBXExecutable;
+		activeArgIndex = 0;
+		activeArgIndices = (
+			YES,
+		);
+		argumentStrings = (
+			"-useSourceWebDirectory YES",
+		);
+		autoAttachOnCrash = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Telekinesis;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	7F2998BE0C224C3D00227C9E /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	7F2998BF0C224C3D00227C9E /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	7F2998C50C224D7300227C9E /* TKController.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = TKController.h;
+		path = /Volumes/Lux/telekinesis/trunk/TKController.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {771, 495}}";
+			sepNavSelRange = "{567, 0}";
+			sepNavVisRange = "{0, 567}";
+			sepNavVisRect = "{{0, 0}, {710, 667}}";
+			sepNavWindowFrame = "{{725, 82}, {755, 796}}";
+		};
+	};
+	7F2998C60C224D7300227C9E /* TKController.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = TKController.m;
+		path = /Volumes/Lux/telekinesis/trunk/TKController.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 5726}}";
+			sepNavSelRange = "{4066, 0}";
+			sepNavVisRange = "{2591, 2597}";
+			sepNavVisRect = "{{0, 620}, {1011, 679}}";
+			sepNavWindowFrame = "{{255, 39}, {1056, 808}}";
+		};
+	};
+	7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {734, 1512}}";
+			sepNavSelRange = "{3315, 5}";
+			sepNavVisRect = "{{0, 1317}, {734, 180}}";
+		};
+	};
+	7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {764, 3822}}";
+			sepNavSelRange = "{8721, 5}";
+			sepNavVisRect = "{{0, 3221}, {734, 180}}";
+		};
+	};
+	7F362A780C3B352B00B24988 /* QSKeyCodeTranslator.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {785, 749}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {785, 749}}";
+			sepNavWindowFrame = "{{58, -5}, {830, 878}}";
+		};
+	};
+	7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {785, 749}}";
+			sepNavSelRange = "{356, 1}";
+			sepNavVisRect = "{{0, 0}, {785, 749}}";
+			sepNavWindowFrame = "{{58, -5}, {830, 878}}";
+		};
+	};
+	7F362A7B0C3B352B00B24988 /* TKController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {800, 5978}}";
+			sepNavSelRange = "{13353, 0}";
+			sepNavVisRect = "{{0, 5713}, {734, 180}}";
+			sepNavWindowFrame = "{{517, 0}, {830, 878}}";
+		};
+	};
+	7F362A8A0C3B356E00B24988 /* certificate.sh */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {785, 749}}";
+			sepNavSelRange = "{114, 0}";
+			sepNavVisRect = "{{0, 0}, {785, 749}}";
+			sepNavWindowFrame = "{{58, -5}, {830, 878}}";
+		};
+	};
+	7F362A920C3B356E00B24988 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {785, 749}}";
+			sepNavSelRange = "{712, 0}";
+			sepNavVisRect = "{{0, 0}, {785, 749}}";
+			sepNavWindowFrame = "{{58, -5}, {830, 878}}";
+		};
+	};
+	7F73C3EE0C37FEB7002E8A31 /* Plan.txt */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1030, 308}}";
+			sepNavSelRange = "{407, 0}";
+			sepNavVisRect = "{{0, 0}, {1030, 308}}";
+			sepNavWindowFrame = "{{79, 441}, {1075, 437}}";
+		};
+	};
+	7FFBFF1C0C3749C200C1B8EB /* TKController.m:166 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		delayBeforeContinue = 0;
+		fileReference = 7F2998C60C224D7300227C9E /* TKController.m */;
+		functionName = "-generateCertificate";
+		hitCount = 1;
+		lineNumber = 166;
+		modificationTime = 205207641.494561;
+		state = 2;
+	};
+	8D1107260486CEB800E47090 /* Telekinesis */ = {
+		activeExec = 0;
+		executables = (
+			7F2998B10C224C3700227C9E /* Telekinesis */,
+		);
+	};
+}
