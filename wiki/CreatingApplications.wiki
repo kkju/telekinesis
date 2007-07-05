@@ -14,7 +14,7 @@ Both of these are still very much in flux, advice and suggestions are welcome!
    `~/Library/Application Support/iPhone Remote/Apps/<App Name>`
   * Give it a custom icon. ([http://telekinesis.blacktree.com/TappTemplate.png Icon template], its white)
    `.../Apps/<App Name>/<App Name>.png`
-http://telekinesis.blacktree.com/Customapps.png
+
 
 
 == Custom Servers ==
