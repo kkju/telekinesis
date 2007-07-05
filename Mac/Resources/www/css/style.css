@@ -1,0 +1,58 @@
+body {
+  margin:0;
+	padding: 0px;
+	margin: 0px;
+	font-family: "Helvetica Neue", "Helvetica";
+}
+.button {
+    color: black;
+    border: 2px solid gray;
+    -webkit-border-radius: 5px;
+    text-decoration:none;
+    float:right;
+    font-size:smaller;
+    padding:2px;
+}
+
+#crumbs { list-style: none;
+  background-color:gray;
+padding:8px;
+margin:0;
+   }
+#crumbs li { display: inline; color:white;}
+#crumbs li a { color:white; text-decoration:none;}
+
+  div.iphonerow {
+    
+    border-bottom: 1px solid lightgray;
+    padding:5px 5px 5px 5px;
+    overflow:hidden;
+
+    font-size:20px;
+      font-family:helvetica;
+      font-weight:bolder;
+
+  }
+
+  div.titlebar {
+  padding:3px;
+  background-color:gray;
+  border-bottom: 1px solid black;
+  color: white;
+}
+div.titlebar a {
+  color:white;
+  
+}
+
+a.iconlink {
+  display:block;
+  font-family: helvetica;
+  font-weight:bold;
+  font-size:11px;
+  color:white;
+  text-decoration:none;
+}
+a.iconlink img{
+margin-bottom:5px;
+}
