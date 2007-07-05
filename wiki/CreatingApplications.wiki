@@ -49,8 +49,8 @@ This process will be terminated when iPhone Remote quits, if it is still running
 
 The iPhone Remote server supports some basic functionality that may be useful in any application:
 
-  * Running Scripts: /s/runscript?path=<absolute path to script> [We need to add relative-to-app-support]
-  * Screen capture: /s/grabscreen
-  * Move click: /s/click?x=100&y=100
-  * Move mouse: /s/mousemove?x=100&y=100
-  * File Icons: /s/icon?path=<Absolute path>
+  * Running Scripts: /t/runscript?path=<absolute path to script> [We need to add relative-to-app-support]
+  * Screen capture: /t/grabscreen
+  * Move click: /t/click?x=100&y=100
+  * Move mouse: /t/mousemove?x=100&y=100
+  * File Icons: /t/icon?path=<Absolute path>
