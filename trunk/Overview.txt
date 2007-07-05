@@ -1,0 +1,17 @@
+Here is my plan
+
+Running telekinesis sets up a mini webserver on 
+https://localhost:5001 accessible only to localhost
+
+It launches apache on:
+https://localhost:8080/
+
+Apache publishes:
+
+https://localhost:8080/ from ./Contents/Resources/www
+https://localhost:8080/apps/ from ~/Library/App Support/Seance 
+https://localhost:8080/s/ is a proxy for the internal app and supports:
+	https://localhost:8080/s/?typestring=blah
+	https://localhost:8080/s/?click=18,299
+	https://localhost:8080/s/?runscript=scripts/pause.scpt
+	and others... 

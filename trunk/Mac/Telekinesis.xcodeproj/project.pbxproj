@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F1E07330C394AA30049F3DA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
+		7F29996A0C225FAE00227C9E /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2999690C225FAE00227C9E /* ApplicationServices.framework */; };
+		7F299A460C22607500227C9E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F299A450C22607500227C9E /* OpenGL.framework */; };
+		7F362A6F0C3B351F00B24988 /* glgrab.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A680C3B351F00B24988 /* glgrab.c */; };
+		7F362A700C3B351F00B24988 /* glgrab.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A690C3B351F00B24988 /* glgrab.h */; };
+		7F362A710C3B351F00B24988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A6A0C3B351F00B24988 /* main.m */; };
+		7F362A720C3B351F00B24988 /* SimpleHTTPConnection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */; };
+		7F362A730C3B351F00B24988 /* SimpleHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */; };
+		7F362A740C3B351F00B24988 /* SimpleHTTPServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */; };
+		7F362A750C3B351F00B24988 /* SimpleHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */; };
+		7F362A7C0C3B352B00B24988 /* NSURL+Parameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A760C3B352B00B24988 /* NSURL+Parameters.h */; };
+		7F362A7D0C3B352B00B24988 /* NSURL+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A770C3B352B00B24988 /* NSURL+Parameters.m */; };
+		7F362A7E0C3B352B00B24988 /* QSKeyCodeTranslator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A780C3B352B00B24988 /* QSKeyCodeTranslator.h */; };
+		7F362A7F0C3B352B00B24988 /* QSKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */; };
+		7F362A800C3B352B00B24988 /* TKController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A7A0C3B352B00B24988 /* TKController.h */; };
+		7F362A810C3B352B00B24988 /* TKController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A7B0C3B352B00B24988 /* TKController.m */; };
+		7F362A970C3B356E00B24988 /* certificate.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 7F362A890C3B356E00B24988 /* certificate.cfg */; };
+		7F362A980C3B356E00B24988 /* certificate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 7F362A8A0C3B356E00B24988 /* certificate.sh */; };
+		7F362A990C3B356E00B24988 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F362A8C0C3B356E00B24988 /* InfoPlist.strings */; };
+		7F362A9A0C3B356E00B24988 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 7F362A8E0C3B356E00B24988 /* MainMenu.nib */; };
+		7F362A9B0C3B356E00B24988 /* httpd.1.3.33.conf in Resources */ = {isa = PBXBuildFile; fileRef = 7F362A900C3B356E00B24988 /* httpd.1.3.33.conf */; };
+		7F362A9C0C3B356E00B24988 /* httpd.2.0.conf in Resources */ = {isa = PBXBuildFile; fileRef = 7F362A910C3B356E00B24988 /* httpd.2.0.conf */; };
+		7F362A9D0C3B356E00B24988 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F362A920C3B356E00B24988 /* Info.plist */; };
+		7F362AE50C3B35AF00B24988 /* cgi-bin in Resources */ = {isa = PBXBuildFile; fileRef = 7F362AA10C3B35AF00B24988 /* cgi-bin */; };
+		7F362AE60C3B35AF00B24988 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 7F362AA50C3B35AF00B24988 /* scripts */; };
+		7F362AE70C3B35AF00B24988 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 7F362AAD0C3B35AF00B24988 /* www */; };
+		7F362BBF0C3B504600B24988 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */; };
+		7F362F370C3C48B900B24988 /* Telekinesis_Prefix.pch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362F360C3C48B900B24988 /* Telekinesis_Prefix.pch */; };
+		7F362F390C3C48BF00B24988 /* Telekinesis.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F362F380C3C48BF00B24988 /* Telekinesis.icns */; };
+		7F548C5A0C398C4F00569195 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
+		7F73C4CA0C3802C9002E8A31 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F73C4C90C3802C9002E8A31 /* WebKit.framework */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7F1E07310C394A9B0049F3DA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7F1E07330C394AA30049F3DA /* Sparkle.framework in CopyFiles */,
+				7F362A700C3B351F00B24988 /* glgrab.h in CopyFiles */,
+				7F362A720C3B351F00B24988 /* SimpleHTTPConnection.h in CopyFiles */,
+				7F362A740C3B351F00B24988 /* SimpleHTTPServer.h in CopyFiles */,
+				7F362A7C0C3B352B00B24988 /* NSURL+Parameters.h in CopyFiles */,
+				7F362A7E0C3B352B00B24988 /* QSKeyCodeTranslator.h in CopyFiles */,
+				7F362A800C3B352B00B24988 /* TKController.h in CopyFiles */,
+				7F362F370C3C48B900B24988 /* Telekinesis_Prefix.pch in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		7F1E07130C394A8A0049F3DA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../../external/Sparkle.framework; sourceTree = "<group>"; };
+		7F2999690C225FAE00227C9E /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		7F299A450C22607500227C9E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		7F362A680C3B351F00B24988 /* glgrab.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = glgrab.c; path = Source/glgrab.c; sourceTree = "<group>"; };
+		7F362A690C3B351F00B24988 /* glgrab.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = glgrab.h; path = Source/glgrab.h; sourceTree = "<group>"; };
+		7F362A6A0C3B351F00B24988 /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+		7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SimpleHTTPConnection.h; path = Source/SimpleHTTPConnection.h; sourceTree = "<group>"; };
+		7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SimpleHTTPConnection.m; path = Source/SimpleHTTPConnection.m; sourceTree = "<group>"; };
+		7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SimpleHTTPServer.h; path = Source/SimpleHTTPServer.h; sourceTree = "<group>"; };
+		7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SimpleHTTPServer.m; path = Source/SimpleHTTPServer.m; sourceTree = "<group>"; };
+		7F362A760C3B352B00B24988 /* NSURL+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "NSURL+Parameters.h"; path = "Source/NSURL+Parameters.h"; sourceTree = "<group>"; };
+		7F362A770C3B352B00B24988 /* NSURL+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Parameters.m"; path = "Source/NSURL+Parameters.m"; sourceTree = "<group>"; };
+		7F362A780C3B352B00B24988 /* QSKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = QSKeyCodeTranslator.h; path = Source/QSKeyCodeTranslator.h; sourceTree = "<group>"; };
+		7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = QSKeyCodeTranslator.m; path = Source/QSKeyCodeTranslator.m; sourceTree = "<group>"; };
+		7F362A7A0C3B352B00B24988 /* TKController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TKController.h; path = Source/TKController.h; sourceTree = "<group>"; };
+		7F362A7B0C3B352B00B24988 /* TKController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = TKController.m; path = Source/TKController.m; sourceTree = "<group>"; };
+		7F362A890C3B356E00B24988 /* certificate.cfg */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = certificate.cfg; path = Resources/certificate.cfg; sourceTree = "<group>"; };
+		7F362A8A0C3B356E00B24988 /* certificate.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; name = certificate.sh; path = Resources/certificate.sh; sourceTree = "<group>"; };
+		7F362A8D0C3B356E00B24988 /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		7F362A8F0C3B356E00B24988 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
+		7F362A900C3B356E00B24988 /* httpd.1.3.33.conf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = httpd.1.3.33.conf; path = Resources/httpd.1.3.33.conf; sourceTree = "<group>"; };
+		7F362A910C3B356E00B24988 /* httpd.2.0.conf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = httpd.2.0.conf; path = Resources/httpd.2.0.conf; sourceTree = "<group>"; };
+		7F362A920C3B356E00B24988 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		7F362AA10C3B35AF00B24988 /* cgi-bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "cgi-bin"; path = "Resources/cgi-bin"; sourceTree = "<group>"; };
+		7F362AA50C3B35AF00B24988 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = Resources/scripts; sourceTree = "<group>"; };
+		7F362AAD0C3B35AF00B24988 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = Resources/www; sourceTree = "<group>"; };
+		7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		7F362F360C3C48B900B24988 /* Telekinesis_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Telekinesis_Prefix.pch; path = Source/Telekinesis_Prefix.pch; sourceTree = "<group>"; };
+		7F362F380C3C48BF00B24988 /* Telekinesis.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Telekinesis.icns; path = Resources/Telekinesis.icns; sourceTree = "<group>"; };
+		7F73C3EE0C37FEB7002E8A31 /* Plan.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Plan.txt; sourceTree = "<group>"; };
+		7F73C4C90C3802C9002E8A31 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		8D1107320486CEB800E47090 /* iPhone Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				7F29996A0C225FAE00227C9E /* ApplicationServices.framework in Frameworks */,
+				7F299A460C22607500227C9E /* OpenGL.framework in Frameworks */,
+				7F73C4CA0C3802C9002E8A31 /* WebKit.framework in Frameworks */,
+				7F548C5A0C398C4F00569195 /* Sparkle.framework in Frameworks */,
+				7F362BBF0C3B504600B24988 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7F362A760C3B352B00B24988 /* NSURL+Parameters.h */,
+				7F362A770C3B352B00B24988 /* NSURL+Parameters.m */,
+				7F362A780C3B352B00B24988 /* QSKeyCodeTranslator.h */,
+				7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */,
+				7F362A7A0C3B352B00B24988 /* TKController.h */,
+				7F362A7B0C3B352B00B24988 /* TKController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */,
+				7F73C4C90C3802C9002E8A31 /* WebKit.framework */,
+				7F299A450C22607500227C9E /* OpenGL.framework */,
+				7F2999690C225FAE00227C9E /* ApplicationServices.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* iPhone Remote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Telekinesis */ = {
+			isa = PBXGroup;
+			children = (
+				7F73C3EE0C37FEB7002E8A31 /* Plan.txt */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Telekinesis;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7F362F360C3C48B900B24988 /* Telekinesis_Prefix.pch */,
+				7F362A680C3B351F00B24988 /* glgrab.c */,
+				7F362A690C3B351F00B24988 /* glgrab.h */,
+				7F362A6A0C3B351F00B24988 /* main.m */,
+				7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */,
+				7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */,
+				7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */,
+				7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7F362F380C3C48BF00B24988 /* Telekinesis.icns */,
+				7F362AA10C3B35AF00B24988 /* cgi-bin */,
+				7F362AA50C3B35AF00B24988 /* scripts */,
+				7F362AAD0C3B35AF00B24988 /* www */,
+				7F362A890C3B356E00B24988 /* certificate.cfg */,
+				7F362A8A0C3B356E00B24988 /* certificate.sh */,
+				7F362A8C0C3B356E00B24988 /* InfoPlist.strings */,
+				7F362A8E0C3B356E00B24988 /* MainMenu.nib */,
+				7F362A900C3B356E00B24988 /* httpd.1.3.33.conf */,
+				7F362A910C3B356E00B24988 /* httpd.2.0.conf */,
+				7F362A920C3B356E00B24988 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F1E07130C394A8A0049F3DA /* Sparkle.framework */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* iPhone Remote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "iPhone Remote" */;
+			buildPhases = (
+				7F6D80540C3684520003FABC /* ShellScript */,
+				7F1E07310C394A9B0049F3DA /* CopyFiles */,
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iPhone Remote";
+			productInstallPath = "$(HOME)/Applications";
+			productName = Telekinesis;
+			productReference = 8D1107320486CEB800E47090 /* iPhone Remote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Telekinesis" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Telekinesis */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* iPhone Remote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F362A970C3B356E00B24988 /* certificate.cfg in Resources */,
+				7F362A980C3B356E00B24988 /* certificate.sh in Resources */,
+				7F362A990C3B356E00B24988 /* InfoPlist.strings in Resources */,
+				7F362A9A0C3B356E00B24988 /* MainMenu.nib in Resources */,
+				7F362A9B0C3B356E00B24988 /* httpd.1.3.33.conf in Resources */,
+				7F362A9C0C3B356E00B24988 /* httpd.2.0.conf in Resources */,
+				7F362A9D0C3B356E00B24988 /* Info.plist in Resources */,
+				7F362AE50C3B35AF00B24988 /* cgi-bin in Resources */,
+				7F362AE60C3B35AF00B24988 /* scripts in Resources */,
+				7F362AE70C3B35AF00B24988 /* www in Resources */,
+				7F362F390C3C48BF00B24988 /* Telekinesis.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F6D80540C3684520003FABC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/www",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "touch $SRCROOT/Resources/www\ntouch $SRCROOT/Resources/cgi-bin\ntouch $SRCROOT/Resources/scripts";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F362A6F0C3B351F00B24988 /* glgrab.c in Sources */,
+				7F362A710C3B351F00B24988 /* main.m in Sources */,
+				7F362A730C3B351F00B24988 /* SimpleHTTPConnection.m in Sources */,
+				7F362A750C3B351F00B24988 /* SimpleHTTPServer.m in Sources */,
+				7F362A7D0C3B352B00B24988 /* NSURL+Parameters.m in Sources */,
+				7F362A7F0C3B352B00B24988 /* QSKeyCodeTranslator.m in Sources */,
+				7F362A810C3B352B00B24988 /* TKController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7F362A8C0C3B356E00B24988 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F362A8D0C3B356E00B24988 /* English */,
+			);
+			name = InfoPlist.strings;
+			path = Resources/English.lproj;
+			sourceTree = "<group>";
+		};
+		7F362A8E0C3B356E00B24988 /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F362A8F0C3B356E00B24988 /* English */,
+			);
+			name = MainMenu.nib;
+			path = Resources/English.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../external\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/Telekinesis_Prefix.pch;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "iPhone Remote";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../external\"";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/Telekinesis_Prefix.pch;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "iPhone Remote";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "iPhone Remote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Telekinesis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
