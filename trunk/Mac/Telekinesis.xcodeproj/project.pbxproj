@@ -95,7 +95,6 @@
 		7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		7F362F360C3C48B900B24988 /* Telekinesis_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Telekinesis_Prefix.pch; path = Source/Telekinesis_Prefix.pch; sourceTree = "<group>"; };
 		7F362F380C3C48BF00B24988 /* Telekinesis.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Telekinesis.icns; path = Resources/Telekinesis.icns; sourceTree = "<group>"; };
-		7F73C3EE0C37FEB7002E8A31 /* Plan.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Plan.txt; sourceTree = "<group>"; };
 		7F73C4C90C3802C9002E8A31 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		8D1107320486CEB800E47090 /* iPhone Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -163,7 +162,6 @@
 		29B97314FDCFA39411CA2CEA /* Telekinesis */ = {
 			isa = PBXGroup;
 			children = (
-				7F73C3EE0C37FEB7002E8A31 /* Plan.txt */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -374,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
@@ -385,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;

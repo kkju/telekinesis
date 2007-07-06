@@ -12,7 +12,7 @@
 <div style="margin-left:10px;margin-right:10px;margin-top:20px;">
 <?php
 
-$dirs = array("ipps", $_ENV["HOME"]."/Library/Application Support/Telekinesis/apps");
+$dirs = array("ipps", $_ENV["HOME"]."/Library/Application Support/iPhone Remote/apps");
 	$i = 0;
 	// Open a known directory, and proceed to read its contents
 foreach ($dirs as $dir) {
@@ -27,9 +27,13 @@ foreach ($dirs as $dir) {
 					$imagepath = "$dir/$file/$file.png";
           $imagepath = realpath($imagepath);
           
-					if (!file_exists($imagepath)) $imagepath = "/images/GenericApp.png";
+					if (file_exists($imagepath)) {
+            $imagepath = "/files/" . $imagepath;
+          } else {
+            $imagepath = "/images/GenericApp.png";
+          }
 					?>
-					<div style="float:left;width:75;height:90px;text-align:center;";><a class="iconlink" target="app_<?=$file?>" href="<?=$app_path?>/"><img src="/files/<?=$imagepath?>" width="57" height="57"><br><?=$file?></a></div>
+					<div style="float:left;width:75;height:90px;text-align:center;";><a class="iconlink" target="app_<?=$file?>" href="<?=$app_path?>/"><img src="<?=$imagepath?>" width="57" height="57"><br><?=$file?></a></div>
 					<?
 				}
 			}

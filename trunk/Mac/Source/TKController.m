@@ -55,10 +55,9 @@ void CatchInterrupt (int signum) {
 	NSMutableArray * addresses;
 	SCDynamicStoreRef
 		dynRef=SCDynamicStoreCreate(kCFAllocatorSystemDefault,
-                                (CFStringRef)@"Whatever you want", NULL, NULL);
+                                (CFStringRef)@"Telekinesis", NULL, NULL);
 	// Get all available interfaces IPv4 addresses
-	NSArray *interfaceList=(NSArray *)
-		SCDynamicStoreCopyKeyList(dynRef,(CFStringRef)@"State:/Network/Service/..*/IPv4");
+	NSArray *interfaceList=(NSArray *)SCDynamicStoreCopyKeyList(dynRef,(CFStringRef)@"State:/Network/Service/..*/IPv4");
 
 NSEnumerator *interfaceEnumerator=[interfaceList objectEnumerator];
 addresses = [NSMutableArray arrayWithCapacity:[interfaceList count]];
@@ -67,11 +66,8 @@ NSString *interface;
 while(interface=[interfaceEnumerator nextObject]) {
 		NSDictionary *interfaceEntry=(NSDictionary
                                   *)SCDynamicStoreCopyValue(dynRef,(CFStringRef)interface);
-
-  NSLog(@"interfaceEntry %@",interfaceEntry);
-		[addresses addObjectsFromArray:[interfaceEntry objectForKey:@"Addresses"]];
-	
-    
+  
+		[addresses addObject:interfaceEntry];
 		[interfaceEntry release]; // must be released
 }
 
@@ -93,24 +89,23 @@ return [NSArray arrayWithArray:addresses];
     
     
     NSString *externalAppsPath = [[self applicationSupportFolder] stringByAppendingPathComponent:@"Apps"];
-    NSString *internalAppsPath = [[[NSBundle mainBundle] pathForResource:@"www" ofType:@""] stringByAppendingPathComponent:@"ipps"];
+    //    NSString *internalAppsPath = [[[NSBundle mainBundle] pathForResource:@"www" ofType:@""] stringByAppendingPathComponent:@"ipps"];
     
     [fm createDirectoryAtPath:[self applicationSupportFolder] attributes:nil];
     [fm createDirectoryAtPath:externalAppsPath attributes:nil];
     [fm createDirectoryAtPath:[self serverRootFolder] attributes:nil];
     
     
-    NSDirectoryEnumerator *de = [[[NSFileManager defaultManager] directoryContentsAtPath:externalAppsPath] objectEnumerator];
+    NSEnumerator *de = [[[NSFileManager defaultManager] directoryContentsAtPath:externalAppsPath] objectEnumerator];
     NSString *path;
     while (path = [de nextObject]) {
       path = [externalAppsPath stringByAppendingPathComponent:path];
       NSString *infoPath = [path stringByAppendingPathComponent:@"Info.plist"];
       NSMutableDictionary *info = [NSMutableDictionary dictionaryWithContentsOfFile:infoPath];
-     if (info) [applicationsDictionary setObject:info forKey:path];
-      NSLog(@"info %@", info);
+      if (info) [applicationsDictionary setObject:info forKey:path];
     }
     
-
+    
   }
   return self;
 }
@@ -121,8 +116,13 @@ return [NSArray arrayWithArray:addresses];
 }
 
 - (void) goHome:(id)sender {
-  NSArray *addresses = [[self class] currentIP4Addresses];
-  NSString *urlString = [NSString stringWithFormat:@"https://%@:%d", [addresses lastObject], 5010];
+  NSArray *interfaces = [[self class] currentIP4Addresses];
+  NSArray *en1 = [interfaces filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"InterfaceName LIKE 'en1'"]];
+  if (en1) interfaces = en1;
+  
+  NSArray *addresses = [interfaces valueForKeyPath:@"@distinctUnionOfArrays.Addresses"];
+  
+  NSString *urlString = [NSString stringWithFormat:@"https://%@:%d", ([addresses count] ? [addresses lastObject] : @"localhost"), 5010];
   [[NSWorkspace sharedWorkspace] openURLs:[NSArray arrayWithObject:[NSURL URLWithString:urlString]]
                   withAppBundleIdentifier:@"com.apple.Safari"
                                   options:nil additionalEventParamDescriptor:nil launchIdentifiers:nil];
@@ -203,13 +203,10 @@ return [NSArray arrayWithArray:addresses];
     }
     
     NSNumber *proxyPort = [value objectForKey:@"proxyPort"];
-      
-      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/apps/%@\" http://localhost:%@", [key lastPathComponent], proxyPort]];
+    
+    [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/apps/%@\" http://localhost:%@", [key lastPathComponent], proxyPort]];
     [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/apps/%@\" http://localhost:%@", [key lastPathComponent], proxyPort]];
   }
-  NSLog(@"directives %@", directives);
-  
-//  [directives addObject:];
   
   NSEnumerator *e = [directives objectEnumerator];
   id item;
@@ -217,6 +214,15 @@ return [NSArray arrayWithArray:addresses];
     [arguments addObject:@"-c"];
     [arguments addObject:item];
   }
+
+  
+  if ([[NSUserDefaults standardUserDefaults] boolForKey:@"EnableMediaPort"]) {
+    NSLog(@"Enabling media port");
+    [arguments addObject:@"-D"];
+    [arguments addObject:@"EnableMediaPort"];
+  }
+  
+  
   NSString *computerName = [(id)SCDynamicStoreCopyComputerName(NULL, NULL) autorelease];
   NSString *rootVolumeName = [[NSFileManager defaultManager] displayNameAtPath:@"/"];
   NSMutableDictionary *environment = [[[[NSProcessInfo processInfo] environment] mutableCopy] autorelease];
@@ -252,10 +258,12 @@ return [NSArray arrayWithArray:addresses];
 }
 
 
-- (IBAction *)cancelPass:(id)sender{ 
+- (IBAction)cancelPass:(id)sender{ 
   [NSApp stopModalWithCode:0];
 }
-- (IBAction *)savePass:(id)sender{ 
+
+
+- (IBAction)savePass:(id)sender{ 
   if (![[passField stringValue] length]) {
     NSBeep();
     return;
@@ -275,8 +283,8 @@ return [NSArray arrayWithArray:addresses];
   [[userField window] close];
   shouldShowHomepage = YES;
   
-[[NSTask launchedTaskWithLaunchPath:@"/usr/bin/htpasswd"
-                         arguments:[NSArray arrayWithObjects:@"-bc", passfile, user, pass, nil]] waitUntilExit];
+  [[NSTask launchedTaskWithLaunchPath:@"/usr/bin/htpasswd"
+                            arguments:[NSArray arrayWithObjects:@"-bc", passfile, user, pass, nil]] waitUntilExit];
   // @htpasswd -bc passwords alcor blah  
 }
 
@@ -358,6 +366,7 @@ return [NSArray arrayWithArray:addresses];
 // Nasty function that handles most of the advanced functionality
 
 - (void)processURL:(NSURL *)url connection:(SimpleHTTPConnection *)connection {
+  
   NSData *data = nil;
   NSString *mime = nil;
   NSString *path = [url path];

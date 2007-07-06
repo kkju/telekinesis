@@ -41,17 +41,25 @@ echo "<ul id=\"crumbs\">";
 	// Open a known directory, and proceed to read its contents
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
-			while (($file = readdir($dh)) !== false) {
-				if (substr($file, 0, 1)!=".") {
+			$ignoredNames = array("Desktop DB", "Desktop DF");
+						
+      while (($file = readdir($dh)) !== false) {
+        if (in_array($file, $ignoredNames)) continue;
+        
 				if (substr($file, 0, 1)!=".") {
 					$path = "$dir/$file";
-					$extension = end(explode('.',$path));
-
+          $components = explode('.',$path);
+					if (count($components)>1) {
+            $extension = end($components);
+          }
+          
 					$is_script = ($extension == @"scpt");
 					if (is_dir($path)) {
 						$link =  "?dir=$path/";
 					} else {
-						if($extension == @"mp3" || $extension == @"mov" || $extension == @"m4a" ||  $extension == @"m4b" || $extension == @"m4v") {
+
+            $streamingExtensions = array("mp3", "mov", "m4a", "m4b", "mp4", "m4v");
+						if( in_array($extension, $streamingExtensions)) {
 							$server = ereg_replace("\:[0-9]{4,4}", ":5009", $_SERVER["HTTP_HOST"]); 
 							$link = "http://".$server."/files/$path";
 						} else {
@@ -75,13 +83,9 @@ echo "<ul id=\"crumbs\">";
 							?><a href="#" onclick="loadURL('<?=$scpt_link?>'); return false;" class="button">Run</a><?
 						}
 						?>
-
-
-				
 				</a>
 					</div>
 					<?
-}
 			}
 		}
 		closedir($dh);
