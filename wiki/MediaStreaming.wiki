@@ -12,8 +12,9 @@ If you store movie or music files on your computer, you can watch and listen to 
 
 Over EDGE you stream media in real time up to 160kbits (in practice 80-100 however.) 
 
-As of now there is no way to stream playlists or queue multiple files.
+To play a media file, simply touch it in the file browser mode. The CoreMedia (Quicktime plugin) player will launch and start to buffer the  media. You can use other applications (Mail, Phone, etc) while the media is playing but you cannot navigate to other MobileSafari pages. 
 
+As of now there is no way to stream playlists or queue multiple files.
 
 == Caveats of media streaming ==
 
