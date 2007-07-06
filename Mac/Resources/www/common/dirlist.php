@@ -52,7 +52,12 @@ $dir = realpath($dir)
 					if (is_dir($path)) {
 						$link =  "?dir=$path/";
 					} else {
-						$link =  "/files/$path";
+						if($extension == @"mp3" || $extension == @"mov" || $extension == @"m4a" ||  $extension == @"m4b" || $extension == @"m4v") {
+							$server = ereg_replace("\:[0-9]{4,4}", ":5009", $_SERVER["HTTP_HOST"]); 
+							$link = "http://".$server."/files/$path";
+						} else {
+							$link =  "/files/$path";
+						}
 					}
 
 				
