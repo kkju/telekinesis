@@ -2,7 +2,7 @@
 
 == Streaming video and audio ==
 
-If you store movie or music files on your computer, you can watch and listen to them on your iPhone using telekinesis. The files have to be supported by the iPhone:
+If you store movie or music files on your computer, you can watch and listen to them on your iPhone using telekinesis after enabling  the feature (see below.) The files have to be supported by the iPhone:
 
   * H.264 Baseline Profile Level 3.0 video, up to 640 x 480 at 30 fps. 
   * MPEG-4 Part 2 video (Simple Profile)
