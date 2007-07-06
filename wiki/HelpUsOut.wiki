@@ -8,10 +8,10 @@ Feel like helping others? Lend a hand on the [http://code.google.com/p/telekines
 
 
 = Development = 
-  *
+  * Full apple remote emulation
 
 = Security = 
   * A full security review by Someone Who Knows
 
 = Visual design =
-  * Proper (monochrome, vector) icon for scripts
+  * ~~Proper (monochrome, vector) icon for scripts~~ Thanks has!
