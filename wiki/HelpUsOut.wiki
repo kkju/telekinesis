@@ -1,5 +1,11 @@
 #summary list of help needed on Telekinesis
 
+Want to make iPhone Remote better? Feel free to review the code and offer suggestions.
+
+Interested in helping create more apps? Let us know what you are interested in and we'll try to lend a hand.
+ 
+Feel like helping others? Lend a hand on the [http://code.google.com/p/telekinesis/issues/list issues]
+
 
 = Development = 
   *
