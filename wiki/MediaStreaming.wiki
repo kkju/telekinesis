@@ -4,6 +4,7 @@ The iPhone doesn't appear to accept media encrypted with a self signed certifica
 
 
 * This allows anyone who can connect to your machine to access m4b, m4v, m4a, mov, and mp3 files if they know the full path to the file*
+
 * Do not enable this unless you are sure your network is secure. *
 
 To enable, in the terminal type:
