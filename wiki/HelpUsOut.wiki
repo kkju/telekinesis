@@ -7,11 +7,15 @@ Interested in helping create more apps? Let us know what you are interested in a
 Feel like helping others? Lend a hand on the [http://code.google.com/p/telekinesis/issues/list issues]
 
 
-= Development = 
+=== Development ===
   * Full apple remote emulation
+  * Full iTunes Browsing & Now Playing screen
+  * 
 
-= Security = 
+=== Security === 
   * A full security review by Someone Who Knows
+  * Authentication against the account user name and password
 
-= Visual design =
+=== Visual design ===
   * ~~Proper (monochrome, vector) icon for scripts~~ Thanks has!
+
