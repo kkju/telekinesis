@@ -17,5 +17,4 @@ Feel like helping others? Lend a hand on the [http://code.google.com/p/telekines
   * Authentication against the account user name and password
 
 === Visual design ===
-  * ~~Proper (monochrome, vector) icon for scripts~~ Thanks has!
-
+  * ~~Proper (monochrome, vector) icon for scripts~~ Thanks Has AND Dain!
