@@ -11,7 +11,10 @@
 #import <Cocoa/Cocoa.h>
 
 @class SimpleHTTPConnection;
-
+@interface NSObject (SimpleHTTPServerDelegate)
+- (void)stopProcessing;
+- (void)processURL:(NSURL *)url connection:(SimpleHTTPConnection *)connection;
+@end
 @interface SimpleHTTPServer : NSObject {
     unsigned port;
     id delegate;
