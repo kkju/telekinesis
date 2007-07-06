@@ -16,6 +16,10 @@ To play a media file, simply touch it in the file browser mode. The CoreMedia (Q
 
 As of now there is no way to stream playlists or queue multiple files.
 
+If you have any problems or improvements, please let us know at the discussion group: 
+
+http://groups.google.com/group/telekinesis-discuss
+
 == Caveats of media streaming ==
 
 The iPhone doesn't appear to accept media encrypted with a self signed certificate. To enable streaming, iPhone Remote is able to send it insecurely. This feature is off by default because of security concerns.
