@@ -1,0 +1,12 @@
+#summary list of help needed on Telekinesis
+
+
+= Development = 
+  *
+
+= Security = 
+  * A full security review by Someone Who Knows
+
+= Visual design =
+  * Proper (monochrome, vector) icon for scripts
+
