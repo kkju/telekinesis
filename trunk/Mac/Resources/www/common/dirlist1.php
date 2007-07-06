@@ -6,7 +6,7 @@ $dir = realpath($dir)
 
 <html>
 <head>
-	<title>Telekinesis - <?=$dir?></title>
+	<title><?=$_ENV["COMPUTER_NAME"]?> - <?=$dir?></title>
     <meta name="viewport" id="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8" />
 	<script src="/js/remote.js" type="text/javascript" charset="utf-8" />
