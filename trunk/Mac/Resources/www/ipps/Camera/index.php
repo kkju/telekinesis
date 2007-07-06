@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=640, inital-scale=0.5, maximum-scale:1.0" />
 </head>
 <body style="background-color:black; margin:0;">
-	<a onclick="$('shot').src = '/cgi/nph-SnapshotWeb?' + Math.random();" href="#"><img id="shot" src="/cgi/nph-SnapshotWeb" ></a>
+	<!-- <a onclick="$('shot').src = '/cgi/bw-iSightGrab?' + Math.random();" href="#"><img id="shot" src="/cgi/bw-iSightGrab" ></a> -->
+	<a onclick="$('shot').src = '/cgi/nph-SnapshotWeb?' + Math.random();" href="#"><img id="shot" src="/cgi/nph-SnapshotWeb" ></a> -->
+	
 </body>
 </html>
