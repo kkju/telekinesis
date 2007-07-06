@@ -10,3 +10,5 @@ The iPhone doesn't appear to accept media encrypted with a self signed certifica
 To enable, in the terminal type:
 
 `defaults write com.blacktree.Telekinesis EnableMediaPort 1`
+
+Then relaunch.
