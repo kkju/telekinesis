@@ -1,5 +1,7 @@
 #summary Media streaming with telekinesis
 
+== Streaming video and audio ==
+
 If you store movie or music files on your computer, you can watch and listen to them on your iPhone using telekinesis. The files have to be supported by the iPhone:
 
   * H.264 Baseline Profile Level 3.0 video, up to 640 x 480 at 30 fps. 
@@ -13,7 +15,7 @@ Over EDGE you stream media in real time up to 160kbits (in practice 80-100 howev
 As of now there is no way to stream playlists or queue multiple files.
 
 
-#summary Caveats of media streaming
+== Caveats of media streaming ==
 
 The iPhone doesn't appear to accept media encrypted with a self signed certificate. To enable streaming, iPhone Remote is able to send it insecurely. This feature is off by default because of security concerns.
 
