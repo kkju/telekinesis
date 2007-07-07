@@ -58,9 +58,9 @@ echo "<ul id=\"crumbs\">";
 						$link =  "?dir=$path/";
 					} else {
 
-            $streamingExtensions = array("mp3", "mov", "m4a", "m4b", "mp4", "m4v");
+						$streamingExtensions = array("mp3", "mov", "m4a", "m4b", "mp4", "m4v");
 						if( in_array($extension, $streamingExtensions)) {
-							$server = ereg_replace("\:[0-9]{4,4}", ":5009", $_SERVER["HTTP_HOST"]); 
+							$server = ereg_replace("\:[0-9]{4,4}", ":".$_ENV["MEDIA_PORT"], $_SERVER["HTTP_HOST"]); 
 							$link = "http://".$server."/files/$path";
 						} else {
 							$link =  "/files/$path";

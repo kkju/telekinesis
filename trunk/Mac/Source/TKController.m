@@ -149,6 +149,12 @@ return [NSArray arrayWithArray:addresses];
   if (port < 1024) port = 5010;
   return port;
 }
+- (int)mediaPortNumber {
+  int mediaPort = [[NSUserDefaults standardUserDefaults] integerForKey:@"mediaPort"];
+  if (mediaPort < 1024) mediaPort = 5012;
+  return mediaPort;
+}
+
 - (IBAction) goSupport:(id)sender {
   // [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http:// 
 }
@@ -276,7 +282,7 @@ return [NSArray arrayWithArray:addresses];
   NSString *configPath = [[NSBundle mainBundle] pathForResource:@"httpd.telekinesis" ofType:@"conf"];
   NSString *customConfig = [NSString stringWithContentsOfFile:configPath];
   
-  customConfig = [NSString stringWithFormat:customConfig, [self portNumber]];
+  customConfig = [NSString stringWithFormat:customConfig, [self portNumber], [self mediaPortNumber]];
   NSString *customConfigPath = [[self serverRootFolder] stringByAppendingPathComponent:@"custom.conf"];
   
   [customConfig writeToFile:customConfigPath atomically:NO];
@@ -292,7 +298,7 @@ return [NSArray arrayWithArray:addresses];
   
   
   if ([[NSUserDefaults standardUserDefaults] boolForKey:@"EnableMediaPort"]) {
-    NSLog(@"Enabling media port 5009");
+    NSLog(@"Enabling media port %d", [self mediaPortNumber]);
     [arguments addObject:@"-D"];
     [arguments addObject:@"EnableMediaPort"];
   }
@@ -303,6 +309,7 @@ return [NSArray arrayWithArray:addresses];
   NSMutableDictionary *environment = [[[[NSProcessInfo processInfo] environment] mutableCopy] autorelease];
   
   [environment setObject:computerName forKey:@"COMPUTER_NAME"];
+  [environment setObject:[NSString stringWithFormat:@"%d", [self mediaPortNumber]] forKey:@"MEDIA_PORT"];
   [environment setObject:rootVolumeName forKey:@"ROOT_VOLUME_NAME"];
   apacheTask = [[NSTask alloc] init];
   [apacheTask setLaunchPath:@"/usr/sbin/httpd"];
