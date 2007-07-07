@@ -248,10 +248,10 @@
 		7F0D27930C3E8364009FD23E /* PrefPane */ = {
 			isa = PBXGroup;
 			children = (
+				7F0D27D40C3E8733009FD23E /* TKPref.h */,
 				7F0D27CE0C3E872C009FD23E /* TKPref.m */,
 				7F0D27CF0C3E872C009FD23E /* TKPref.tiff */,
 				7F0D27D30C3E8733009FD23E /* PrefPane-Info.plist */,
-				7F0D27D40C3E8733009FD23E /* TKPref.h */,
 				7F0D27FE0C3E88C0009FD23E /* TKPref.nib */,
 			);
 			name = PrefPane;
