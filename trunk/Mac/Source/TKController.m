@@ -46,6 +46,15 @@ void CatchInterrupt (int signum) {
 @implementation TKController
 + (void) initialize {
   signal(SIGTERM, CatchInterrupt);  
+  
+  NSMutableDictionary *newDefaults = [NSMutableDictionary dictionary];
+  [newDefaults addEntriesFromDictionary:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSUserDefaults"]];
+  [newDefaults setObject:[NSNumber numberWithBool:NO]
+                  forKey:@"headersHidden"];
+  [newDefaults setObject:@"./Contents/Resources/style.css"
+                  forKey:@"stylePath"];
+  
+  [[NSUserDefaults standardUserDefaults] registerDefaults:newDefaults];
 }
 
 + (NSArray *) currentIP4Addresses
@@ -78,7 +87,7 @@ return [NSArray arrayWithArray:addresses];
 - (id) init {
   self = [super init];
   if (self != nil) {
-    [self setServer:[[[SimpleHTTPServer alloc] initWithTCPPort:5011
+    [self setServer:[[[SimpleHTTPServer alloc] initWithTCPPort:[self telePortNumber]
                                                       delegate:self] autorelease]];
     
     [self applicationSupportFolder];
@@ -144,16 +153,21 @@ return [NSArray arrayWithArray:addresses];
 - (void)menuNeedsUpdate:(NSMenu *)menu{
   //  [[menu itemWithTag:2] setTitle:@"ip address"];
 }
-- (int)portNumber {
-  int port = [[NSUserDefaults standardUserDefaults] integerForKey:@"port"];
-  if (port < 1024) port = 5010;
+
+
+- (int)userPortForDefault:(NSString *)key{
+  int port = [[NSUserDefaults standardUserDefaults] integerForKey:key];
+  if (port < 1024) {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+    port = [[NSUserDefaults standardUserDefaults] integerForKey:key];
+  }
   return port;
 }
-- (int)mediaPortNumber {
-  int mediaPort = [[NSUserDefaults standardUserDefaults] integerForKey:@"mediaPort"];
-  if (mediaPort < 1024) mediaPort = 5012;
-  return mediaPort;
-}
+
+- (int)portNumber {return [self userPortForDefault:@"port"];}
+- (int)telePortNumber {return [self userPortForDefault:@"telePort"];}
+- (int)mediaPortNumber {return [self userPortForDefault:@"mediaPort"];}
+
 
 - (IBAction) goSupport:(id)sender {
   // [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http:// 
@@ -249,11 +263,8 @@ return [NSArray arrayWithArray:addresses];
   
   NSMutableArray *directives = [NSMutableArray arrayWithObjects:
     [NSString stringWithFormat:@"Alias /resources/ \"%@\"", root],
-    [NSString stringWithFormat:@"ErrorLog \"%@/Library/Logs/Telekinesis_error.log\"", NSHomeDirectory()],
-    [NSString stringWithFormat:@"CustomLog \"%@/Library/Logs/Telekinesis_access.log\" common", NSHomeDirectory()],
     [NSString stringWithFormat:@"DocumentRoot \"%@/www/\"", documentRoot],
     [NSString stringWithFormat:@"Alias /Apps/ \"%@/Apps/\"", [self applicationSupportFolder]],
-    [NSString stringWithFormat:@"Alias /home/ \"%@/\"",  NSHomeDirectory()],
     [NSString stringWithFormat:@"ScriptAlias /cgi/ \"%@/cgi-bin/\"",  documentRoot],
     nil];
   
@@ -271,9 +282,11 @@ return [NSArray arrayWithArray:addresses];
     }
     
     NSNumber *proxyPort = [info objectForKey:@"proxyPort"];
-    
-    [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
-    [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
+    if (proxyPort) {
+      NSLog(@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort);
+      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
+    }
   }
   
   
@@ -282,6 +295,7 @@ return [NSArray arrayWithArray:addresses];
   NSString *configPath = [[NSBundle mainBundle] pathForResource:@"httpd.telekinesis" ofType:@"conf"];
   NSString *customConfig = [NSString stringWithContentsOfFile:configPath];
   
+  customConfig = [NSString stringWithFormat:customConfig, [self portNumber], [self mediaPortNumber], NSHomeDirectory(), [[NSBundle mainBundle] bundlePath], [self applicationSupportFolder]];
   customConfig = [NSString stringWithFormat:customConfig, [self portNumber], [self mediaPortNumber]];
   NSString *customConfigPath = [[self serverRootFolder] stringByAppendingPathComponent:@"custom.conf"];
   
@@ -289,6 +303,7 @@ return [NSArray arrayWithArray:addresses];
   
   //  [directives addObject:[NSString stringWithFormat:@"Include \"%@\"", configPath]];
   
+//  NSLog(@"Directives %@", directives);
   NSEnumerator *de = [directives objectEnumerator];
   id item;
   while (item = [de nextObject]) {

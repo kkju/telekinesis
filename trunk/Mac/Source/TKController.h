@@ -42,7 +42,7 @@
 - (IBAction) goHome:(id)sender;
 - (IBAction) goSupport:(id)sender;
 
-- (int)mediaPortNumber;
 - (int)portNumber;
-
+- (int)telePortNumber;
+- (int)mediaPortNumber;
 @end
