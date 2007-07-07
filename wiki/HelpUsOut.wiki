@@ -17,4 +17,5 @@ Feel like helping others? Lend a hand on the [http://code.google.com/p/telekines
   * Authentication against the account user name and password
 
 === Visual design ===
+  * Better default background picture. Something similar to what's there, but cleaner.
   * ~~Proper (monochrome, vector) icon for scripts~~ Thanks Has AND Dain!
