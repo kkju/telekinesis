@@ -1,4 +1,4 @@
-#summary How to add functionality to iPhone Remote
+#summary How to add functionality to iPhone Remote with 'tapps'
 
 = Introduction =
 
@@ -21,7 +21,7 @@ Both of these are still very much in flux, advice and suggestions are welcome!
 == Custom Servers ==
 
 For more advanced apps, you may want to provide web content directly.
-iPhone Remote is able to launch another program and proxy traffic to its port. An Info.plist defines this behavior:
+iPhone Remote is able to launch another program and proxy traffic to its port. An Info.plist inside the tapp defines this behavior:
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
