@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title><?=$_ENV["COMPUTER_NAME"]?></title>
+<title><?=$_ENV["COMPUTER_NAME"]?></title>
 <meta name="viewport" content="width=320, height=418" />
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
 <link rel="stylesheet" href="/css/menu.css" type="text/css" media="screen" charset="utf-8">
@@ -12,20 +12,28 @@
 <div style="margin-left:10px;margin-right:10px;margin-top:20px;">
 <?php
 
-$dirs = array("ipps", $_ENV["HOME"]."/Library/Application Support/iPhone Remote/apps");
-	$i = 0;
-	// Open a known directory, and proceed to read its contents
+$dirs = array("ipps", $_ENV["HOME"]."/Library/Application Support/iPhone Remote/Apps");
+$i = 0;
+// Open a known directory, and proceed to read its contents
 foreach ($dirs as $dir) {
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
 			while (($file = readdir($dh)) !== false) {
 				if (substr($file, 0, 1) !=".") {
+          
+          if (substr($file, -5, 5) != ".tapp") continue; // Ignore non-tapps
 					$i++;
-					
+          
+					$name = substr($file, 0, strrpos($file,'.')); // remove Extension
 					$basepath = basename($dir);
 					$app_path = "$basepath/$file";
-					$imagepath = "$dir/$file/$file.png";
+					$imagepath = "$dir/$file/Icon.png";
           $imagepath = realpath($imagepath);
+
+          if (!file_exists($imagepath)) {
+            $imagepath = "$dir/$file/$name.png";
+            $imagepath = realpath($imagepath);
+          }
           
 					if (file_exists($imagepath)) {
             $imagepath = "/files/" . $imagepath;
@@ -33,8 +41,8 @@ foreach ($dirs as $dir) {
             $imagepath = "/images/GenericApp.png";
           }
 					?>
-					<div style="float:left;width:75;height:90px;text-align:center;";><a class="iconlink" target="app_<?=$file?>" href="<?=$app_path?>/"><img src="<?=$imagepath?>" width="57" height="57"><br><?=$file?></a></div>
-					<?
+            <div style="float:left;width:75;height:90px;text-align:center;";><a class="iconlink" target="app_<?=$file?>" href="<?=$app_path?>/"><img src="<?=$imagepath?>" width="57" height="57"><br><?=$name?></a></div>
+              <?
 				}
 			}
 			closedir($dh);
@@ -42,7 +50,7 @@ foreach ($dirs as $dir) {
 	}
 }
 
-	?>
+?>
 </div>
 <br clear="all">
 <div class="title" align="center" style="opacity:0.5;color:#FFF; position:absolute; width:100%; bottom:0px; padding-bottom:10px;">

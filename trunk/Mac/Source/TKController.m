@@ -95,22 +95,29 @@ return [NSArray arrayWithArray:addresses];
     [fm createDirectoryAtPath:externalAppsPath attributes:nil];
     [fm createDirectoryAtPath:[self serverRootFolder] attributes:nil];
     
-    
-    NSEnumerator *de = [[[NSFileManager defaultManager] directoryContentsAtPath:externalAppsPath] objectEnumerator];
-    NSString *path;
-    while (path = [de nextObject]) {
-      path = [externalAppsPath stringByAppendingPathComponent:path];
-      NSString *infoPath = [path stringByAppendingPathComponent:@"Info.plist"];
-      NSMutableDictionary *info = [NSMutableDictionary dictionaryWithContentsOfFile:infoPath];
-      if (!info) info = [NSMutableDictionary dictionary];
-      [info setObject:path forKey:@"path"];
-      [info setObject:[path lastPathComponent] forKey:@"name"];
-      if (info) [applications addObject:info];
-    }
-    
-    
   }
   return self;
+}
+
+
+- (void) reloadApps {
+  [applications removeAllObjects];
+  NSString *externalAppsPath = [[self applicationSupportFolder] stringByAppendingPathComponent:@"Apps"];
+  
+  NSArray *paths = [[NSFileManager defaultManager] directoryContentsAtPath:externalAppsPath];
+  paths = [paths pathsMatchingExtensions:[NSArray arrayWithObject:@"tapp"]];
+  NSEnumerator *de = [paths objectEnumerator];
+  NSString *path;
+  while (path = [de nextObject]) {
+    path = [externalAppsPath stringByAppendingPathComponent:path];
+    NSString *infoPath = [path stringByAppendingPathComponent:@"Info.plist"];
+    NSMutableDictionary *info = [NSMutableDictionary dictionaryWithContentsOfFile:infoPath];
+    if (!info) info = [NSMutableDictionary dictionary];
+    [info setObject:path forKey:@"path"];
+    [info setObject:[[path lastPathComponent] stringByDeletingPathExtension] forKey:@"name"];
+    if (info) [applications addObject:info];
+  }
+  NSLog(@"Applications installed: %@", [[applications valueForKey:@"name"] componentsJoinedByString:@","]);
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
@@ -205,9 +212,13 @@ return [NSArray arrayWithArray:addresses];
 - (void) startServices {
   if (servicesRunning) return;
   
+  
+  
   // Commit port changes, if needed.
   [prefsWindow makeFirstResponder:prefsWindow];
+  [[NSUserDefaults standardUserDefaults] synchronize];
   
+  [self reloadApps];
   [self generateCertificateIfNeeded];
   [self getPasswordIfNeeded];
   
@@ -235,7 +246,7 @@ return [NSArray arrayWithArray:addresses];
     [NSString stringWithFormat:@"ErrorLog \"%@/Library/Logs/Telekinesis_error.log\"", NSHomeDirectory()],
     [NSString stringWithFormat:@"CustomLog \"%@/Library/Logs/Telekinesis_access.log\" common", NSHomeDirectory()],
     [NSString stringWithFormat:@"DocumentRoot \"%@/www/\"", documentRoot],
-    [NSString stringWithFormat:@"Alias /apps/ \"%@/Apps/\"", [self applicationSupportFolder]],
+    [NSString stringWithFormat:@"Alias /Apps/ \"%@/Apps/\"", [self applicationSupportFolder]],
     [NSString stringWithFormat:@"Alias /home/ \"%@/\"",  NSHomeDirectory()],
     [NSString stringWithFormat:@"ScriptAlias /cgi/ \"%@/cgi-bin/\"",  documentRoot],
     nil];
@@ -308,7 +319,7 @@ return [NSArray arrayWithArray:addresses];
   NSString *command = [taskOptions valueForKey:@"path"];
   if (!command) return nil;
   
-  command = [basePath stringByAppendingPathComponent:command];
+  if (![command hasPrefix:@"/"]) command = [basePath stringByAppendingPathComponent:command];
   command = [command stringByStandardizingPath];
   
   NSArray *arguments = [taskOptions objectForKey:@"arguments"];
@@ -502,11 +513,11 @@ return [NSArray arrayWithArray:addresses];
     CGImageRef theCGImage = grabViaOpenGL(displayID, rect);
     
     NSMutableData* imageData = [NSMutableData data];
-    CGImageDestinationRef destCG = CGImageDestinationCreateWithData((CFMutableDataRef)imageData,  kUTTypePNG,1,NULL);
+    CGImageDestinationRef destCG = CGImageDestinationCreateWithData((CFMutableDataRef)imageData,  kUTTypeJPEG,1,NULL);
     CGImageDestinationAddImage(destCG, theCGImage, NULL);
     CGImageDestinationFinalize(destCG);
     data = imageData;
-    mime = @"image/png";
+    mime = @"image/jpeg";
     
     NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
       mime, @"Content-Type",
