@@ -8,10 +8,25 @@
             SUPERCLASS = NSObject; 
         }, 
         {
-            ACTIONS = {cancelPass = id; savePass = id; }; 
+            ACTIONS = {
+                cancelPass = id; 
+                choosePass = id; 
+                goHome = id; 
+                goSupport = id; 
+                restartServices = id; 
+                savePass = id; 
+                showPrefs = id; 
+                toggleServices = id; 
+            }; 
             CLASS = TKController; 
             LANGUAGE = ObjC; 
-            OUTLETS = {passField = NSTextField; userField = NSTextField; webView = WebView; }; 
+            OUTLETS = {
+                passField = NSTextField; 
+                prefsWindow = NSWindow; 
+                statusMenu = NSMenu; 
+                userField = NSTextField; 
+                webView = WebView; 
+            }; 
             SUPERCLASS = NSObject; 
         }
     ); 
