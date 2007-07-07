@@ -9,11 +9,11 @@
 </head>
 <body style="background-color:black; margin:0;">
 
-	<!-- newer firewire-friendly CGI -->
-	<!-- <a onclick="$('shot').src = '/cgi/bw-iSightGrab?' + Math.random();" href="#"><img id="shot" src="/cgi/bw-iSightGrab" ></a> -->
+	<!-- newer firewire-and-USB-friendly CGI -->
+	<a onclick="$('shot').src = '/cgi/bw-iSightGrab?' + Math.random();" href="#"><img id="shot" src="/cgi/bw-iSightGrab" ></a>
 
-	<!-- the original cgi -->
-	<a onclick="$('shot').src = '/cgi/nph-SnapshotWeb?' + Math.random();" href="#"><img id="shot" src="/cgi/nph-SnapshotWeb" ></a>
+	<!-- the original cgi 
+	<a onclick="$('shot').src = '/cgi/nph-SnapshotWeb?' + Math.random();" href="#"><img id="shot" src="/cgi/nph-SnapshotWeb" ></a> -->
 	
 </body>
 </html>
