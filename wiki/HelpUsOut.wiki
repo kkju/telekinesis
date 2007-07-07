@@ -10,6 +10,7 @@ Feel like helping others? Lend a hand on the [http://code.google.com/p/telekines
 === Development ===
   * Full apple remote emulation
   * Full iTunes Browsing & Now Playing screen
+  * Dashboard widget (for access from other macs)
 
 === Security === 
   * A full security review by Someone Who Knows
