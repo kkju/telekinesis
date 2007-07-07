@@ -1,23 +1,74 @@
+/* CSS FOR THE HOMEPAGE */
 
-  body.mainmenu {
-    background: #008 url('/images/blue-gradient.jpg') no-repeat fixed;
-  
-    margin:0;
-  /*border: 100px solid darkgray; */
-  width:320;
-    }
-  div.title {
-    
-    font-family: helvetica;
-    font-size:120%;
-    color:white;
-    margin-top:10px;
-    overflow:hidden;
-  }
-  body.mainmenu hr{
-    border: 0;
-    width: 80%;
-    color: #FFF;
-    background-color: #66F;
-    height: 1px;
-  }
+body {
+  margin:0;
+  padding:0;
+  background: #008 url('/images/blue-gradient.jpg') no-repeat fixed;
+  font-family:helvetica;
+  font-size:11px;
+  color:white;
+}
+
+.page-title {
+  opacity:0.5;
+  position:absolute; 
+  width:100%; 
+  bottom:0px; 
+  padding-bottom:10px;
+}
+
+#icon-container {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:20px;
+}
+
+.icon {
+  float:left;
+  width:75;
+  height:90px;
+  text-align:center;
+}
+
+.icon a {
+  display:block;
+  font-weight:bold;
+  color:white;
+  text-decoration:none;
+}
+
+.icon img {
+  margin-bottom:5px;
+  width:57px;
+  height:57px;
+  border:0px;
+}
+
+.icon span {
+  display:block;
+}
+
+.widget-container {
+  position:absolute;
+  top:0px;
+  left:24px;
+  width:272px;
+  height:394px;
+  opacity:0;
+}
+
+.widget-container .close {
+  font-weight:bold;
+  padding:2px;
+  background-color:red;
+  position:absolute;
+  right:0px;
+  display:inline;
+}
+
+.widget-container iframe {
+  position:absolute;
+  border:0px;
+  width:272px;
+  height:394px;
+}

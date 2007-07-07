@@ -1,7 +1,8 @@
 <?php
 $dir = $_GET["dir"];
 if (!isset($dir)) $dir = $_ENV["HOME"];
-$dir = realpath($dir)
+$dir = realpath($dir);
+include("filerow.php");
 ?>
 
 <html>
@@ -46,48 +47,10 @@ echo "<ul id=\"crumbs\">";
       while (($file = readdir($dh)) !== false) {
         if (in_array($file, $ignoredNames)) continue;
         
-				if (substr($file, 0, 1)!=".") {
-					$path = "$dir/$file";
-          $components = explode('.',$path);
-					if (count($components)>1) {
-            $extension = end($components);
-          }
-          
-					$is_script = ($extension == @"scpt");
-					if (is_dir($path)) {
-						$link =  "?dir=$path/";
-					} else {
-
-						$streamingExtensions = array("mp3", "mov", "m4a", "m4b", "mp4", "m4v");
-						if( in_array($extension, $streamingExtensions)) {
-							$server = ereg_replace("\:[0-9]{4,4}", ":".$_ENV["MEDIA_PORT"], $_SERVER["HTTP_HOST"]); 
-							$link = "http://".$server."/files/$path";
-						} else {
-							$link =  "/files/$path";
-						}
-					}
-
-				
-					?>
-					<div class="iphonerow"><a style="display:block; color:black; text-decoration:none; font-family:lucida grande;" href="<?=$link?>">
-
-						<img valign="middle" hspace=8 src="/t/icon?path=<?=urlencode($path)?>&size={32,32}" width="32" height="32"><?=$file?>
-
-            <?
-						if (is_dir($path)) {
-							?><img src="/images/ChildArrow.png"><?
-							
-						}
-						if ($is_script) { //} || is_executable($path)) {
-							$scpt_link =  "/t/runscript?path=$path";
-							?><a href="#" onclick="loadURL('<?=$scpt_link?>'); return false;" class="button">Run</a><?
-						}
-						?>
-				</a>
-					</div>
-					<?
-			}
-		}
+        
+        file_row($file, $dir);
+			
+      }
 		closedir($dh);
 	}
 }
