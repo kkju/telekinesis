@@ -12,6 +12,8 @@
 #import <stdio.h>
 #import <string.h>
 #import <sys/socket.h>
+
+#import <CoreFoundation/CoreFoundation.h>
 #include <arpa/inet.h>
 #include <SystemConfiguration/SystemConfiguration.h>
 #import "NSURL+Parameters.h"
@@ -235,6 +237,14 @@ return [NSArray arrayWithArray:addresses];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   
+  NSDictionary *displaysDict = [(NSDictionary *)CFPreferencesCopyValue(CFSTR("Background"), CFSTR("com.apple.Desktop"),
+                                                                                  kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
+  
+  NSDictionary *displaySettings = [displaysDict objectForKey:[NSString stringWithFormat:@"%d", CGMainDisplayID()]];
+  NSLog(@"displaysDict %@", [displaySettings objectForKey:@"ImageFilePath"]);
+  
+  //NSFileManager *fm = [NSFileManager defaultManager];
+  //[fm 
   // No Status item for now
   // statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:24] retain];
   [statusItem setHighlightMode:YES];
