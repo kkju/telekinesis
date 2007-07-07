@@ -6,7 +6,7 @@ Adding functionality to iPhone Remote is simple, there are two approaches, basic
 
 Both of these are still very much in flux, advice and suggestions are welcome!
 
-*Changed: * The `.tapp` extension is required for an app to be recognized. This is eventually intended to make installing them easier.
+
 
 == Basic Web Page ==
 
@@ -14,7 +14,7 @@ Both of these are still very much in flux, advice and suggestions are welcome!
 
   * Create a simple web page in html/php, etc and install it in 
    `~/Library/Application Support/iPhone Remote/Apps/<App Name>.tapp`
- 
+  * *Changed: * The `.tapp` extension is required for an app to be recognized. This is eventually intended to make installing them easier.
   * Give it a custom icon. (Get the [http://telekinesis.blacktree.com/TappTemplate.png template]. It's there, just white)
    `.../Apps/<App Name>.tapp/<App Name>.png`
 
