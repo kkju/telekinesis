@@ -22,6 +22,7 @@
 @interface TKController (PrivateMethods)
 - (NSString *)applicationSupportFolder;
 - (NSString *)serverRootFolder;
+- (NSString *)appsFolder;
 - (void) startServices;
 - (void) stopServices;
 - (void) generateCertificateIfNeeded;
@@ -107,6 +108,46 @@ return [NSArray arrayWithArray:addresses];
   }
   return self;
 }
+
+- (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
+  NSEnumerator *e = [filenames objectEnumerator];
+  NSString *filename;
+
+  NSAlert *alert = [NSAlert alertWithMessageText:@"Install Applications?"
+                                   defaultButton:@"Install" 
+                                 alternateButton:@"Cancel"
+                                     otherButton:nil 
+                       informativeTextWithFormat:@"Would you like to install the following applications and restart the Remote? (%@)", 
+    
+    [[filenames valueForKeyPath:@"lastPathComponent.stringByDeletingPathExtension"] componentsJoinedByString:@", "]]; 
+  int installResult = [alert runModal];
+  NSLog(@"res %d", installResult);
+  if (installResult < 1) return;
+  
+  while (filename = [e nextObject]) {
+    if ([filename hasPrefix:[self appsFolder]]) continue;
+    
+    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *destination = [[self appsFolder] stringByAppendingPathComponent:[filename lastPathComponent]];
+    
+    if ([fm fileExistsAtPath:destination]) {
+      NSAlert *alert = [NSAlert alertWithMessageText:@"Replace this Application?"
+                                       defaultButton:@"Replace" alternateButton:@"Skip" otherButton:nil informativeTextWithFormat:@"%@ is already installed. Replace it?", [filename lastPathComponent]]; 
+      int result = [alert runModal];
+      
+      if (result < 1) continue;
+        [fm removeFileAtPath:destination handler:nil];
+    }
+      [fm movePath:filename
+            toPath:destination
+           handler:nil];
+      
+      
+  }
+  [self restartServices:nil];
+}
+
 
 
 - (void) reloadApps {
@@ -284,8 +325,8 @@ return [NSArray arrayWithArray:addresses];
     NSNumber *proxyPort = [info objectForKey:@"proxyPort"];
     if (proxyPort) {
       NSLog(@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort);
-      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
-      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/Apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
     }
   }
   
@@ -479,6 +520,9 @@ return [NSArray arrayWithArray:addresses];
 
 - (NSString *)serverRootFolder {
   return [[self applicationSupportFolder]stringByAppendingPathComponent:@"Server"];
+}
+- (NSString *)appsFolder {
+  return [[self applicationSupportFolder]stringByAppendingPathComponent:@"Apps"];
 }
 - (NSString *)applicationSupportFolder {
 	NSString *appSupportFolder = [@"~/Library/Application Support/iPhone Remote/" stringByStandardizingPath];
