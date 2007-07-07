@@ -17,18 +17,29 @@
   
   int region;
   IBOutlet WebView *webView; 
-  NSMutableDictionary *applicationsDictionary;
+  NSMutableArray *applications;
   
   IBOutlet NSTextField *userField;
   IBOutlet NSTextField *passField; 
+  IBOutlet NSMenu *statusMenu; 
+  IBOutlet NSWindow *prefsWindow; 
   BOOL shouldShowHomepage;
+  BOOL servicesRunning;
+  NSStatusItem *statusItem;
 }
 - (IBAction)cancelPass:(id)sender;
 - (IBAction)savePass:(id)sender;
+- (IBAction)choosePass:(id)sender;
+- (IBAction)showPrefs:(id) sender;
 - (void)setServer:(SimpleHTTPServer *)sv;
 - (SimpleHTTPServer *)server;
 
 - (void)processURL:(NSURL *)path connection:(SimpleHTTPConnection *)connection;
 - (void)stopProcessing;
+
+- (IBAction) restartServices:(id)sender;
+- (IBAction) toggleServices:(id)sender;
+- (IBAction) goHome:(id)sender;
+- (IBAction) goSupport:(id)sender;
 
 @end

@@ -4,6 +4,29 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>tapp</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>Tapp</string>
+			<key>CFBundleTypeName</key>
+			<string>Telekinesis App</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>TAPP</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>XML</string>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -19,14 +42,18 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.9.8</string>
+	<string>0.9.9</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<integer>1</integer>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUCheckAtStartup</key>
+	<true/>
 	<key>SUFeedURL</key>
 	<string>http://www.blacktree.com/appcast/Telekinesis.xml</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>

@@ -22,11 +22,11 @@
 @interface TKController (PrivateMethods)
 - (NSString *)applicationSupportFolder;
 - (NSString *)serverRootFolder;
-- (void) startApache;
-- (void) stopApache;
+- (void) startServices;
+- (void) stopServices;
 - (void) generateCertificateIfNeeded;
 - (void)getPasswordIfNeeded;
-- (void) goHome:(id)sender;
+- (NSTask *)taskWithDictionary:(NSDictionary *)taskOptions basePath:(NSString *)basePath;
 @end
 
 
@@ -37,7 +37,7 @@ void CatchInterrupt (int signum) {
   
   fflush(stdout);
   
-  [[NSApp delegate] stopApache];
+  [[NSApp delegate] stopServices];
   my_pid = getpid();
   kill(my_pid, SIGKILL);
 }
@@ -54,7 +54,7 @@ void CatchInterrupt (int signum) {
   
 	NSMutableArray * addresses;
 	SCDynamicStoreRef
-		dynRef=SCDynamicStoreCreate(kCFAllocatorSystemDefault,
+    dynRef=SCDynamicStoreCreate(kCFAllocatorSystemDefault,
                                 (CFStringRef)@"Telekinesis", NULL, NULL);
 	// Get all available interfaces IPv4 addresses
 	NSArray *interfaceList=(NSArray *)SCDynamicStoreCopyKeyList(dynRef,(CFStringRef)@"State:/Network/Service/..*/IPv4");
@@ -83,7 +83,7 @@ return [NSArray arrayWithArray:addresses];
     
     [self applicationSupportFolder];
     
-    applicationsDictionary = [[NSMutableDictionary alloc] init];
+    applications = [[NSMutableArray alloc] init];
     
     NSFileManager *fm = [NSFileManager defaultManager];
     
@@ -102,7 +102,10 @@ return [NSArray arrayWithArray:addresses];
       path = [externalAppsPath stringByAppendingPathComponent:path];
       NSString *infoPath = [path stringByAppendingPathComponent:@"Info.plist"];
       NSMutableDictionary *info = [NSMutableDictionary dictionaryWithContentsOfFile:infoPath];
-      if (info) [applicationsDictionary setObject:info forKey:path];
+      if (!info) info = [NSMutableDictionary dictionary];
+      [info setObject:path forKey:@"path"];
+      [info setObject:[path lastPathComponent] forKey:@"name"];
+      if (info) [applications addObject:info];
     }
     
     
@@ -111,10 +114,37 @@ return [NSArray arrayWithArray:addresses];
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
-  [self goHome:nil];
+  //  [self goHome:nil];
   return NO; 
 }
 
+
+- (IBAction)showPrefs:(id) sender {
+  [prefsWindow center];
+  [NSApp activateIgnoringOtherApps:YES];
+  [prefsWindow makeKeyAndOrderFront:nil];
+}
+
+
+- (BOOL)validateMenuItem:(NSMenuItem *)item {
+  if ([item action] == @selector(toggleServices:)) {
+    
+    [item setTitle:servicesRunning ? @"Stop Remote" : @"Start Remote"];
+  }
+  return YES;
+}
+
+- (void)menuNeedsUpdate:(NSMenu *)menu{
+  //  [[menu itemWithTag:2] setTitle:@"ip address"];
+}
+- (int)portNumber {
+  int port = [[NSUserDefaults standardUserDefaults] integerForKey:@"port"];
+  if (port < 1024) port = 5010;
+  return port;
+}
+- (IBAction) goSupport:(id)sender {
+  // [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http:// 
+}
 - (void) goHome:(id)sender {
   NSArray *interfaces = [[self class] currentIP4Addresses];
   NSArray *en1 = [interfaces filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"InterfaceName LIKE 'en1'"]];
@@ -122,7 +152,7 @@ return [NSArray arrayWithArray:addresses];
   
   NSArray *addresses = [interfaces valueForKeyPath:@"@distinctUnionOfArrays.Addresses"];
   
-  NSString *urlString = [NSString stringWithFormat:@"https://%@:%d", ([addresses count] ? [addresses lastObject] : @"localhost"), 5010];
+  NSString *urlString = [NSString stringWithFormat:@"https://%@:%d", ([addresses count] ? [addresses lastObject] : @"localhost"), [self portNumber]];
   [[NSWorkspace sharedWorkspace] openURLs:[NSArray arrayWithObject:[NSURL URLWithString:urlString]]
                   withAppBundleIdentifier:@"com.apple.Safari"
                                   options:nil additionalEventParamDescriptor:nil launchIdentifiers:nil];
@@ -131,11 +161,15 @@ return [NSArray arrayWithArray:addresses];
   //NSLog(@"request %@", urlString);
   //[[webView mainFrame] loadRequest:request];
 }
-- (void)applicationWillFinishLaunching:(NSNotification *)notification {
-  [self generateCertificateIfNeeded];
-  [self getPasswordIfNeeded];
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
   
-  [self startApache];  
+  // No Status item for now
+  statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:24] retain];
+  [statusItem setHighlightMode:YES];
+  [statusItem setMenu:statusMenu];
+  [statusItem setImage:[NSImage imageNamed:@"TKMenu"]];
+  
+  [self startServices];  
   if (shouldShowHomepage) [self performSelector:@selector(goHome:) withObject:nil afterDelay:0.4];
   
 }
@@ -150,10 +184,33 @@ return [NSArray arrayWithArray:addresses];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-  [self stopApache]; 
+  [self stopServices]; 
 }
 
-- (void) startApache {
+
+- (IBAction) restartServices:(id)sender {
+  [self stopServices];
+  [self startServices];
+}
+
+
+- (IBAction) toggleServices:(id)sender {
+  if (servicesRunning) {
+    [self stopServices];
+  } else { 
+    [self startServices];
+  }
+}
+
+- (void) startServices {
+  if (servicesRunning) return;
+  
+  // Commit port changes, if needed.
+  [prefsWindow makeFirstResponder:prefsWindow];
+  
+  [self generateCertificateIfNeeded];
+  [self getPasswordIfNeeded];
+  
   NSString *root = [[NSBundle mainBundle] resourcePath];
   
   NSString *documentRoot = root;
@@ -183,41 +240,46 @@ return [NSArray arrayWithArray:addresses];
     [NSString stringWithFormat:@"ScriptAlias /cgi/ \"%@/cgi-bin/\"",  documentRoot],
     nil];
   
-  NSEnumerator *ke = [applicationsDictionary keyEnumerator];
-  NSString *key;
-  NSMutableDictionary *value;
-  while ((key = [ke nextObject]) && (value = [applicationsDictionary objectForKey:key])) {
-    NSLog(@"val %@", value);
-    
-    NSDictionary *startTaskOptions =  [value objectForKey:@"startTask"];
-    NSString *startCommand = [startTaskOptions valueForKey:@"path"];
-    if (startCommand) {
-      startCommand = [key stringByAppendingPathComponent:startCommand];
-      startCommand = [startCommand stringByStandardizingPath];
-      
-      NSArray *arguments = [startTaskOptions objectForKey:@"arguments"];
-      if (!arguments) arguments = [NSArray array];
-      NSLog(@"starting %@", startCommand);
-      NSTask *task = [NSTask launchedTaskWithLaunchPath:startCommand arguments:arguments];
-      [value setObject:task forKey:@"task"];
+  NSEnumerator *e = [applications objectEnumerator];
+  NSMutableDictionary *info;
+  while (info = [e nextObject]) {
+    NSString *path = [info objectForKey:@"path"];
+    NSDictionary *startTaskOptions =  [info objectForKey:@"startTask"];
+    NSTask *task = [self taskWithDictionary:startTaskOptions basePath:path];
+    if (task) {
+      [info setObject:task forKey:@"task"];
+      [task launch];
     }
     
-    NSNumber *proxyPort = [value objectForKey:@"proxyPort"];
+    NSNumber *proxyPort = [info objectForKey:@"proxyPort"];
     
-    [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/apps/%@\" http://localhost:%@", [key lastPathComponent], proxyPort]];
-    [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/apps/%@\" http://localhost:%@", [key lastPathComponent], proxyPort]];
+    [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
+    [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
   }
   
-  NSEnumerator *e = [directives objectEnumerator];
+  
+  
+  
+  NSString *configPath = [[NSBundle mainBundle] pathForResource:@"httpd.telekinesis" ofType:@"conf"];
+  NSString *customConfig = [NSString stringWithContentsOfFile:configPath];
+  
+  customConfig = [NSString stringWithFormat:customConfig, [self portNumber]];
+  NSString *customConfigPath = [[self serverRootFolder] stringByAppendingPathComponent:@"custom.conf"];
+  
+  [customConfig writeToFile:customConfigPath atomically:NO];
+  
+  //  [directives addObject:[NSString stringWithFormat:@"Include \"%@\"", configPath]];
+  
+  NSEnumerator *de = [directives objectEnumerator];
   id item;
-  while (item = [e nextObject]) {
+  while (item = [de nextObject]) {
     [arguments addObject:@"-c"];
     [arguments addObject:item];
   }
-
+  
   
   if ([[NSUserDefaults standardUserDefaults] boolForKey:@"EnableMediaPort"]) {
-    NSLog(@"Enabling media port");
+    NSLog(@"Enabling media port 5009");
     [arguments addObject:@"-D"];
     [arguments addObject:@"EnableMediaPort"];
   }
@@ -233,28 +295,59 @@ return [NSArray arrayWithArray:addresses];
   [apacheTask setLaunchPath:@"/usr/sbin/httpd"];
   [apacheTask setArguments:arguments];
   [apacheTask setEnvironment:environment];
+  NSLog(@"Starting server on port %d", [self portNumber]);
   [apacheTask launch];
+  
+  servicesRunning = YES;
+  [statusItem setImage:[NSImage imageNamed:@"TKMenu"]];
 }
 
-- (void) stopApache {
-  NSEnumerator *ke = [applicationsDictionary keyEnumerator];
-  NSString *key;
-  NSMutableDictionary *value;
-  while ((key = [ke nextObject]) && (value = [applicationsDictionary objectForKey:key])) {
-    NSTask *task = [value objectForKey:@"task"];
-    [task terminate];
-  }
+- (NSTask *)taskWithDictionary:(NSDictionary *)taskOptions basePath:(NSString *)basePath {
+  NSString *command = [taskOptions valueForKey:@"path"];
+  if (!command) return nil;
   
-  NSLog(@"stop %@", apacheTask);
+  command = [basePath stringByAppendingPathComponent:command];
+  command = [command stringByStandardizingPath];
   
-  [apacheTask terminate];
+  NSArray *arguments = [taskOptions objectForKey:@"arguments"];
+  if (!arguments) arguments = [NSArray array];
+  
+  NSTask *task = [[[NSTask alloc] init] autorelease];
+  [task setLaunchPath:command];
+  [task setArguments:arguments];  
+  return task;
+}
+
+- (void) stopServices {   
+  if (!servicesRunning) return;
+  
+  // Stop application services
+  
+  NSEnumerator *e = [applications objectEnumerator];
+  NSMutableDictionary *info;
+  while (info = [e nextObject]) {
+    
+    NSDictionary *stopTaskOptions =  [info objectForKey:@"stopTask"];
+    if (stopTaskOptions) {
+      NSTask *task = [self taskWithDictionary:stopTaskOptions basePath:[info objectForKey:@"path"]];
+      [task launch];
+    } else {
+      NSTask *task = [info objectForKey:@"task"];
+      [task terminate];
+    }
+    
+  } 
+  
+  
+  NSString *pidString = [NSString stringWithContentsOfFile:[[[self applicationSupportFolder] stringByAppendingPathComponent:@"Server"] stringByAppendingPathComponent:@"httpd.pid"]];
+  pid_t pid = [pidString intValue];
+  if (pid) kill(pid,SIGTERM);
   [apacheTask waitUntilExit];
   
-  // This isn't working... killall for now
-  
-  system("killall httpd");
   [apacheTask release];
   apacheTask = nil;
+  servicesRunning = NO;	
+  [statusItem setImage:[NSImage imageNamed:@"TKMenu_disabled"]];
 }
 
 
@@ -271,13 +364,19 @@ return [NSArray arrayWithArray:addresses];
   [NSApp stopModalWithCode:1];
 }
 
-- (void)getPasswordIfNeeded{
+
+
+- (IBAction)choosePass:(id)sender {
   NSString *passfile = [[self serverRootFolder] stringByAppendingPathComponent:@"authorized-users"];
-  if ([[NSFileManager defaultManager] fileExistsAtPath:passfile]) return;
   [[userField window] center];
   [[userField window] makeKeyAndOrderFront:nil];
   int code = [NSApp runModalForWindow:[userField window]];
-  if (!code) [NSApp terminate:nil];
+  
+  
+  if (!code) {
+    if (![[NSFileManager defaultManager] fileExistsAtPath:passfile]) [NSApp terminate:nil];
+    return;
+  }
   NSString *user = [userField stringValue];
   NSString *pass = [passField stringValue];
   [[userField window] close];
@@ -285,7 +384,14 @@ return [NSArray arrayWithArray:addresses];
   
   [[NSTask launchedTaskWithLaunchPath:@"/usr/bin/htpasswd"
                             arguments:[NSArray arrayWithObjects:@"-bc", passfile, user, pass, nil]] waitUntilExit];
+  
   // @htpasswd -bc passwords alcor blah  
+}
+
+- (void)getPasswordIfNeeded{
+  NSString *passfile = [[self serverRootFolder] stringByAppendingPathComponent:@"authorized-users"];
+  if ([[NSFileManager defaultManager] fileExistsAtPath:passfile]) return;
+  [self choosePass:nil];
 }
 
 - (void) generateCertificateIfNeeded {
@@ -413,125 +519,144 @@ return [NSArray arrayWithArray:addresses];
     NSDictionary *params =  [url parameterDictionary];
     
     NSString *path = [[params objectForKey:@"path"] stringByStandardizingPath];
+    
     NSAppleScript *script = nil;
     if (path) {
       path = [path stringByStandardizingPath];
-      if (![path hasPrefix:@"/"]) path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
+      if (![path hasPrefix:@"/"]) {
+        NSString *appName = [params objectForKey:@"app"];
+        
+        NSString *basePath = nil;
+        
+        if (appName) {
+          NSArray *matches = [applications filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name LIKE %@", appName]];
+          if ([matches count]) 
+            basePath = [[applications lastObject] objectForKey:@"path"];
+        }
+        if (!basePath) {
+          basePath = [[NSBundle mainBundle] resourcePath];
+        }
+        path = [basePath stringByAppendingPathComponent:path];
+        
+      }
       
+      NSLog(@"Running script %@", path);
       
       script = [[[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
                                                        error:nil] autorelease];
-      
-    } else {
-      NSString *source = [params objectForKey:@"source"];
-      
-      if (source) {
-        script = [[[NSAppleScript alloc] initWithSource:source] autorelease];
-      }
-      
     }
+    
+    
+    //  else {
+    //    NSString *source = [params objectForKey:@"source"];
+    //    if (source) {
+    //      script = [[[NSAppleScript alloc] initWithSource:source] autorelease];
+    //    }
+    //  }
     
     NSAppleEventDescriptor *descriptor = [script executeAndReturnError:nil];
     data = [[descriptor stringValue] dataUsingEncoding:NSUTF8StringEncoding];
     mime = @"text/plain";
     
-    [server replyWithStatusCode:200 message:@""];
-    return;
+    if (!data) {
+      [server replyWithStatusCode:200 message:@""];
+      return;
+    }
     
 #pragma mark Get an icon
-  } else if ([[url path] hasPrefix:@"/icon"]) {
-    NSDictionary *params =  [url parameterDictionary];
-    
-    NSString *path = [params objectForKey:@"path"];
-    path = [[path componentsSeparatedByString:@"+"] componentsJoinedByString:@" "];
-    path = [path stringByStandardizingPath];
-    NSSize size = NSSizeFromString([params objectForKey:@"size"]);
-    
-    NSImage *image = [[NSWorkspace sharedWorkspace] iconForFile:path];
-    
-    if (!NSEqualSizes(size,NSZeroSize)) [image setSize:size];
-    
-    data = [(NSBitmapImageRep *)[image bestRepresentationForDevice:nil] representationUsingType:NSPNGFileType properties:nil];
-    mime = @"image/png";    
-    
-#pragma mark click
-  } else if ([[url path] hasPrefix: @"/click"]) {
-    
-    NSDictionary *params =  [url parameterDictionary];
-    //;hi?31,191
-    //NSArray *points = [[url query] componentsSeparatedByString:@","];
-    CGPoint p;
-    p.x = [[params objectForKey:@"x"] intValue];
-    p.y = [[params objectForKey:@"y"] intValue];
-    CGWarpMouseCursorPosition(p);
-    
-    CGPostMouseEvent(p, 0, 1, 1);
-    CGPostMouseEvent(p, 0, 1, 0);    
-    [server replyWithStatusCode:200 message:@""];
-    
-    return;
-#pragma mark move
-  } else if ([[url path] hasPrefix: @"/mousemove"]) {
-    
-    NSDictionary *params =  [url parameterDictionary];
-    //;hi?31,191
-    CGPoint p;
-    p.x = [[params objectForKey:@"x"] intValue];
-    p.y = [[params objectForKey:@"y"] intValue];
-    CGWarpMouseCursorPosition(p);
-    
-    [server replyWithStatusCode:200 message:@""];
-    
-    return;
-    
-#pragma mark keypress
-  } else if ([[url path] hasPrefix: @"/telekinesis"]) {
-    NSDictionary *params =  [url parameterDictionary];
-    if (1 || [[params objectForKey:@"t"] isEqualToString:@"keyup"]) {
-      
-      NSString *string = [params objectForKey:@"string"];
-      
-      
-      int i;
-      for (i = 0; i < [string length]; i++) {
-        unichar c = [string characterAtIndex:i];
-        
-        BOOL shift = isupper(c);//[[params objectForKey:@"s"] isEqualToString:@"true"];
-          
-          short code = [QSKeyCodeTranslator AsciiToKeyCode:c];
-          
-          if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, true ); // shift down
-          CGPostKeyboardEvent(0, code, YES);
-          CGPostKeyboardEvent(0, code, NO);
-          if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, false ); // 'shift up
-      }
-    }
-    [server replyWithStatusCode:200 message:@""];
-    
-    return;
-    
-    
-    
-    
-#pragma mark return path
-  } else {
-    //components = [components subarrayWithRange:NSMakeRange(2,[components count]-2)];
-    //path = [NSString pathWithComponents:components];
-    path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
-    
-    data = [NSData dataWithContentsOfMappedFile:path];
-    mime = @"";
-  } 
+} else if ([[url path] hasPrefix:@"/icon"]) {
+  NSDictionary *params =  [url parameterDictionary];
   
-  if(data && mime) {
-    [server replyWithData: data
-                 MIMEType: mime];
-  } else {
-    NSString *errorMsg = [NSString stringWithFormat:@"Error in URL: %@", url];
+  NSString *path = [params objectForKey:@"path"];
+  path = [[path componentsSeparatedByString:@"+"] componentsJoinedByString:@" "];
+  path = [path stringByStandardizingPath];
+  NSSize size = NSSizeFromString([params objectForKey:@"size"]);
+  
+  NSImage *image = [[NSWorkspace sharedWorkspace] iconForFile:path];
+  
+  if (!NSEqualSizes(size,NSZeroSize)) [image setSize:size];
+  
+  data = [(NSBitmapImageRep *)[image bestRepresentationForDevice:nil] representationUsingType:NSPNGFileType properties:nil];
+  mime = @"image/png";    
+  
+#pragma mark click
+} else if ([[url path] hasPrefix: @"/click"]) {
+  
+  NSDictionary *params =  [url parameterDictionary];
+  //;hi?31,191
+  //NSArray *points = [[url query] componentsSeparatedByString:@","];
+  CGPoint p;
+  p.x = [[params objectForKey:@"x"] intValue];
+  p.y = [[params objectForKey:@"y"] intValue];
+  CGWarpMouseCursorPosition(p);
+  
+  CGPostMouseEvent(p, 0, 1, 1);
+  CGPostMouseEvent(p, 0, 1, 0);    
+  [server replyWithStatusCode:200 message:@""];
+  
+  return;
+#pragma mark move
+} else if ([[url path] hasPrefix: @"/mousemove"]) {
+  
+  NSDictionary *params =  [url parameterDictionary];
+  //;hi?31,191
+  CGPoint p;
+  p.x = [[params objectForKey:@"x"] intValue];
+  p.y = [[params objectForKey:@"y"] intValue];
+  CGWarpMouseCursorPosition(p);
+  
+  [server replyWithStatusCode:200 message:@""];
+  
+  return;
+  
+#pragma mark keypress
+} else if ([[url path] hasPrefix: @"/telekinesis"]) {
+  NSDictionary *params =  [url parameterDictionary];
+  if (1 || [[params objectForKey:@"t"] isEqualToString:@"keyup"]) {
     
-    [server replyWithStatusCode:400 // Bad Request
-                        message:errorMsg];
+    NSString *string = [params objectForKey:@"string"];
+    
+    
+    int i;
+    for (i = 0; i < [string length]; i++) {
+      unichar c = [string characterAtIndex:i];
+      
+      BOOL shift = isupper(c);//[[params objectForKey:@"s"] isEqualToString:@"true"];
+        
+        short code = [QSKeyCodeTranslator AsciiToKeyCode:c];
+        
+        if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, true ); // shift down
+        CGPostKeyboardEvent(0, code, YES);
+        CGPostKeyboardEvent(0, code, NO);
+        if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, false ); // 'shift up
+    }
   }
+  [server replyWithStatusCode:200 message:@""];
+  
+  return;
+  
+  
+  
+  
+#pragma mark return path
+} else {
+  //components = [components subarrayWithRange:NSMakeRange(2,[components count]-2)];
+  //path = [NSString pathWithComponents:components];
+  path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
+  
+  data = [NSData dataWithContentsOfMappedFile:path];
+  mime = @"";
+} 
+
+if(data && mime) {
+  [server replyWithData: data
+               MIMEType: mime];
+} else {
+  NSString *errorMsg = [NSString stringWithFormat:@"Error in URL: %@", url];
+  
+  [server replyWithStatusCode:400 // Bad Request
+                      message:errorMsg];
+}
 }
 
 - (void)stopProcessing {
