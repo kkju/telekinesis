@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'isightGrab' target in the 'isightGrab' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

@@ -1,0 +1,252 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DD76F9A0486AA7600D96B5E /* isightGrab.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* isightGrab.m */; settings = {ATTRIBUTES = (); }; };
+		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+		8DD76F9F0486AA7600D96B5E /* isightGrab.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* isightGrab.1 */; };
+		9A0481B50C3EDDAB00164550 /* CocoaSequenceGrabber.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0481B00C3EDDAB00164550 /* CocoaSequenceGrabber.h */; };
+		9A0481B60C3EDDAB00164550 /* CSGCamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0481B10C3EDDAB00164550 /* CSGCamera.h */; };
+		9A0481B70C3EDDAB00164550 /* CSGCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0481B20C3EDDAB00164550 /* CSGCamera.m */; };
+		9A0481B80C3EDDAB00164550 /* CSGImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0481B30C3EDDAB00164550 /* CSGImage.h */; };
+		9A0481B90C3EDDAB00164550 /* CSGImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0481B40C3EDDAB00164550 /* CSGImage.m */; };
+		9A0481C00C3EDDD300164550 /* grab.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A0481BE0C3EDDD300164550 /* grab.h */; };
+		9A0481C10C3EDDD300164550 /* grab.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0481BF0C3EDDD300164550 /* grab.m */; };
+		9A0481EB0C3EDF9F00164550 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0481EA0C3EDF9F00164550 /* Cocoa.framework */; };
+		9A0482BE0C3EE5F100164550 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0482BD0C3EE5F100164550 /* QuickTime.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F9E0486AA7600D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F9F0486AA7600D96B5E /* isightGrab.1 in CopyFiles */,
+				9A0481B50C3EDDAB00164550 /* CocoaSequenceGrabber.h in CopyFiles */,
+				9A0481B60C3EDDAB00164550 /* CSGCamera.h in CopyFiles */,
+				9A0481B80C3EDDAB00164550 /* CSGImage.h in CopyFiles */,
+				9A0481C00C3EDDD300164550 /* grab.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB7796FE84155DC02AAC07 /* isightGrab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = isightGrab.m; sourceTree = "<group>"; };
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32A70AAB03705E1F00C91783 /* isightGrab_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isightGrab_Prefix.pch; sourceTree = "<group>"; };
+		8DD76FA10486AA7600D96B5E /* isightGrab */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = isightGrab; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0481B00C3EDDAB00164550 /* CocoaSequenceGrabber.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CocoaSequenceGrabber.h; sourceTree = "<group>"; };
+		9A0481B10C3EDDAB00164550 /* CSGCamera.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSGCamera.h; sourceTree = "<group>"; };
+		9A0481B20C3EDDAB00164550 /* CSGCamera.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSGCamera.m; sourceTree = "<group>"; };
+		9A0481B30C3EDDAB00164550 /* CSGImage.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = CSGImage.h; sourceTree = "<group>"; };
+		9A0481B40C3EDDAB00164550 /* CSGImage.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = CSGImage.m; sourceTree = "<group>"; };
+		9A0481BE0C3EDDD300164550 /* grab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grab.h; sourceTree = "<group>"; };
+		9A0481BF0C3EDDD300164550 /* grab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = grab.m; sourceTree = "<group>"; };
+		9A0481EA0C3EDF9F00164550 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		9A0482BD0C3EE5F100164550 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		C6859EA3029092ED04C91782 /* isightGrab.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = isightGrab.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F9B0486AA7600D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
+				9A0481EB0C3EDF9F00164550 /* Cocoa.framework in Frameworks */,
+				9A0482BE0C3EE5F100164550 /* QuickTime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* isightGrab */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859EA2029092E104C91782 /* Documentation */,
+				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = isightGrab;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9A0481B00C3EDDAB00164550 /* CocoaSequenceGrabber.h */,
+				9A0481B10C3EDDAB00164550 /* CSGCamera.h */,
+				9A0481B20C3EDDAB00164550 /* CSGCamera.m */,
+				9A0481B30C3EDDAB00164550 /* CSGImage.h */,
+				9A0481B40C3EDDAB00164550 /* CSGImage.m */,
+				32A70AAB03705E1F00C91783 /* isightGrab_Prefix.pch */,
+				08FB7796FE84155DC02AAC07 /* isightGrab.m */,
+				9A0481BE0C3EDDD300164550 /* grab.h */,
+				9A0481BF0C3EDDD300164550 /* grab.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9A0482BD0C3EE5F100164550 /* QuickTime.framework */,
+				9A0481EA0C3EDF9F00164550 /* Cocoa.framework */,
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76FA10486AA7600D96B5E /* isightGrab */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859EA2029092E104C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859EA3029092ED04C91782 /* isightGrab.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F960486AA7600D96B5E /* isightGrab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "isightGrab" */;
+			buildPhases = (
+				8DD76F990486AA7600D96B5E /* Sources */,
+				8DD76F9B0486AA7600D96B5E /* Frameworks */,
+				8DD76F9E0486AA7600D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = isightGrab;
+			productInstallPath = "$(HOME)/bin";
+			productName = isightGrab;
+			productReference = 8DD76FA10486AA7600D96B5E /* isightGrab */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "isightGrab" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* isightGrab */;
+			projectDirPath = "";
+			targets = (
+				8DD76F960486AA7600D96B5E /* isightGrab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F990486AA7600D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F9A0486AA7600D96B5E /* isightGrab.m in Sources */,
+				9A0481B70C3EDDAB00164550 /* CSGCamera.m in Sources */,
+				9A0481B90C3EDDAB00164550 /* CSGImage.m in Sources */,
+				9A0481C10C3EDDD300164550 /* grab.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB927508733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = isightGrab_Prefix.pch;
+				INSTALL_PATH = "$(HOME)/bin";
+				PRODUCT_NAME = isightGrab;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB927608733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = isightGrab_Prefix.pch;
+				INSTALL_PATH = "$(HOME)/bin";
+				PRODUCT_NAME = isightGrab;
+			};
+			name = Release;
+		};
+		1DEB927908733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB927A08733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "isightGrab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927508733DD40010E9CD /* Debug */,
+				1DEB927608733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "isightGrab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927908733DD40010E9CD /* Debug */,
+				1DEB927A08733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
