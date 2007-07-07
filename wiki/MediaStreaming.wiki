@@ -2,7 +2,9 @@
 
 == Streaming video and audio ==
 
-If you store movie or music files on your computer, you can watch and listen to them on your iPhone using telekinesis after enabling  the feature (see below.) The files have to be supported by the iPhone:
+If you store movie or music files on your computer, you can watch and listen to them on your iPhone using telekinesis after enabling  the feature in the preference pane. *This feature is off by default for security reasons, please see below.*
+
+The files you play have to be supported by the iPhone:
 
   * H.264 Baseline Profile Level 3.0 video, up to 640 x 480 at 30 fps. 
   * MPEG-4 Part 2 video (Simple Profile)
@@ -22,10 +24,9 @@ http://groups.google.com/group/telekinesis-discuss
 
 == Caveats of media streaming ==
 
-The iPhone doesn't appear to accept media encrypted with a self signed certificate. To enable streaming, iPhone Remote is able to send it insecurely. This feature is off by default because of security concerns.
+The iPhone doesn't appear to accept media encrypted with a self signed certificate. To enable streaming, iPhone Remote needs to send it insecurely. 
 
-
-* This allows anyone who can connect to your machine to access m4b, m4v, m4a, mov, and mp3 files if they know the full path to the file*
+* If you choose to enable this feature, anyone can connect to your machine to access m4b, m4v, m4a, mov, and mp3 files if they can access your computer and know the full path to the file*
 
 * Do not enable this unless you are sure your network is secure. *
 
