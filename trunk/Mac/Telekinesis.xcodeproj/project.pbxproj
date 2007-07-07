@@ -44,7 +44,7 @@
 		7F3A50D10C3F348E0020DD5D /* TKMenu_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A50CF0C3F348E0020DD5D /* TKMenu_disabled.png */; };
 		7F3A50D20C3F348E0020DD5D /* TKMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A50D00C3F348E0020DD5D /* TKMenu.png */; };
 		7F548C5A0C398C4F00569195 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
-		7F67FEF20C402CFA005A66BD /* Tapp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F67FEF10C402CFA005A66BD /* Tapp.icns */; };
+		7F67FF560C40370A005A66BD /* Tapp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F67FF550C403709005A66BD /* Tapp.icns */; };
 		7F73C4CA0C3802C9002E8A31 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F73C4C90C3802C9002E8A31 /* WebKit.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -113,7 +113,7 @@
 		7F362F380C3C48BF00B24988 /* Telekinesis.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Telekinesis.icns; path = Resources/Telekinesis.icns; sourceTree = "<group>"; };
 		7F3A50CF0C3F348E0020DD5D /* TKMenu_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKMenu_disabled.png; sourceTree = "<group>"; };
 		7F3A50D00C3F348E0020DD5D /* TKMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKMenu.png; sourceTree = "<group>"; };
-		7F67FEF10C402CFA005A66BD /* Tapp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Tapp.icns; sourceTree = "<group>"; };
+		7F67FF550C403709005A66BD /* Tapp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tapp.icns; path = Resources/Tapp.icns; sourceTree = "<group>"; };
 		7F73C4C90C3802C9002E8A31 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		8D1107320486CEB800E47090 /* iPhone Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,8 +218,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7F67FEF10C402CFA005A66BD /* Tapp.icns */,
 				7F362F380C3C48BF00B24988 /* Telekinesis.icns */,
+				7F67FF550C403709005A66BD /* Tapp.icns */,
 				7F362AA10C3B35AF00B24988 /* cgi-bin */,
 				7F362AA50C3B35AF00B24988 /* scripts */,
 				7F362AAD0C3B35AF00B24988 /* www */,
@@ -345,7 +345,7 @@
 				7F0017470C3F139700C757C6 /* httpd.telekinesis.conf in Resources */,
 				7F3A50D10C3F348E0020DD5D /* TKMenu_disabled.png in Resources */,
 				7F3A50D20C3F348E0020DD5D /* TKMenu.png in Resources */,
-				7F67FEF20C402CFA005A66BD /* Tapp.icns in Resources */,
+				7F67FF560C40370A005A66BD /* Tapp.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

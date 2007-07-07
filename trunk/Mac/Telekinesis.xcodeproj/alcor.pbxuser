@@ -60,7 +60,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Warnings_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					646,
+					292,
 					20,
 					48,
 					43,
@@ -103,6 +103,28 @@
 			PBXWorkspaceStateSaveDate = 205522373;
 		};
 		perUserProjectItems = {
+			7F6700000C404786005A66BD /* PBXTextBookmark */ = 7F6700000C404786005A66BD /* PBXTextBookmark */;
+			7F6700010C404786005A66BD /* PBXTextBookmark */ = 7F6700010C404786005A66BD /* PBXTextBookmark */;
+			7F6700020C404786005A66BD /* PBXTextBookmark */ = 7F6700020C404786005A66BD /* PBXTextBookmark */;
+			7F6700030C404786005A66BD /* PBXTextBookmark */ = 7F6700030C404786005A66BD /* PBXTextBookmark */;
+			7F6700040C404786005A66BD /* PBXTextBookmark */ = 7F6700040C404786005A66BD /* PBXTextBookmark */;
+			7F6700050C404786005A66BD /* PBXTextBookmark */ = 7F6700050C404786005A66BD /* PBXTextBookmark */;
+			7F6700080C404786005A66BD /* PBXTextBookmark */ = 7F6700080C404786005A66BD /* PBXTextBookmark */;
+			7F6700090C404786005A66BD /* PBXTextBookmark */ = 7F6700090C404786005A66BD /* PBXTextBookmark */;
+			7F67000E0C404810005A66BD /* PBXTextBookmark */ = 7F67000E0C404810005A66BD /* PBXTextBookmark */;
+			7F67000F0C404810005A66BD /* PBXTextBookmark */ = 7F67000F0C404810005A66BD /* PBXTextBookmark */;
+			7F6700130C40481E005A66BD /* PBXTextBookmark */ = 7F6700130C40481E005A66BD /* PBXTextBookmark */;
+			7F6700140C40481E005A66BD /* PBXTextBookmark */ = 7F6700140C40481E005A66BD /* PBXTextBookmark */;
+			7F6700180C40483D005A66BD /* PBXTextBookmark */ = 7F6700180C40483D005A66BD /* PBXTextBookmark */;
+			7F6700190C40483D005A66BD /* PBXTextBookmark */ = 7F6700190C40483D005A66BD /* PBXTextBookmark */;
+			7F67001F0C404893005A66BD /* PBXTextBookmark */ = 7F67001F0C404893005A66BD /* PBXTextBookmark */;
+			7F6700200C404893005A66BD /* PBXTextBookmark */ = 7F6700200C404893005A66BD /* PBXTextBookmark */;
+			7F6700240C4048C8005A66BD /* PBXTextBookmark */ = 7F6700240C4048C8005A66BD /* PBXTextBookmark */;
+			7F6700250C4048C8005A66BD /* PBXTextBookmark */ = 7F6700250C4048C8005A66BD /* PBXTextBookmark */;
+			7F6700260C4048CE005A66BD /* PBXTextBookmark */ = 7F6700260C4048CE005A66BD /* PBXTextBookmark */;
+			7F6700290C404939005A66BD /* PBXTextBookmark */ = 7F6700290C404939005A66BD /* PBXTextBookmark */;
+			7F67002A0C404939005A66BD /* PBXTextBookmark */ = 7F67002A0C404939005A66BD /* PBXTextBookmark */;
+			7F67002B0C404939005A66BD /* PBXTextBookmark */ = 7F67002B0C404939005A66BD /* PBXTextBookmark */;
 			7F67FD0F0C400983005A66BD /* PBXBookmark */ = 7F67FD0F0C400983005A66BD /* PBXBookmark */;
 			7F67FD2F0C400AE8005A66BD /* PBXBookmark */ = 7F67FD2F0C400AE8005A66BD /* PBXBookmark */;
 			7F67FD3D0C400C01005A66BD /* PBXTextBookmark */ = 7F67FD3D0C400C01005A66BD /* PBXTextBookmark */;
@@ -330,6 +352,64 @@
 			7F67FF480C40340D005A66BD /* PBXTextBookmark */ = 7F67FF480C40340D005A66BD /* PBXTextBookmark */;
 			7F67FF490C40340D005A66BD /* PBXTextBookmark */ = 7F67FF490C40340D005A66BD /* PBXTextBookmark */;
 			7F67FF4A0C40340D005A66BD /* PBXTextBookmark */ = 7F67FF4A0C40340D005A66BD /* PBXTextBookmark */;
+			7F67FF5D0C40381C005A66BD /* PBXBookmark */ = 7F67FF5D0C40381C005A66BD /* PBXBookmark */;
+			7F67FF610C4038B0005A66BD /* PBXBookmark */ = 7F67FF610C4038B0005A66BD /* PBXBookmark */;
+			7F67FF620C4038B0005A66BD /* PBXBookmark */ = 7F67FF620C4038B0005A66BD /* PBXBookmark */;
+			7F67FF630C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF630C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF640C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF640C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF650C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF650C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF660C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF660C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF670C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF670C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF680C4038B0005A66BD /* PBXBookmark */ = 7F67FF680C4038B0005A66BD /* PBXBookmark */;
+			7F67FF690C4038B0005A66BD /* PBXBookmark */ = 7F67FF690C4038B0005A66BD /* PBXBookmark */;
+			7F67FF6A0C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF6A0C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF6B0C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF6B0C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF6C0C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF6C0C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF6F0C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF6F0C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF700C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF700C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF710C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF710C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF720C4038B0005A66BD /* PBXTextBookmark */ = 7F67FF720C4038B0005A66BD /* PBXTextBookmark */;
+			7F67FF780C40392E005A66BD /* PBXTextBookmark */ = 7F67FF780C40392E005A66BD /* PBXTextBookmark */;
+			7F67FF7B0C40392E005A66BD /* PBXTextBookmark */ = 7F67FF7B0C40392E005A66BD /* PBXTextBookmark */;
+			7F67FF7C0C40392E005A66BD /* PBXTextBookmark */ = 7F67FF7C0C40392E005A66BD /* PBXTextBookmark */;
+			7F67FF7D0C40392E005A66BD /* PBXTextBookmark */ = 7F67FF7D0C40392E005A66BD /* PBXTextBookmark */;
+			7F67FF7E0C40392E005A66BD /* PBXTextBookmark */ = 7F67FF7E0C40392E005A66BD /* PBXTextBookmark */;
+			7F67FF810C40394F005A66BD /* PBXTextBookmark */ = 7F67FF810C40394F005A66BD /* PBXTextBookmark */;
+			7F67FF820C40394F005A66BD /* PBXTextBookmark */ = 7F67FF820C40394F005A66BD /* PBXTextBookmark */;
+			7F67FF890C403953005A66BD /* PBXTextBookmark */ = 7F67FF890C403953005A66BD /* PBXTextBookmark */;
+			7F67FFD30C403A37005A66BD /* PBXTextBookmark */ = 7F67FFD30C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFD40C403A37005A66BD /* PBXTextBookmark */ = 7F67FFD40C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFD50C403A37005A66BD /* PBXTextBookmark */ = 7F67FFD50C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFD60C403A37005A66BD /* PBXTextBookmark */ = 7F67FFD60C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFD70C403A37005A66BD /* PBXTextBookmark */ = 7F67FFD70C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFD80C403A37005A66BD /* PBXTextBookmark */ = 7F67FFD80C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFD90C403A37005A66BD /* PBXTextBookmark */ = 7F67FFD90C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFDA0C403A37005A66BD /* PBXTextBookmark */ = 7F67FFDA0C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFDB0C403A37005A66BD /* PBXTextBookmark */ = 7F67FFDB0C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFDC0C403A37005A66BD /* PBXBookmark */ = 7F67FFDC0C403A37005A66BD /* PBXBookmark */;
+			7F67FFDD0C403A37005A66BD /* PBXBookmark */ = 7F67FFDD0C403A37005A66BD /* PBXBookmark */;
+			7F67FFDE0C403A37005A66BD /* PBXTextBookmark */ = 7F67FFDE0C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFDF0C403A37005A66BD /* PBXTextBookmark */ = 7F67FFDF0C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE00C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE00C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE10C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE10C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE20C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE20C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE30C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE30C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE40C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE40C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE50C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE50C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE60C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE60C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE70C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE70C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE80C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE80C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFE90C403A37005A66BD /* PBXTextBookmark */ = 7F67FFE90C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFEA0C403A37005A66BD /* PBXBookmark */ = 7F67FFEA0C403A37005A66BD /* PBXBookmark */;
+			7F67FFEB0C403A37005A66BD /* PBXBookmark */ = 7F67FFEB0C403A37005A66BD /* PBXBookmark */;
+			7F67FFEC0C403A37005A66BD /* PBXTextBookmark */ = 7F67FFEC0C403A37005A66BD /* PBXTextBookmark */;
+			7F67FFF90C404786005A66BD /* PBXTextBookmark */ = 7F67FFF90C404786005A66BD /* PBXTextBookmark */;
+			7F67FFFA0C404786005A66BD /* PBXTextBookmark */ = 7F67FFFA0C404786005A66BD /* PBXTextBookmark */;
+			7F67FFFB0C404786005A66BD /* PBXTextBookmark */ = 7F67FFFB0C404786005A66BD /* PBXTextBookmark */;
+			7F67FFFC0C404786005A66BD /* PBXTextBookmark */ = 7F67FFFC0C404786005A66BD /* PBXTextBookmark */;
+			7F67FFFD0C404786005A66BD /* PBXTextBookmark */ = 7F67FFFD0C404786005A66BD /* PBXTextBookmark */;
+			7F67FFFE0C404786005A66BD /* PBXTextBookmark */ = 7F67FFFE0C404786005A66BD /* PBXTextBookmark */;
+			7F67FFFF0C404786005A66BD /* PBXTextBookmark */ = 7F67FFFF0C404786005A66BD /* PBXTextBookmark */;
 			7F9540210C40006B001E5264 = 7F9540210C40006B001E5264 /* PBXBookmark */;
 			7F9540230C4000CD001E5264 = 7F9540230C4000CD001E5264 /* PBXTextBookmark */;
 			7F9540240C4000CD001E5264 = 7F9540240C4000CD001E5264 /* PBXTextBookmark */;
@@ -344,11 +424,11 @@
 	};
 	7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1231, 1456}}";
-			sepNavSelRange = "{1707, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {838, 1596}}";
+			sepNavSelRange = "{1309, 0}";
 			sepNavVisRange = "{0, 652}";
-			sepNavVisRect = "{{0, 801}, {1231, 641}}";
-			sepNavWindowFrame = "{{188, -12}, {1276, 770}}";
+			sepNavVisRect = "{{0, 981}, {838, 475}}";
+			sepNavWindowFrame = "{{648, -19}, {1276, 770}}";
 		};
 	};
 	7F0D27810C3E82F0009FD23E /* PrefPane */ = {
@@ -492,9 +572,9 @@
 	};
 	7F362A6A0C3B351F00B24988 /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {731, 673}}";
+			sepNavIntBoundsRect = "{{0, 0}, {838, 475}}";
 			sepNavSelRange = "{229, 0}";
-			sepNavVisRect = "{{0, 0}, {731, 673}}";
+			sepNavVisRect = "{{0, 0}, {838, 475}}";
 		};
 	};
 	7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */ = {
@@ -507,24 +587,24 @@
 	7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {838, 1512}}";
-			sepNavSelRange = "{3285, 0}";
-			sepNavVisRect = "{{0, 1024}, {838, 475}}";
+			sepNavSelRange = "{2618, 0}";
+			sepNavVisRect = "{{0, 519}, {838, 475}}";
 			sepNavWindowFrame = "{{111, 19}, {1276, 770}}";
 		};
 	};
 	7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {936, 636}}";
+			sepNavIntBoundsRect = "{{0, 0}, {838, 672}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 0}, {936, 636}}";
+			sepNavVisRect = "{{0, 0}, {838, 475}}";
 			sepNavWindowFrame = "{{401, 67}, {1276, 770}}";
 		};
 	};
 	7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1100, 3822}}";
-			sepNavSelRange = "{2151, 0}";
-			sepNavVisRect = "{{0, 359}, {1100, 749}}";
+			sepNavIntBoundsRect = "{{0, 0}, {838, 3822}}";
+			sepNavSelRange = "{8726, 5}";
+			sepNavVisRect = "{{0, 2688}, {838, 475}}";
 			sepNavWindowFrame = "{{58, -5}, {1145, 878}}";
 		};
 	};
@@ -537,9 +617,10 @@
 	};
 	7F362A770C3B352B00B24988 /* NSURL+Parameters.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {838, 518}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1013, 749}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRect = "{{0, 0}, {838, 475}}";
+			sepNavVisRect = "{{0, 0}, {1013, 749}}";
+			sepNavWindowFrame = "{{58, -5}, {1058, 878}}";
 		};
 	};
 	7F362A780C3B352B00B24988 /* QSKeyCodeTranslator.h */ = {
@@ -552,34 +633,34 @@
 	};
 	7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {936, 742}}";
+			sepNavIntBoundsRect = "{{0, 0}, {838, 742}}";
 			sepNavSelRange = "{356, 1}";
-			sepNavVisRect = "{{0, 0}, {936, 636}}";
+			sepNavVisRect = "{{0, 0}, {838, 475}}";
 			sepNavWindowFrame = "{{58, -5}, {830, 878}}";
 		};
 	};
 	7F362A7A0C3B352B00B24988 /* TKController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {785, 749}}";
-			sepNavSelRange = "{1171, 0}";
+			sepNavSelRange = "{1133, 0}";
 			sepNavVisRange = "{0, 1015}";
 			sepNavVisRect = "{{0, 0}, {785, 749}}";
-			sepNavWindowFrame = "{{625, 0}, {830, 878}}";
+			sepNavWindowFrame = "{{151, -157}, {830, 878}}";
 		};
 	};
 	7F362A7B0C3B352B00B24988 /* TKController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1232, 10486}}";
-			sepNavSelRange = "{3967, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1232, 10556}}";
+			sepNavSelRange = "{7270, 0}";
 			sepNavVisRange = "{8924, 1539}";
-			sepNavVisRect = "{{219, 1299}, {1013, 749}}";
-			sepNavWindowFrame = "{{457, 0}, {830, 878}}";
+			sepNavVisRect = "{{0, 2758}, {484, 463}}";
+			sepNavWindowFrame = "{{91, 0}, {1058, 878}}";
 		};
 	};
 	7F362A890C3B356E00B24988 /* certificate.cfg */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {838, 475}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavSelRange = "{298, 0}";
 			sepNavVisRect = "{{0, 0}, {838, 475}}";
 		};
 	};
@@ -612,7 +693,7 @@
 			sepNavIntBoundsRect = "{{0, 0}, {838, 7056}}";
 			sepNavSelRange = "{1567, 6}";
 			sepNavVisRange = "{0, 1618}";
-			sepNavVisRect = "{{0, 204}, {838, 475}}";
+			sepNavVisRect = "{{0, 211}, {838, 475}}";
 			sepNavWindowFrame = "{{121, 15}, {1276, 770}}";
 		};
 	};
@@ -644,6 +725,223 @@
 		state = 1;
 		symbolName = "-[NSException raise]";
 	};
+	7F6700000C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "";
+		rLen = 1;
+		rLoc = 814;
+		rType = 0;
+		vrLen = 815;
+		vrLoc = 0;
+	};
+	7F6700010C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 219";
+		rLen = 0;
+		rLoc = 7387;
+		rType = 0;
+		vrLen = 1579;
+		vrLoc = 6637;
+	};
+	7F6700020C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */;
+		name = /;
+		rLen = 1;
+		rLoc = 356;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 0;
+	};
+	7F6700030C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 219";
+		rLen = 0;
+		rLoc = 7387;
+		rType = 0;
+		vrLen = 1536;
+		vrLoc = 6680;
+	};
+	7F6700040C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "";
+		rLen = 1;
+		rLoc = 814;
+		rType = 0;
+		vrLen = 815;
+		vrLoc = 0;
+	};
+	7F6700050C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "- (IBAction) goToApps:(id)sender {";
+		rLen = 35;
+		rLoc = 7138;
+		rType = 0;
+		vrLen = 1477;
+		vrLoc = 6680;
+	};
+	7F6700080C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		rLen = 0;
+		rLoc = "-2147483615";
+		rType = 0;
+	};
+	7F6700090C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 45";
+		rLen = 0;
+		rLoc = 1133;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 0;
+	};
+	7F67000E0C404810005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 212";
+		rLen = 0;
+		rLoc = 7264;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 6680;
+	};
+	7F67000F0C404810005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 45";
+		rLen = 0;
+		rLoc = 1133;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 0;
+	};
+	7F6700130C40481E005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 212";
+		rLen = 0;
+		rLoc = 7264;
+		rType = 0;
+		vrLen = 1464;
+		vrLoc = 6680;
+	};
+	7F6700140C40481E005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 45";
+		rLen = 0;
+		rLoc = 1133;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 0;
+	};
+	7F6700180C40483D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 212";
+		rLen = 0;
+		rLoc = 7264;
+		rType = 0;
+		vrLen = 1464;
+		vrLoc = 6680;
+	};
+	7F6700190C40483D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 45";
+		rLen = 0;
+		rLoc = 1133;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 0;
+	};
+	7F67001F0C404893005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 212";
+		rLen = 0;
+		rLoc = 7263;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 6680;
+	};
+	7F6700200C404893005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 45";
+		rLen = 0;
+		rLoc = 1133;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 0;
+	};
+	7F6700240C4048C8005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: appsFolder";
+		rLen = 0;
+		rLoc = 591;
+		rType = 0;
+		vrLen = 973;
+		vrLoc = 0;
+	};
+	7F6700250C4048C8005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = MEDIA_PORT;
+		rLen = 10;
+		rLoc = 1164;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 1005;
+	};
+	7F6700260C4048CE005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 214";
+		rLen = 0;
+		rLoc = 7270;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 6680;
+	};
+	7F6700290C404939005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 214";
+		rLen = 0;
+		rLoc = 7270;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 6680;
+	};
+	7F67002A0C404939005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 214";
+		rLen = 0;
+		rLoc = 7270;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 6680;
+	};
+	7F67002B0C404939005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 214";
+		rLen = 0;
+		rLoc = 7270;
+		rType = 0;
+		vrLen = 1463;
+		vrLoc = 6680;
+	};
 	7F67FD0F0C400983005A66BD /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
@@ -656,7 +954,7 @@
 		isa = PBXTextBookmark;
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		rLen = 1;
-		rLoc = 207;
+		rLoc = 205;
 		rType = 1;
 	};
 	7F67FD3E0C400C01005A66BD /* PBXTextBookmark */ = {
@@ -664,7 +962,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 308";
 		rLen = 0;
-		rLoc = 11968;
+		rLoc = 11788;
 		rType = 0;
 		vrLen = 1646;
 		vrLoc = 9175;
@@ -718,7 +1016,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1122;
 		vrLoc = 4719;
@@ -748,7 +1046,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = 5010;
 		rLen = 0;
-		rLoc = 6592;
+		rLoc = 6540;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 4418;
@@ -768,7 +1066,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 158";
 		rLen = 0;
-		rLoc = 6592;
+		rLoc = 6540;
 		rType = 0;
 		vrLen = 869;
 		vrLoc = 4420;
@@ -808,7 +1106,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1122;
 		vrLoc = 4719;
@@ -828,7 +1126,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 102";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1723;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -837,7 +1135,7 @@
 		isa = PBXTextBookmark;
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		rLen = 0;
-		rLoc = 2147483634;
+		rLoc = "-2147483628";
 		rType = 0;
 	};
 	7F67FD580C400C02005A66BD /* PBXTextBookmark */ = {
@@ -845,7 +1143,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1104;
+		rLoc = 1138;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -855,7 +1153,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 4435;
@@ -865,7 +1163,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 308";
 		rLen = 0;
-		rLoc = 11968;
+		rLoc = 11788;
 		rType = 0;
 		vrLen = 1646;
 		vrLoc = 9175;
@@ -885,7 +1183,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 102";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1723;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -895,7 +1193,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1104;
+		rLoc = 1138;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -905,7 +1203,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 4435;
@@ -969,7 +1267,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 102";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1723;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -979,7 +1277,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1104;
+		rLoc = 1138;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -989,7 +1287,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 4435;
@@ -999,7 +1297,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 308";
 		rLen = 0;
-		rLoc = 11968;
+		rLoc = 11788;
 		rType = 0;
 		vrLen = 1646;
 		vrLoc = 9175;
@@ -1019,7 +1317,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 102";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1723;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1029,7 +1327,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1104;
+		rLoc = 1138;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1039,7 +1337,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 4435;
@@ -1049,7 +1347,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 308";
 		rLen = 0;
-		rLoc = 11968;
+		rLoc = 11788;
 		rType = 0;
 		vrLen = 1646;
 		vrLoc = 9175;
@@ -1089,7 +1387,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 102";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1723;
 		rType = 0;
 		vrLen = 721;
 		vrLoc = 967;
@@ -1139,7 +1437,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 102";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1723;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1149,7 +1447,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1104;
+		rLoc = 1138;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1159,7 +1457,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1842;
 		vrLoc = 4435;
@@ -1169,7 +1467,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 10";
 		rLen = 0;
-		rLoc = 155;
+		rLoc = 210;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -1179,7 +1477,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 102";
 		rLen = 0;
-		rLoc = 1668;
+		rLoc = 1723;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1189,7 +1487,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1104;
+		rLoc = 1138;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1199,7 +1497,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 171";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1209,7 +1507,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 523;
 		vrLoc = 0;
@@ -1219,7 +1517,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 89";
 		rLen = 0;
-		rLoc = 1288;
+		rLoc = 1343;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -1229,7 +1527,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1239,7 +1537,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1249,7 +1547,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1289,7 +1587,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: telePortNumber";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 4720;
@@ -1329,7 +1627,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: telePortNumber";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 4720;
@@ -1349,7 +1647,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1359,7 +1657,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1369,7 +1667,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1419,6 +1717,11 @@
 		name = "dir-list-footer.html";
 		path = "/Volumes/Lux/telekinesis/trunk/Mac/Resources/www/dir-list-footer.html";
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {838, 475}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {838, 475}}";
+		};
 	};
 	7F67FDF90C401087005A66BD /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1541,7 +1844,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1551,7 +1854,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1561,7 +1864,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1571,7 +1874,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 148;
@@ -1581,7 +1884,7 @@
 		comments = "error: parse error before '<<' token";
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		rLen = 1;
-		rLoc = 338;
+		rLoc = 335;
 		rType = 1;
 	};
 	7F67FE100C40108E005A66BD /* PBXTextBookmark */ = {
@@ -1589,7 +1892,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 717";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 1719;
 		vrLoc = 9386;
@@ -1599,7 +1902,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: portNumber";
 		rLen = 0;
-		rLoc = 1100;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 1023;
 		vrLoc = 148;
@@ -1609,7 +1912,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -1635,7 +1938,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "[environment setObject:[NSString stringWithFormat:@\"%d\", [self mediaPortNumber]] forKey:@\"MEDIA_PORT\"];";
 		rLen = 106;
-		rLoc = 12971;
+		rLoc = 12791;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 10643;
@@ -1644,7 +1947,7 @@
 		isa = PBXTextBookmark;
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 	};
 	7F67FE180C40108E005A66BD /* PBXTextBookmark */ = {
@@ -1668,7 +1971,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "[environment setObject:[NSString stringWithFormat:@\"%d\", [self mediaPortNumber]] forKey:@\"MEDIA_PORT\"];";
 		rLen = 106;
-		rLoc = 12971;
+		rLoc = 12791;
 		rType = 0;
 		vrLen = 1441;
 		vrLoc = 10643;
@@ -1678,7 +1981,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -1698,7 +2001,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1708,7 +2011,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1718,7 +2021,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1738,7 +2041,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: telePortNumber";
 		rLen = 0;
-		rLoc = 7176;
+		rLoc = 7124;
 		rType = 0;
 		vrLen = 1121;
 		vrLoc = 4720;
@@ -1821,7 +2124,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1831,7 +2134,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1841,7 +2144,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1881,7 +2184,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1891,7 +2194,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1901,7 +2204,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1941,7 +2244,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -1951,7 +2254,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -1961,7 +2264,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -1971,7 +2274,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -1981,7 +2284,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2011,7 +2314,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -2021,7 +2324,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2031,7 +2334,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -2041,7 +2344,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -2051,7 +2354,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2095,7 +2398,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -2105,7 +2408,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2115,7 +2418,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -2125,7 +2428,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -2135,7 +2438,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2145,7 +2448,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -2155,7 +2458,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2189,7 +2492,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -2199,7 +2502,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2209,7 +2512,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -2219,7 +2522,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -2229,7 +2532,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2243,7 +2546,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -2253,7 +2556,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2263,7 +2566,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -2273,7 +2576,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -2283,7 +2586,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2297,7 +2600,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -2307,7 +2610,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2317,7 +2620,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -2345,7 +2648,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 288";
 		rLen = 0;
-		rLoc = 11352;
+		rLoc = 11108;
 		rType = 0;
 		vrLen = 1626;
 		vrLoc = 8787;
@@ -2355,7 +2658,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -2365,7 +2668,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2375,7 +2678,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -2385,7 +2688,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 298";
 		rLen = 0;
-		rLoc = 11624;
+		rLoc = 11372;
 		rType = 0;
 		vrLen = 1807;
 		vrLoc = 9131;
@@ -2395,7 +2698,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2405,7 +2708,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 288";
 		rLen = 0;
-		rLoc = 11352;
+		rLoc = 11108;
 		rType = 0;
 		vrLen = 1626;
 		vrLoc = 8787;
@@ -2415,7 +2718,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = "httpd.telekinesis.conf: 104";
 		rLen = 0;
-		rLoc = 1707;
+		rLoc = 1876;
 		rType = 0;
 		vrLen = 841;
 		vrLoc = 847;
@@ -2425,7 +2728,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2435,7 +2738,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
 		rLen = 0;
-		rLoc = 24591;
+		rLoc = 24411;
 		rType = 0;
 		vrLen = 2161;
 		vrLoc = 4720;
@@ -2451,8 +2754,8 @@
 		isa = PBXTextBookmark;
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "";
-		rLen = 1;
-		rLoc = 11437;
+		rLen = 0;
+		rLoc = 11188;
 		rType = 0;
 		vrLen = 1704;
 		vrLoc = 8800;
@@ -2479,8 +2782,8 @@
 		isa = PBXTextBookmark;
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "";
-		rLen = 1;
-		rLoc = 11437;
+		rLen = 0;
+		rLoc = 11188;
 		rType = 0;
 		vrLen = 1704;
 		vrLoc = 8800;
@@ -2506,6 +2809,13 @@
 	7F67FEED0C402AC1005A66BD /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = 7F67FEDD0C402A83005A66BD /* Tapp.icns */;
+	};
+	7F67FEF10C402CFA005A66BD /* Tapp.icns */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.icns;
+		name = Tapp.icns;
+		path = /Volumes/Lux/telekinesis/trunk/Mac/Tapp.icns;
+		sourceTree = "<absolute>";
 	};
 	7F67FF030C402F43005A66BD /* TKController.m:115 */ = {
 		isa = PBXFileBreakpoint;
@@ -2553,7 +2863,7 @@
 		isa = PBXTextBookmark;
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		rLen = 1;
-		rLoc = 519;
+		rLoc = 524;
 		rType = 1;
 	};
 	7F67FF0F0C402FCA005A66BD /* PBXTextBookmark */ = {
@@ -2561,7 +2871,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 124";
 		rLen = 0;
-		rLoc = 4195;
+		rLoc = 4165;
 		rType = 0;
 		vrLen = 2320;
 		vrLoc = 2478;
@@ -2587,7 +2897,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "if ([filename hasPrefix:[self appsFolder]]) continue;";
 		rLen = 58;
-		rLoc = 4244;
+		rLoc = 4214;
 		rType = 0;
 		vrLen = 1482;
 		vrLoc = 3410;
@@ -2596,7 +2906,7 @@
 		isa = PBXTextBookmark;
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		rLen = 0;
-		rLoc = 2147483647;
+		rLoc = "-2147483615";
 		rType = 0;
 	};
 	7F67FF1F0C402FFB005A66BD /* PBXTextBookmark */ = {
@@ -2604,7 +2914,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2614,7 +2924,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 125";
 		rLen = 0;
-		rLoc = 4193;
+		rLoc = 4163;
 		rType = 0;
 		vrLen = 2340;
 		vrLoc = 2459;
@@ -2623,7 +2933,7 @@
 		isa = PBXTextBookmark;
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		rLen = 1;
-		rLoc = 523;
+		rLoc = 528;
 		rType = 1;
 	};
 	7F67FF240C40300E005A66BD /* PBXTextBookmark */ = {
@@ -2641,7 +2951,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2651,7 +2961,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "if ([filename hasPrefix:[self appsFolder]]) continue;";
 		rLen = 58;
-		rLoc = 4244;
+		rLoc = 4214;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 3410;
@@ -2661,7 +2971,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 124";
 		rLen = 0;
-		rLoc = 4167;
+		rLoc = 4139;
 		rType = 0;
 		vrLen = 2372;
 		vrLoc = 2459;
@@ -2671,7 +2981,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2681,7 +2991,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "if ([filename hasPrefix:[self appsFolder]]) continue;";
 		rLen = 58;
-		rLoc = 4244;
+		rLoc = 4214;
 		rType = 0;
 		vrLen = 1537;
 		vrLoc = 3410;
@@ -2691,7 +3001,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 148";
 		rLen = 0;
-		rLoc = 5080;
+		rLoc = 5028;
 		rType = 0;
 		vrLen = 2413;
 		vrLoc = 3586;
@@ -2701,7 +3011,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2711,7 +3021,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "if ([filename hasPrefix:[self appsFolder]]) continue;";
 		rLen = 58;
-		rLoc = 4244;
+		rLoc = 4214;
 		rType = 0;
 		vrLen = 1539;
 		vrLoc = 3410;
@@ -2721,7 +3031,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 120";
 		rLen = 0;
-		rLoc = 3967;
+		rLoc = 3969;
 		rType = 0;
 		vrLen = 2415;
 		vrLoc = 3586;
@@ -2731,7 +3041,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2741,7 +3051,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 122";
 		rLen = 0;
-		rLoc = 4092;
+		rLoc = 4094;
 		rType = 0;
 		vrLen = 1604;
 		vrLoc = 3436;
@@ -2751,7 +3061,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2761,7 +3071,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 120";
 		rLen = 0;
-		rLoc = 3967;
+		rLoc = 3969;
 		rType = 0;
 		vrLen = 2274;
 		vrLoc = 2777;
@@ -2781,7 +3091,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2791,7 +3101,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 122";
 		rLen = 0;
-		rLoc = 4051;
+		rLoc = 4053;
 		rType = 0;
 		vrLen = 1613;
 		vrLoc = 3275;
@@ -2801,7 +3111,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2811,7 +3121,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 120";
 		rLen = 0;
-		rLoc = 3967;
+		rLoc = 3969;
 		rType = 0;
 		vrLen = 2274;
 		vrLoc = 2777;
@@ -2831,7 +3141,7 @@
 		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
 		name = MEDIA_PORT;
 		rLen = 10;
-		rLoc = 1109;
+		rLoc = 1164;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 982;
@@ -2841,7 +3151,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 117";
 		rLen = 0;
-		rLoc = 3721;
+		rLoc = 3723;
 		rType = 0;
 		vrLen = 1613;
 		vrLoc = 3275;
@@ -2851,7 +3161,7 @@
 		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
 		name = "TKController.h: 49";
 		rLen = 0;
-		rLoc = 1171;
+		rLoc = 1205;
 		rType = 0;
 		vrLen = 1171;
 		vrLoc = 0;
@@ -2861,10 +3171,533 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 120";
 		rLen = 0;
-		rLoc = 3967;
+		rLoc = 3969;
 		rType = 0;
 		vrLen = 2274;
 		vrLoc = 2777;
+	};
+	7F67FF5D0C40381C005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+	};
+	7F67FF610C4038B0005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F362F380C3C48BF00B24988 /* Telekinesis.icns */;
+	};
+	7F67FF620C4038B0005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F67FF550C403709005A66BD /* Tapp.icns */;
+	};
+	7F67FF630C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 129";
+		rLen = 0;
+		rLoc = 4276;
+		rType = 0;
+		vrLen = 1243;
+		vrLoc = 3971;
+	};
+	7F67FF640C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A910C3B356E00B24988 /* httpd.2.0.conf */;
+		name = Listen;
+		rLen = 6;
+		rLoc = 1567;
+		rType = 0;
+		vrLen = 1309;
+		vrLoc = 770;
+	};
+	7F67FF650C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 725;
+		vrLoc = 982;
+	};
+	7F67FF660C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 117";
+		rLen = 0;
+		rLoc = 3723;
+		rType = 0;
+		vrLen = 1587;
+		vrLoc = 2940;
+	};
+	7F67FF670C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 117";
+		rLen = 0;
+		rLoc = 3723;
+		rType = 0;
+		vrLen = 1587;
+		vrLoc = 2940;
+	};
+	7F67FF680C4038B0005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F362F380C3C48BF00B24988 /* Telekinesis.icns */;
+	};
+	7F67FF690C4038B0005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F67FF550C403709005A66BD /* Tapp.icns */;
+	};
+	7F67FF6A0C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 129";
+		rLen = 0;
+		rLoc = 4276;
+		rType = 0;
+		vrLen = 1243;
+		vrLoc = 3971;
+	};
+	7F67FF6B0C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A910C3B356E00B24988 /* httpd.2.0.conf */;
+		name = Listen;
+		rLen = 6;
+		rLoc = 1567;
+		rType = 0;
+		vrLen = 1309;
+		vrLoc = 770;
+	};
+	7F67FF6C0C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 1005;
+	};
+	7F67FF6F0C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 111";
+		rLen = 0;
+		rLoc = 1859;
+		rType = 0;
+		vrLen = 892;
+		vrLoc = 984;
+	};
+	7F67FF700C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 120";
+		rLen = 0;
+		rLoc = 3969;
+		rType = 0;
+		vrLen = 2240;
+		vrLoc = 2777;
+	};
+	7F67FF710C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 306";
+		rLen = 0;
+		rLoc = 10219;
+		rType = 0;
+		vrLen = 2062;
+		vrLoc = 10037;
+	};
+	7F67FF720C4038B0005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 49";
+		rLen = 0;
+		rLoc = 1205;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	7F67FF780C40392E005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 1005;
+	};
+	7F67FF7B0C40392E005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		rLen = 0;
+		rLoc = "-2147483546";
+		rType = 0;
+	};
+	7F67FF7C0C40392E005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 327";
+		rLen = 0;
+		rLoc = 11188;
+		rType = 0;
+		vrLen = 2038;
+		vrLoc = 11791;
+	};
+	7F67FF7D0C40392E005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 49";
+		rLen = 0;
+		rLoc = 1205;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	7F67FF7E0C40392E005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 111";
+		rLen = 0;
+		rLoc = 1859;
+		rType = 0;
+		vrLen = 892;
+		vrLoc = 984;
+	};
+	7F67FF810C40394F005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: appsFolder";
+		rLen = 0;
+		rLoc = 591;
+		rType = 0;
+		vrLen = 973;
+		vrLoc = 0;
+	};
+	7F67FF820C40394F005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = MEDIA_PORT;
+		rLen = 10;
+		rLoc = 1164;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 1005;
+	};
+	7F67FF890C403953005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 88";
+		rLen = 0;
+		rLoc = 1309;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 1005;
+	};
+	7F67FFD30C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 87";
+		rLen = 0;
+		rLoc = 1285;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 1005;
+	};
+	7F67FFD40C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */;
+		name = "SimpleHTTPConnection.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 0;
+	};
+	7F67FFD50C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "";
+		rLen = 1;
+		rLoc = 814;
+		rType = 0;
+		vrLen = 815;
+		vrLoc = 0;
+	};
+	7F67FFD60C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 113";
+		rLen = 1514;
+		rLoc = 3516;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 3275;
+	};
+	7F67FFD70C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6A0C3B351F00B24988 /* main.m */;
+		name = "main.m: 13";
+		rLen = 0;
+		rLoc = 229;
+		rType = 0;
+		vrLen = 261;
+		vrLoc = 0;
+	};
+	7F67FFD80C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */;
+		name = "SimpleHTTPConnection.m: 84";
+		rLen = 0;
+		rLoc = 2618;
+		rType = 0;
+		vrLen = 874;
+		vrLoc = 1269;
+	};
+	7F67FFD90C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */;
+		name = "SimpleHTTPServer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 847;
+		vrLoc = 0;
+	};
+	7F67FFDA0C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */;
+		name = /;
+		rLen = 1;
+		rLoc = 356;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 0;
+	};
+	7F67FFDB0C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
+		name = NSLog;
+		rLen = 5;
+		rLoc = 8726;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 7009;
+	};
+	7F67FFDC0C403A37005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F362F380C3C48BF00B24988 /* Telekinesis.icns */;
+	};
+	7F67FFDD0C403A37005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F67FF550C403709005A66BD /* Tapp.icns */;
+	};
+	7F67FFDE0C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 87";
+		rLen = 0;
+		rLoc = 1285;
+		rType = 0;
+		vrLen = 678;
+		vrLoc = 1005;
+	};
+	7F67FFDF0C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */;
+		name = "SimpleHTTPConnection.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 0;
+	};
+	7F67FFE00C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "";
+		rLen = 1;
+		rLoc = 814;
+		rType = 0;
+		vrLen = 815;
+		vrLoc = 0;
+	};
+	7F67FFE10C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 129";
+		rLen = 0;
+		rLoc = 4276;
+		rType = 0;
+		vrLen = 1238;
+		vrLoc = 3976;
+	};
+	7F67FFE20C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "";
+		rLen = 1;
+		rLoc = 814;
+		rType = 0;
+		vrLen = 815;
+		vrLoc = 0;
+	};
+	7F67FFE30C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 113";
+		rLen = 1514;
+		rLoc = 3516;
+		rType = 0;
+		vrLen = 1583;
+		vrLoc = 3275;
+	};
+	7F67FFE40C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6A0C3B351F00B24988 /* main.m */;
+		name = "main.m: 13";
+		rLen = 0;
+		rLoc = 229;
+		rType = 0;
+		vrLen = 261;
+		vrLoc = 0;
+	};
+	7F67FFE50C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */;
+		name = "SimpleHTTPConnection.m: 84";
+		rLen = 0;
+		rLoc = 2618;
+		rType = 0;
+		vrLen = 874;
+		vrLoc = 1269;
+	};
+	7F67FFE60C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */;
+		name = "SimpleHTTPServer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 847;
+		vrLoc = 0;
+	};
+	7F67FFE70C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
+		name = NSLog;
+		rLen = 5;
+		rLoc = 8726;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 7009;
+	};
+	7F67FFE80C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */;
+		name = /;
+		rLen = 1;
+		rLoc = 356;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 0;
+	};
+	7F67FFE90C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
+		name = NSLog;
+		rLen = 5;
+		rLoc = 8726;
+		rType = 0;
+		vrLen = 1301;
+		vrLoc = 7009;
+	};
+	7F67FFEA0C403A37005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F362F380C3C48BF00B24988 /* Telekinesis.icns */;
+	};
+	7F67FFEB0C403A37005A66BD /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F67FF550C403709005A66BD /* Tapp.icns */;
+	};
+	7F67FFEC0C403A37005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A890C3B356E00B24988 /* certificate.cfg */;
+		name = "certificate.cfg: 9";
+		rLen = 0;
+		rLoc = 298;
+		rType = 0;
+		vrLen = 428;
+		vrLoc = 0;
+	};
+	7F67FFF90C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A890C3B356E00B24988 /* certificate.cfg */;
+		name = "certificate.cfg: 9";
+		rLen = 0;
+		rLoc = 298;
+		rType = 0;
+		vrLen = 428;
+		vrLoc = 0;
+	};
+	7F67FFFA0C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FDF80C401087005A66BD /* dir-list-footer.html */;
+		name = "dir-list-footer.html: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 406;
+		vrLoc = 0;
+	};
+	7F67FFFB0C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */;
+		name = /;
+		rLen = 1;
+		rLoc = 356;
+		rType = 0;
+		vrLen = 1323;
+		vrLoc = 0;
+	};
+	7F67FFFC0C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "";
+		rLen = 1;
+		rLoc = 814;
+		rType = 0;
+		vrLen = 815;
+		vrLoc = 0;
+	};
+	7F67FFFD0C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 219";
+		rLen = 0;
+		rLoc = 7387;
+		rType = 0;
+		vrLen = 1536;
+		vrLoc = 6680;
+	};
+	7F67FFFE0C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A890C3B356E00B24988 /* certificate.cfg */;
+		name = "certificate.cfg: 9";
+		rLen = 0;
+		rLoc = 298;
+		rType = 0;
+		vrLen = 428;
+		vrLoc = 0;
+	};
+	7F67FFFF0C404786005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FDF80C401087005A66BD /* dir-list-footer.html */;
+		name = "dir-list-footer.html: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 406;
+		vrLoc = 0;
 	};
 	7F953DF70C3FDC61001E5264 /* index.php */ = {
 		isa = PBXFileReference;
@@ -2891,7 +3724,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 288";
 		rLen = 0;
-		rLoc = 11845;
+		rLoc = 11665;
 		rType = 0;
 		vrLen = 1428;
 		vrLoc = 8924;
@@ -2901,7 +3734,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 288";
 		rLen = 0;
-		rLoc = 11845;
+		rLoc = 11665;
 		rType = 0;
 		vrLen = 1536;
 		vrLoc = 8924;
@@ -2921,7 +3754,7 @@
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 288";
 		rLen = 0;
-		rLoc = 11845;
+		rLoc = 11665;
 		rType = 0;
 		vrLen = 1539;
 		vrLoc = 8924;

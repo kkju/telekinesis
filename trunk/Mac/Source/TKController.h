@@ -41,6 +41,7 @@
 - (IBAction) toggleServices:(id)sender;
 - (IBAction) goHome:(id)sender;
 - (IBAction) goSupport:(id)sender;
+- (IBAction) goToApps:(id)sender;
 
 - (int)portNumber;
 - (int)telePortNumber;
