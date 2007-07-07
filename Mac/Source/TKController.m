@@ -164,7 +164,7 @@ return [NSArray arrayWithArray:addresses];
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   
   // No Status item for now
-  statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:24] retain];
+  // statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:24] retain];
   [statusItem setHighlightMode:YES];
   [statusItem setMenu:statusMenu];
   [statusItem setImage:[NSImage imageNamed:@"TKMenu"]];
@@ -248,6 +248,8 @@ return [NSArray arrayWithArray:addresses];
     NSTask *task = [self taskWithDictionary:startTaskOptions basePath:path];
     if (task) {
       [info setObject:task forKey:@"task"];
+      
+      NSLog(@"Starting task for %@", [info objectForKey:@"name"]);
       [task launch];
     }
     
@@ -333,6 +335,8 @@ return [NSArray arrayWithArray:addresses];
       [task launch];
     } else {
       NSTask *task = [info objectForKey:@"task"];
+      
+      NSLog(@"Stopping task for %@", [info objectForKey:@"name"]);
       [task terminate];
     }
     
