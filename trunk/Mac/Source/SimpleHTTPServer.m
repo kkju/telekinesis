@@ -53,7 +53,7 @@
             addr4.sin_len = sizeof(addr4);
             addr4.sin_family = AF_INET;
             addr4.sin_port = htons(port);
-            addr4.sin_addr.s_addr = htonl(INADDR_ANY);
+            addr4.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
             NSData *address4 = [NSData dataWithBytes:&addr4 length:sizeof(addr4)];
             if (kCFSocketSuccess != CFSocketSetAddress(socket, (CFDataRef)address4)) {
                 NSLog(@"Could not bind to address");
