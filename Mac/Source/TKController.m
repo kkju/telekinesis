@@ -112,7 +112,7 @@ return [NSArray arrayWithArray:addresses];
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
   NSEnumerator *e = [filenames objectEnumerator];
   NSString *filename;
-
+  
   NSAlert *alert = [NSAlert alertWithMessageText:@"Install Applications?"
                                    defaultButton:@"Install" 
                                  alternateButton:@"Cancel"
@@ -121,7 +121,7 @@ return [NSArray arrayWithArray:addresses];
     
     [[filenames valueForKeyPath:@"lastPathComponent.stringByDeletingPathExtension"] componentsJoinedByString:@", "]]; 
   int installResult = [alert runModal];
-  NSLog(@"res %d", installResult);
+  
   if (installResult < 1) return;
   
   while (filename = [e nextObject]) {
@@ -137,13 +137,11 @@ return [NSArray arrayWithArray:addresses];
       int result = [alert runModal];
       
       if (result < 1) continue;
-        [fm removeFileAtPath:destination handler:nil];
+      [fm removeFileAtPath:destination handler:nil];
     }
-      [fm movePath:filename
-            toPath:destination
-           handler:nil];
-      
-      
+    [fm movePath:filename
+          toPath:destination
+         handler:nil];
   }
   [self restartServices:nil];
 }
@@ -210,9 +208,15 @@ return [NSArray arrayWithArray:addresses];
 - (int)mediaPortNumber {return [self userPortForDefault:@"mediaPort"];}
 
 
+- (IBAction) goToApps:(id)sender {
+  [[NSWorkspace sharedWorkspace] selectFile:[self appsFolder] inFileViewerRootedAtPath:@""];
+ 
+}
+
 - (IBAction) goSupport:(id)sender {
   // [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http:// 
 }
+
 - (void) goHome:(id)sender {
   NSArray *interfaces = [[self class] currentIP4Addresses];
   NSArray *en1 = [interfaces filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"InterfaceName LIKE 'en1'"]];
@@ -302,12 +306,7 @@ return [NSArray arrayWithArray:addresses];
     nil];
   
   
-  NSMutableArray *directives = [NSMutableArray arrayWithObjects:
-    [NSString stringWithFormat:@"Alias /resources/ \"%@\"", root],
-    [NSString stringWithFormat:@"DocumentRoot \"%@/www/\"", documentRoot],
-    [NSString stringWithFormat:@"Alias /Apps/ \"%@/Apps/\"", [self applicationSupportFolder]],
-    [NSString stringWithFormat:@"ScriptAlias /cgi/ \"%@/cgi-bin/\"",  documentRoot],
-    nil];
+  NSMutableArray *directives = [NSMutableArray arrayWithObjects: nil];
   
   NSEnumerator *e = [applications objectEnumerator];
   NSMutableDictionary *info;
@@ -329,14 +328,20 @@ return [NSArray arrayWithArray:addresses];
       [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
     }
   }
-  
-  
-  
+
   
   NSString *configPath = [[NSBundle mainBundle] pathForResource:@"httpd.telekinesis" ofType:@"conf"];
   NSString *customConfig = [NSString stringWithContentsOfFile:configPath];
   
-  customConfig = [NSString stringWithFormat:customConfig, [self portNumber], [self mediaPortNumber], NSHomeDirectory(), [[NSBundle mainBundle] bundlePath], [self applicationSupportFolder]];
+  customConfig = [NSString stringWithFormat:customConfig,
+    [self portNumber],
+    [self mediaPortNumber], 
+    NSHomeDirectory(), 
+    [[NSBundle mainBundle] bundlePath],
+    [self applicationSupportFolder],
+    [self serverRootFolder],
+    documentRoot];
+  
   customConfig = [NSString stringWithFormat:customConfig, [self portNumber], [self mediaPortNumber]];
   NSString *customConfigPath = [[self serverRootFolder] stringByAppendingPathComponent:@"custom.conf"];
   

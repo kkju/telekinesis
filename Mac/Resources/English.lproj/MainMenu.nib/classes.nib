@@ -13,6 +13,7 @@
                 choosePass = id; 
                 goHome = id; 
                 goSupport = id; 
+                goToApps = id; 
                 restartServices = id; 
                 savePass = id; 
                 showPrefs = id; 
