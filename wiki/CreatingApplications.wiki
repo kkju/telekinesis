@@ -50,7 +50,7 @@ A "stopTask" key with the same structure will be used to shut down the serever. 
 
 The iPhone Remote server supports some basic functionality that may be useful in any application:
 
-  * Running Scripts: /t/runscript?path=<absolute path to script> [We need to add relative-to-app-support]
+  * Running Applescripts: /t/runscript?path=<relative path>&app=<App Name>
   * Screen capture: /t/grabscreen
   * Move click: /t/click?x=100&y=100
   * Move mouse: /t/mousemove?x=100&y=100
