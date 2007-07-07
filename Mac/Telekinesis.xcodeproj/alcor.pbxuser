@@ -208,6 +208,29 @@
 			7F67FE1D0C401092005A66BD /* PBXTextBookmark */ = 7F67FE1D0C401092005A66BD /* PBXTextBookmark */;
 			7F67FE1E0C401092005A66BD /* PBXTextBookmark */ = 7F67FE1E0C401092005A66BD /* PBXTextBookmark */;
 			7F67FE1F0C401092005A66BD /* PBXTextBookmark */ = 7F67FE1F0C401092005A66BD /* PBXTextBookmark */;
+			7F67FE290C40128D005A66BD /* PBXTextBookmark */ = 7F67FE290C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE2A0C40128D005A66BD /* PBXTextBookmark */ = 7F67FE2A0C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE2B0C40128D005A66BD /* PBXTextBookmark */ = 7F67FE2B0C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE2C0C40128D005A66BD /* PBXTextBookmark */ = 7F67FE2C0C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE2F0C40128D005A66BD /* PBXTextBookmark */ = 7F67FE2F0C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE300C40128D005A66BD /* PBXTextBookmark */ = 7F67FE300C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE330C40128D005A66BD /* PBXTextBookmark */ = 7F67FE330C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE350C40128D005A66BD /* PBXTextBookmark */ = 7F67FE350C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE370C40128D005A66BD /* PBXTextBookmark */ = 7F67FE370C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE380C40128D005A66BD /* PBXTextBookmark */ = 7F67FE380C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE390C40128D005A66BD /* PBXTextBookmark */ = 7F67FE390C40128D005A66BD /* PBXTextBookmark */;
+			7F67FE470C401346005A66BD /* PBXTextBookmark */ = 7F67FE470C401346005A66BD /* PBXTextBookmark */;
+			7F67FE480C401346005A66BD /* PBXTextBookmark */ = 7F67FE480C401346005A66BD /* PBXTextBookmark */;
+			7F67FE490C401346005A66BD /* PBXTextBookmark */ = 7F67FE490C401346005A66BD /* PBXTextBookmark */;
+			7F67FE4A0C401346005A66BD /* PBXTextBookmark */ = 7F67FE4A0C401346005A66BD /* PBXTextBookmark */;
+			7F67FE4B0C401346005A66BD /* PBXTextBookmark */ = 7F67FE4B0C401346005A66BD /* PBXTextBookmark */;
+			7F67FE4C0C401346005A66BD /* PBXTextBookmark */ = 7F67FE4C0C401346005A66BD /* PBXTextBookmark */;
+			7F67FE4F0C401354005A66BD /* PBXTextBookmark */ = 7F67FE4F0C401354005A66BD /* PBXTextBookmark */;
+			7F67FE500C401354005A66BD /* PBXTextBookmark */ = 7F67FE500C401354005A66BD /* PBXTextBookmark */;
+			7F67FE510C401354005A66BD /* PBXTextBookmark */ = 7F67FE510C401354005A66BD /* PBXTextBookmark */;
+			7F67FE520C401354005A66BD /* PBXTextBookmark */ = 7F67FE520C401354005A66BD /* PBXTextBookmark */;
+			7F67FE530C401354005A66BD /* PBXTextBookmark */ = 7F67FE530C401354005A66BD /* PBXTextBookmark */;
+			7F67FE540C401354005A66BD /* PBXTextBookmark */ = 7F67FE540C401354005A66BD /* PBXTextBookmark */;
 			7F9540210C40006B001E5264 = 7F9540210C40006B001E5264 /* PBXBookmark */;
 			7F9540230C4000CD001E5264 = 7F9540230C4000CD001E5264 /* PBXTextBookmark */;
 			7F9540240C4000CD001E5264 = 7F9540240C4000CD001E5264 /* PBXTextBookmark */;
@@ -400,9 +423,9 @@
 	};
 	7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {838, 3822}}";
-			sepNavSelRange = "{8721, 5}";
-			sepNavVisRect = "{{0, 2718}, {838, 475}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1100, 3822}}";
+			sepNavSelRange = "{2151, 0}";
+			sepNavVisRect = "{{0, 359}, {1100, 749}}";
 		};
 	};
 	7F362A760C3B352B00B24988 /* NSURL+Parameters.h */ = {
@@ -802,7 +825,7 @@
 		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
 		name = NSLog;
 		rLen = 5;
-		rLoc = 8721;
+		rLoc = 8726;
 		rType = 0;
 		vrLen = 1372;
 		vrLoc = 7054;
@@ -826,7 +849,7 @@
 		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
 		name = NSLog;
 		rLen = 5;
-		rLoc = 8721;
+		rLoc = 8726;
 		rType = 0;
 		vrLen = 1372;
 		vrLoc = 7054;
@@ -1591,6 +1614,248 @@
 		vrLoc = 0;
 	};
 	7F67FE1F0C401092005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 705";
+		rLen = 0;
+		rLoc = 22806;
+		rType = 0;
+		vrLen = 2161;
+		vrLoc = 4720;
+	};
+	7F67FE290C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FDFC0C401087005A66BD /* dirlist.php */;
+		name = "dirlist.php: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1104;
+		vrLoc = 0;
+	};
+	7F67FE2A0C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: telePortNumber";
+		rLen = 0;
+		rLoc = 5502;
+		rType = 0;
+		vrLen = 1121;
+		vrLoc = 4720;
+	};
+	7F67FE2B0C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FDFC0C401087005A66BD /* dirlist.php */;
+		name = "dirlist.php: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1104;
+		vrLoc = 0;
+	};
+	7F67FE2C0C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = initWithTCPPort;
+		rLen = 15;
+		rLoc = 2629;
+		rType = 0;
+		vrLen = 1265;
+		vrLoc = 2128;
+	};
+	7F67FE2F0C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
+		rLen = 1;
+		rLoc = 24;
+		rType = 1;
+	};
+	7F67FE300C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
+		name = "SimpleHTTPServer.m: 58";
+		rLen = 0;
+		rLoc = 2236;
+		rType = 0;
+		vrLen = 2294;
+		vrLoc = 714;
+	};
+	7F67FE330C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FE340C40128D005A66BD /* NSPort.h */;
+		rLen = 1;
+		rLoc = 135;
+		rType = 1;
+	};
+	7F67FE340C40128D005A66BD /* NSPort.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSPort.h;
+		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSPort.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1100, 2086}}";
+			sepNavSelRange = "{4368, 15}";
+			sepNavVisRect = "{{0, 1337}, {1100, 749}}";
+		};
+	};
+	7F67FE350C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FE360C40128D005A66BD /* NSPort.h */;
+		name = initWithTCPPort;
+		rLen = 15;
+		rLoc = 4368;
+		rType = 0;
+		vrLen = 1376;
+		vrLoc = 3575;
+	};
+	7F67FE360C40128D005A66BD /* NSPort.h */ = {
+		isa = PBXFileReference;
+		name = NSPort.h;
+		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSPort.h;
+		sourceTree = "<absolute>";
+	};
+	7F67FE370C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 104";
+		rLen = 0;
+		rLoc = 1707;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 847;
+	};
+	7F67FE380C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 49";
+		rLen = 0;
+		rLoc = 1171;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	7F67FE390C40128D005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 705";
+		rLen = 0;
+		rLoc = 22806;
+		rType = 0;
+		vrLen = 2161;
+		vrLoc = 4720;
+	};
+	7F67FE470C401346005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = initWithTCPPort;
+		rLen = 15;
+		rLoc = 2629;
+		rType = 0;
+		vrLen = 1265;
+		vrLoc = 2128;
+	};
+	7F67FE480C401346005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
+		name = "SimpleHTTPServer.m: 56";
+		rLen = 0;
+		rLoc = 2151;
+		rType = 0;
+		vrLen = 2257;
+		vrLoc = 714;
+	};
+	7F67FE490C401346005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FE340C40128D005A66BD /* NSPort.h */;
+		name = initWithTCPPort;
+		rLen = 15;
+		rLoc = 4368;
+		rType = 0;
+		vrLen = 1376;
+		vrLoc = 3575;
+	};
+	7F67FE4A0C401346005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 104";
+		rLen = 0;
+		rLoc = 1707;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 847;
+	};
+	7F67FE4B0C401346005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 49";
+		rLen = 0;
+		rLoc = 1171;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	7F67FE4C0C401346005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 705";
+		rLen = 0;
+		rLoc = 22806;
+		rType = 0;
+		vrLen = 2161;
+		vrLoc = 4720;
+	};
+	7F67FE4F0C401354005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = initWithTCPPort;
+		rLen = 15;
+		rLoc = 2629;
+		rType = 0;
+		vrLen = 1265;
+		vrLoc = 2128;
+	};
+	7F67FE500C401354005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */;
+		name = "SimpleHTTPServer.m: 56";
+		rLen = 0;
+		rLoc = 2151;
+		rType = 0;
+		vrLen = 2257;
+		vrLoc = 714;
+	};
+	7F67FE510C401354005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FE340C40128D005A66BD /* NSPort.h */;
+		name = initWithTCPPort;
+		rLen = 15;
+		rLoc = 4368;
+		rType = 0;
+		vrLen = 1376;
+		vrLoc = 3575;
+	};
+	7F67FE520C401354005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 104";
+		rLen = 0;
+		rLoc = 1707;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 847;
+	};
+	7F67FE530C401354005A66BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7A0C3B352B00B24988 /* TKController.h */;
+		name = "TKController.h: 49";
+		rLen = 0;
+		rLoc = 1171;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	7F67FE540C401354005A66BD /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		name = "TKController.m: 705";
