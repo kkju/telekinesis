@@ -18,7 +18,12 @@ function file_row($file, $dir) {
         $blink =  "/t/runscript?path=$path";
         $blink_name = "Run";
       break;
-      case "mp3": // "mov", "m4a", "m4b", "mp4", "m4v";
+	  case "mov":
+	  case "m4a":
+	  case "m4b":
+	  case "mp4":
+	  case "m4v":
+      case "mp3": 
        $server = ereg_replace("\:[0-9]{4,4}", ":".$_ENV["MEDIA_PORT"], $_SERVER["HTTP_HOST"]); 
         $link = "http://".$server."/files/$path";
       break;
