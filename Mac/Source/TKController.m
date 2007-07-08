@@ -284,7 +284,7 @@ return [NSArray arrayWithArray:addresses];
     f = [CIFilter filterWithName:@"CILanczosScaleTransform"];
 		[f setDefaults]; 
 		[f setValue:[NSNumber numberWithFloat:scale] forKey:@"inputScale"];
-		[f setValue:[NSNumber numberWithFloat:1.0] forKey:@"inputAspectRatio"];
+		[f setValue:[NSNumber numberWithFloat:1.0f] forKey:@"inputAspectRatio"];
 		[f setValue:image forKey:@"inputImage"];
 		image = [f valueForKey:@"outputImage"];
     
@@ -300,13 +300,13 @@ return [NSArray arrayWithArray:addresses];
     
     f = [CIFilter filterWithName:@"CIGaussianBlur"];
     [f setDefaults]; 
-    [f setValue:[NSNumber numberWithFloat:3.5] forKey:@"inputRadius"];
+    [f setValue:[NSNumber numberWithFloat:3.5f] forKey:@"inputRadius"];
     [f setValue:image forKey:@"inputImage"];
     image = [f valueForKey:@"outputImage"];
     
 		f = [CIFilter filterWithName:@"CIExposureAdjust"];
 		[f setValue:image forKey:@"inputImage"];
-		[f setValue:[NSNumber numberWithFloat:-2.0] forKey:@"inputEV"];
+		[f setValue:[NSNumber numberWithFloat:-2.0f] forKey:@"inputEV"];
 		image = [f valueForKey:@"outputImage"];
     
     f = [CIFilter filterWithName:@"CIAffineClamp"];
@@ -315,8 +315,8 @@ return [NSArray arrayWithArray:addresses];
 		image = [f valueForKey:@"outputImage"];
     
     f = [CIFilter filterWithName:@"CIColorControls"];
-		[f setValue:[NSNumber numberWithFloat:2.5] forKey:@"inputSaturation"];
-		[f setValue:[NSNumber numberWithFloat:1.0] forKey:@"inputContrast"];
+		[f setValue:[NSNumber numberWithFloat:2.5f] forKey:@"inputSaturation"];
+		[f setValue:[NSNumber numberWithFloat:1.0f] forKey:@"inputContrast"];
 		[f setValue:image forKey:@"inputImage"];
 		image = [f valueForKey:@"outputImage"];
     
@@ -336,7 +336,7 @@ return [NSArray arrayWithArray:addresses];
     NSBitmapImageRep *rep=[NSBitmapImageRep imageRepWithCIImage:image];
   [[rep representationUsingType:NSJPEGFileType
                      properties:formatDictionary] writeToFile:destination atomically:NO];
-  
+  NSLog(@"Wrote Image %@", destination);
   //  NSFileManager *fm = [NSFileManager defaultManager];
   //  [fm copyPath:imagePath toPath:destination handler:nil];   
 }
