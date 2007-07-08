@@ -10,7 +10,11 @@ sendData({
 
 return false;
 }
+
 function hideLocationBar() {
+  setTimeout(hideLocationBarNow, 100);
+}
+function hideLocationBarNow() {
   window.scrollTo(0, 1);
 }
 function handleMouseEvent(e) {
