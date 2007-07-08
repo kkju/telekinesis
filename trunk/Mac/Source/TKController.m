@@ -340,7 +340,6 @@ return [NSArray arrayWithArray:addresses];
   [[rep representationUsingType:NSJPEGFileType
                      properties:formatDictionary] writeToFile:destination atomically:NO];
   
-  NSLog(@"Background %@", destination);
   //  NSFileManager *fm = [NSFileManager defaultManager];
   //  [fm copyPath:imagePath toPath:destination handler:nil];   
 }
@@ -366,7 +365,7 @@ return [NSArray arrayWithArray:addresses];
                                                           name:@"com.apple.desktop"
                                                         object:nil];
   [self reloadDesktopPicture:nil];
-    [self pingServer];
+  //[self pingServer];
   
   
  // No Status item for now
