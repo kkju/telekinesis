@@ -8,7 +8,7 @@ www.andymatuschak.org/xml-namespaces/sparkle">
         <language>en</language> 
         <item> 
             <title>Version 0.9.13 Alpha</title> 
-            <description>http://telekinesis.googlecode.com/svn/site/appcast/Telekinesis.html</description>
+            <description>http://telekinesis.googlecode.com/svn/site/appcast/Telekinesis.txt</description>
             <!--<pubDate>Wed, 09 Jan 2006 19:20:11 +0000</pubDate> -->
             <enclosure url="http://telekinesis.googlecode.com/files/iPhoneRemote_0.9.13.zip" type="application/octet-stream"/> 
         </item> 

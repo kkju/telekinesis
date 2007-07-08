@@ -1,0 +1,23 @@
+0.9.13 (7/8/07)
+  * Improved file listings
+  * Added ability to run shell scripts and launch apps remotely
+
+0.9.12 (7/8/07)
+  * Newer, (hopefully better faster stronger) internal http code
+  * Tweaks all around
+
+0.9.11 (7/7/07)
+  * Fixed security bugs
+  * Ports can be changed
+
+0.9.10
+  * Improved support for applications
+
+0.9.9
+  * Basic preferences (port and media option)
+  * Better support for scripts
+  * Improved support for proxy applications
+
+0.9.8
+  * Added media streaming
+  * Many bug fixes
