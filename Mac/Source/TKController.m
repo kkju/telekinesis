@@ -119,13 +119,8 @@ return [NSArray arrayWithArray:addresses];
     applications = [[NSMutableArray alloc] init];
     
     NSFileManager *fm = [NSFileManager defaultManager];
-    
-    
-    NSString *externalAppsPath = [[self applicationSupportFolder] stringByAppendingPathComponent:@"Apps"];
-    //    NSString *internalAppsPath = [[[NSBundle mainBundle] pathForResource:@"www" ofType:@""] stringByAppendingPathComponent:@"ipps"];
-    
     [fm createDirectoryAtPath:[self applicationSupportFolder] attributes:nil];
-    [fm createDirectoryAtPath:externalAppsPath attributes:nil];
+    [fm createDirectoryAtPath:[self appsFolder] attributes:nil];
     [fm createDirectoryAtPath:[self serverRootFolder] attributes:nil];
     
   }
@@ -261,7 +256,7 @@ return [NSArray arrayWithArray:addresses];
   
   if ([[NSFileManager defaultManager] fileExistsAtPath:[[self applicationSupportFolder] stringByAppendingPathComponent:@"Background.jpg"]]) {
     return;
-}
+  }
   NSDictionary *displaySettings = [notif userInfo];
   
   if (!displaySettings) {
@@ -269,6 +264,8 @@ return [NSArray arrayWithArray:addresses];
                                                                          kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
     
     displaySettings = [displaysDict objectForKey:[NSString stringWithFormat:@"%d", CGMainDisplayID()]];
+    if (!displaySettings) displaySettings = [displaysDict objectForKey:[NSString stringWithFormat:@"default"]];
+
   }
   
   NSString *imagePath = [displaySettings objectForKey:@"ImageFilePath"];
@@ -600,8 +597,12 @@ return [NSArray arrayWithArray:addresses];
   NSString *pass = [passField stringValue];
   [[userField window] close];
   shouldShowHomepage = YES;
+
+  NSString *htpasswdPath = @"/usr/bin/htpasswd";
+  if (![[NSFileManager defaultManager] fileExistsAtPath:htpasswdPath]) // Leopard
+    htpasswdPath = @"/usr/sbin/htpasswd";
   
-  [[NSTask launchedTaskWithLaunchPath:@"/usr/bin/htpasswd"
+  [[NSTask launchedTaskWithLaunchPath:htpasswdPath
                             arguments:[NSArray arrayWithObjects:@"-bc", passfile, user, pass, nil]] waitUntilExit];
   
   // @htpasswd -bc passwords alcor blah  
@@ -757,7 +758,6 @@ return [NSArray arrayWithArray:addresses];
     
     NSString *path = [[params objectForKey:@"path"] stringByStandardizingPath];
     
-    NSAppleScript *script = nil;
     if (path) {
       path = [path stringByStandardizingPath];
       if (![path hasPrefix:@"/"]) {
@@ -779,10 +779,20 @@ return [NSArray arrayWithArray:addresses];
       
       NSLog(@"Running script %@", path);
       
-      script = [[[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
-                                                       error:nil] autorelease];
     }
     
+    
+    if (![[path pathExtension] caseInsensitiveCompare:@"scpt"]) {
+      NSAppleScript *script = nil;
+      script = [[[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
+                                                       error:nil] autorelease];
+      
+      NSAppleEventDescriptor *descriptor = [script executeAndReturnError:nil];
+      data = [[descriptor stringValue] dataUsingEncoding:NSUTF8StringEncoding];
+      mime = @"text/plain";
+    } else if ([[NSFileManager defaultManager] isExecutableFileAtPath:path]) {
+      [NSTask launchedTaskWithLaunchPath:path arguments:[NSArray array]]; 
+    }
     
     //  else {
     //    NSString *source = [params objectForKey:@"source"];
@@ -791,12 +801,8 @@ return [NSArray arrayWithArray:addresses];
     //    }
     //  }
     
-    NSAppleEventDescriptor *descriptor = [script executeAndReturnError:nil];
-    data = [[descriptor stringValue] dataUsingEncoding:NSUTF8StringEncoding];
-    mime = @"text/plain";
-    
     if (!data) {
-      [request replyWithStatusCode:200 message:@""];
+      [request replyWithStatusCode:200 message:nil];
       return;
     }
     
