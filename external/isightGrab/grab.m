@@ -36,10 +36,11 @@
 	if (warmUpCounter >= WARM_UP_FRAMES)
 	{
 		NSBitmapImageRep        *bitmapRep =  [NSBitmapImageRep imageRepWithData:[aFrame TIFFRepresentation]];
-		NSData * PNG = [bitmapRep representationUsingType:NSPNGFileType properties:nil];
-		const char * outputImage = (const char*)[PNG bytes];
-		fprintf(stdout, "Content-Type: image/png\n\n");
-		fwrite(outputImage, sizeof(char), [PNG length], stdout);
+		NSData * JPEG = [bitmapRep representationUsingType:NSJPEGFileType 
+								   properties:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:COMPRESSION_RATIO], NSImageCompressionFactor, nil]];
+		const char * outputImage = (const char*)[JPEG bytes];
+		fprintf(stdout, "Content-Type: image/jpeg\n\n");
+		fwrite(outputImage, sizeof(char), [JPEG length], stdout);
 		fflush(stdout);
 		[camera stop];
 	    exit(0);
