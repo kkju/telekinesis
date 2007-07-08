@@ -12,6 +12,9 @@
 		7F0D27D00C3E872C009FD23E /* TKPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D27CE0C3E872C009FD23E /* TKPref.m */; };
 		7F0D27D10C3E872C009FD23E /* TKPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D27CF0C3E872C009FD23E /* TKPref.tiff */; };
 		7F0D28040C3E88C0009FD23E /* TKPref.nib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D27FE0C3E88C0009FD23E /* TKPref.nib */; };
+		7F1943990C4060A300C868A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1943790C4060A300C868A0 /* QuartzCore.framework */; };
+		7F1943EE0C40656100C868A0 /* NSImage+CIImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F1943EC0C40656100C868A0 /* NSImage+CIImage.h */; };
+		7F1943EF0C40656100C868A0 /* NSImage+CIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1943ED0C40656100C868A0 /* NSImage+CIImage.m */; };
 		7F1E07330C394AA30049F3DA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
 		7F29996A0C225FAE00227C9E /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2999690C225FAE00227C9E /* ApplicationServices.framework */; };
 		7F299A460C22607500227C9E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F299A450C22607500227C9E /* OpenGL.framework */; };
@@ -64,6 +67,7 @@
 				7F362A7E0C3B352B00B24988 /* QSKeyCodeTranslator.h in CopyFiles */,
 				7F362A800C3B352B00B24988 /* TKController.h in CopyFiles */,
 				7F362F370C3C48B900B24988 /* Telekinesis_Prefix.pch in CopyFiles */,
+				7F1943EE0C40656100C868A0 /* NSImage+CIImage.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +86,9 @@
 		7F0D27D30C3E8733009FD23E /* PrefPane-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = "PrefPane-Info.plist"; path = "PrefPane/PrefPane-Info.plist"; sourceTree = "<group>"; };
 		7F0D27D40C3E8733009FD23E /* TKPref.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TKPref.h; path = PrefPane/TKPref.h; sourceTree = "<group>"; };
 		7F0D27FF0C3E88C0009FD23E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = PrefPane/English.lproj/TKPref.nib; sourceTree = "<group>"; };
+		7F1943790C4060A300C868A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		7F1943EC0C40656100C868A0 /* NSImage+CIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CIImage.h"; sourceTree = "<group>"; };
+		7F1943ED0C40656100C868A0 /* NSImage+CIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CIImage.m"; sourceTree = "<group>"; };
 		7F1E07130C394A8A0049F3DA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../../external/Sparkle.framework; sourceTree = "<group>"; };
 		7F2999690C225FAE00227C9E /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		7F299A450C22607500227C9E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
@@ -137,6 +144,7 @@
 				7F73C4CA0C3802C9002E8A31 /* WebKit.framework in Frameworks */,
 				7F548C5A0C398C4F00569195 /* Sparkle.framework in Frameworks */,
 				7F362BBF0C3B504600B24988 /* SystemConfiguration.framework in Frameworks */,
+				7F1943990C4060A300C868A0 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +167,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F1943790C4060A300C868A0 /* QuartzCore.framework */,
 				7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */,
 				7F73C4C90C3802C9002E8A31 /* WebKit.framework */,
 				7F299A450C22607500227C9E /* OpenGL.framework */,
@@ -209,6 +218,8 @@
 				7F362A6A0C3B351F00B24988 /* main.m */,
 				7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */,
 				7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */,
+				7F1943EC0C40656100C868A0 /* NSImage+CIImage.h */,
+				7F1943ED0C40656100C868A0 /* NSImage+CIImage.m */,
 				7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */,
 				7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */,
 			);
@@ -388,6 +399,7 @@
 				7F362A7D0C3B352B00B24988 /* NSURL+Parameters.m in Sources */,
 				7F362A7F0C3B352B00B24988 /* QSKeyCodeTranslator.m in Sources */,
 				7F362A810C3B352B00B24988 /* TKController.m in Sources */,
+				7F1943EF0C40656100C868A0 /* NSImage+CIImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

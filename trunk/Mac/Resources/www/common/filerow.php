@@ -1,5 +1,7 @@
 <?
-function file_row($file, $dir) {
+function file_row($path) {
+  $file, $dir;
+  
   if (substr($file, 0, 1)!=".") {
     $path = "$dir/$file";
     $components = explode('.',$path);
