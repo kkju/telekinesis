@@ -19,10 +19,6 @@
 		7F362A6F0C3B351F00B24988 /* glgrab.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A680C3B351F00B24988 /* glgrab.c */; };
 		7F362A700C3B351F00B24988 /* glgrab.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A690C3B351F00B24988 /* glgrab.h */; };
 		7F362A710C3B351F00B24988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A6A0C3B351F00B24988 /* main.m */; };
-		7F362A720C3B351F00B24988 /* SimpleHTTPConnection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */; };
-		7F362A730C3B351F00B24988 /* SimpleHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */; };
-		7F362A740C3B351F00B24988 /* SimpleHTTPServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */; };
-		7F362A750C3B351F00B24988 /* SimpleHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */; };
 		7F362A7C0C3B352B00B24988 /* NSURL+Parameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A760C3B352B00B24988 /* NSURL+Parameters.h */; };
 		7F362A7D0C3B352B00B24988 /* NSURL+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F362A770C3B352B00B24988 /* NSURL+Parameters.m */; };
 		7F362A7E0C3B352B00B24988 /* QSKeyCodeTranslator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362A780C3B352B00B24988 /* QSKeyCodeTranslator.h */; };
@@ -67,8 +63,6 @@
 			files = (
 				7F1E07330C394AA30049F3DA /* Sparkle.framework in CopyFiles */,
 				7F362A700C3B351F00B24988 /* glgrab.h in CopyFiles */,
-				7F362A720C3B351F00B24988 /* SimpleHTTPConnection.h in CopyFiles */,
-				7F362A740C3B351F00B24988 /* SimpleHTTPServer.h in CopyFiles */,
 				7F362A7C0C3B352B00B24988 /* NSURL+Parameters.h in CopyFiles */,
 				7F362A7E0C3B352B00B24988 /* QSKeyCodeTranslator.h in CopyFiles */,
 				7F362A800C3B352B00B24988 /* TKController.h in CopyFiles */,
@@ -102,10 +96,6 @@
 		7F362A680C3B351F00B24988 /* glgrab.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = glgrab.c; path = Source/glgrab.c; sourceTree = "<group>"; };
 		7F362A690C3B351F00B24988 /* glgrab.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = glgrab.h; path = Source/glgrab.h; sourceTree = "<group>"; };
 		7F362A6A0C3B351F00B24988 /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
-		7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SimpleHTTPConnection.h; path = Source/SimpleHTTPConnection.h; sourceTree = "<group>"; };
-		7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SimpleHTTPConnection.m; path = Source/SimpleHTTPConnection.m; sourceTree = "<group>"; };
-		7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SimpleHTTPServer.h; path = Source/SimpleHTTPServer.h; sourceTree = "<group>"; };
-		7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SimpleHTTPServer.m; path = Source/SimpleHTTPServer.m; sourceTree = "<group>"; };
 		7F362A760C3B352B00B24988 /* NSURL+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "NSURL+Parameters.h"; path = "Source/NSURL+Parameters.h"; sourceTree = "<group>"; };
 		7F362A770C3B352B00B24988 /* NSURL+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Parameters.m"; path = "Source/NSURL+Parameters.m"; sourceTree = "<group>"; };
 		7F362A780C3B352B00B24988 /* QSKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = QSKeyCodeTranslator.h; path = Source/QSKeyCodeTranslator.h; sourceTree = "<group>"; };
@@ -234,12 +224,8 @@
 				7F3962D70C41419600EC6C2D /* HTTPServerRequest+Convenience.h */,
 				7F3962D80C41419600EC6C2D /* HTTPServerRequest+Convenience.m */,
 				7F395E990C411E4F00EC6C2D /* CocoaHTTPServer */,
-				7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */,
-				7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */,
 				7F3962D30C41418D00EC6C2D /* NSImage+CIImage.h */,
 				7F3962D40C41418D00EC6C2D /* NSImage+CIImage.m */,
-				7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */,
-				7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -424,8 +410,6 @@
 			files = (
 				7F362A6F0C3B351F00B24988 /* glgrab.c in Sources */,
 				7F362A710C3B351F00B24988 /* main.m in Sources */,
-				7F362A730C3B351F00B24988 /* SimpleHTTPConnection.m in Sources */,
-				7F362A750C3B351F00B24988 /* SimpleHTTPServer.m in Sources */,
 				7F362A7D0C3B352B00B24988 /* NSURL+Parameters.m in Sources */,
 				7F362A7F0C3B352B00B24988 /* QSKeyCodeTranslator.m in Sources */,
 				7F362A810C3B352B00B24988 /* TKController.m in Sources */,

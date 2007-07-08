@@ -1,6 +1,8 @@
 <?php
 $dir = $_GET["dir"];
 if (!isset($dir)) $dir = $_ENV["HOME"];
+
+if ($dir == "") $dir = "/Volumes/";
 $dir = realpath($dir);
 include("filerow.php");
 ?>
@@ -22,7 +24,10 @@ include("filerow.php");
 echo "<ul id=\"crumbs\">";
 	/* get array containing each directory name in the path */
 	$parts = explode("/", $dir);  
-	echo "<li><a href=\"?dir=/\">" . $_ENV["COMPUTER_NAME"] . "</a></li>";
+	echo "<li><a href=\"?dir=\">" . $_ENV["COMPUTER_NAME"] . "</a></li>";
+
+if ($parts[1] != "Volumes")
+echo "<li> &#x25B6; <a href=\"?dir=/\">" . $_ENV["ROOT_VOLUME_NAME"] . "</a></li>";
 	foreach ($parts as $key => $component) {
 		switch ($dir) {
 			case "about": $label = "About Us"; break;
@@ -34,6 +39,8 @@ echo "<ul id=\"crumbs\">";
 		$url = "";
 		for ($i = 1; $i <= $key; $i++) 
 			{ $url .= $parts[$i] . "/"; }
+    if ($url == "Volumes/") continue;
+
 		if ($component != "") 
 			echo "<li> &#x25B6; <a href=\"?dir=/$url\">$label</a></li>";
 	}
@@ -43,10 +50,14 @@ echo "<ul id=\"crumbs\">";
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
 			$ignoredNames = array("Desktop DB", "Desktop DF");
-						
+      if ($dir == "/") $ignoredNames = array_merge( $ignoredNames, array("Network", "Icon\n", "cores", "bin", "etc", "mach", "mach.sym", "automount", "mach_kernel.ctfsys", "net", "private", "sbin", "tmp", "usr", "var", "home", "Volumes", "mach_kernel", "dev"));
+      if ($dir == "/Volumes") {
+        file_row("/", "");
+        $ignoredNames[] = $_ENV["ROOT_VOLUME_NAME"];
+      }
       while (($file = readdir($dh)) !== false) {
         if (in_array($file, $ignoredNames)) continue;
-        
+     
         
         file_row($file, $dir);
 			

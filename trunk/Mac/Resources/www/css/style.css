@@ -4,14 +4,19 @@ body {
 	margin: 0px;
 	font-family: "Helvetica Neue", "Helvetica";
 }
-.button {
-    color: black;
-    border: 2px solid gray;
-    -webkit-border-radius: 5px;
+.rlink-button {
+  margin-top:2px;
+  margin-left:5px;
+    color: gray;
+    border: 2px solid lightgray;
+    -webkit-border-radius: 3px;
+    background-color:white;
     text-decoration:none;
     float:right;
-    font-size:smaller;
-    padding:2px;
+    font-size:50%;;
+    padding:3px;
+    z-index:1;
+    position:relative;
 }
 
 #crumbs { 
@@ -25,17 +30,29 @@ margin:0;
 #crumbs li {font-size:80%; display: inline; color:white;}
 #crumbs li a {font-size:125%; color:white; text-decoration:none;}
 
-  div.iphonerow {
-    
-    border-bottom: 1px solid lightgray;
-    padding:5px 5px 5px 5px;
-    overflow:hidden;
+div.iphonerow img.icon{
+float:left;
+margin-left:-44px;
+margin-top:-3px;
 
-    font-size:20px;
-      font-family:helvetica;
-      font-weight:bolder;
+}
+div.iphonerow img.arrow{
+margin-top:8px;
 
-  }
+}
+div.iphonerow {
+  border-bottom: 1px solid lightgray;
+  padding:8px 5px 5px 54px;
+  overflow:hidden;
+  font-size:20px;
+    font-family:helvetica;
+    font-weight:bolder;
+
+}
+div.iphonerow span {
+margin-top:10px;
+
+}
 
   div.titlebar {
   padding:3px;

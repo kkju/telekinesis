@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sparkle="http:// 
+www.andymatuschak.org/xml-namespaces/sparkle"> 
+    <channel> 
+        <title>iPhone Remote Changelog</title> 
+        <link>http://www.blacktree.com/appcast/Telekinesis.xml</link> 
+        <description>Most recent changes with links to updates.</description> 
+        <language>en</language> 
+        <item> 
+            <title>Version 0.9.13 Alpha</title> 
+            <description>http://www.blacktree.com/appcast/Telekinesis.html</description>
+            <!--<pubDate>Wed, 09 Jan 2006 19:20:11 +0000</pubDate> -->
+            <enclosure url="http://telekinesis.googlecode.com/files/iPhoneRemote_0.9.13.zip" type="application/octet-stream"/> 
+        </item> 
+    </channel> 
+</rss> 
