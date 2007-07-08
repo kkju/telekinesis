@@ -3,7 +3,7 @@
 www.andymatuschak.org/xml-namespaces/sparkle"> 
     <channel> 
         <title>iPhone Remote Changelog</title> 
-        <link>http://www.blacktree.com/appcast/Telekinesis.xml</link> 
+        <link>http://telekinesis.googlecode.com/svn/site/appcast/Telekinesis.xml</link> 
         <description>Most recent changes with links to updates.</description> 
         <language>en</language> 
         <item> 

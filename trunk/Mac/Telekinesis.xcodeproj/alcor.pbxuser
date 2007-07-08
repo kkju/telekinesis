@@ -147,6 +147,8 @@
 			7F40C0DC0C417505009EF045 /* PBXTextBookmark */ = 7F40C0DC0C417505009EF045 /* PBXTextBookmark */;
 			7F40C0DF0C41750C009EF045 /* PBXTextBookmark */ = 7F40C0DF0C41750C009EF045 /* PBXTextBookmark */;
 			7F40C0E00C41750C009EF045 /* PBXTextBookmark */ = 7F40C0E00C41750C009EF045 /* PBXTextBookmark */;
+			7F40C0EB0C417834009EF045 /* PBXTextBookmark */ = 7F40C0EB0C417834009EF045 /* PBXTextBookmark */;
+			7F40C0EC0C417834009EF045 /* PBXTextBookmark */ = 7F40C0EC0C417834009EF045 /* PBXTextBookmark */;
 			7F9A9C1F0C415C9000ACF9C2 = 7F9A9C1F0C415C9000ACF9C2 /* PBXTextBookmark */;
 			7F9A9C210C415C9000ACF9C2 = 7F9A9C210C415C9000ACF9C2 /* PBXTextBookmark */;
 			7F9A9C3E0C41665200ACF9C2 = 7F9A9C3E0C41665200ACF9C2 /* PBXTextBookmark */;
@@ -384,7 +386,7 @@
 	7F362A7B0C3B352B00B24988 /* TKController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1232, 12810}}";
-			sepNavSelRange = "{27326, 0}";
+			sepNavSelRange = "{27085, 0}";
 			sepNavVisRange = "{20135, 1402}";
 			sepNavVisRect = "{{0, 10727}, {934, 677}}";
 			sepNavWindowFrame = "{{243, 25}, {869, 853}}";
@@ -432,9 +434,9 @@
 	};
 	7F362A920C3B356E00B24988 /* Info.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {686, 994}}";
-			sepNavSelRange = "{1315, 0}";
-			sepNavVisRect = "{{0, 157}, {582, 592}}";
+			sepNavIntBoundsRect = "{{0, 0}, {785, 994}}";
+			sepNavSelRange = "{1884, 0}";
+			sepNavVisRect = "{{0, 4}, {785, 749}}";
 			sepNavWindowFrame = "{{466, 0}, {830, 878}}";
 		};
 	};
@@ -942,6 +944,26 @@
 		vrLoc = 26173;
 	};
 	7F40C0E00C41750C009EF045 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F1943100C4054D000C868A0 /* filerow.php */;
+		name = "filerow.php: 22";
+		rLen = 0;
+		rLoc = 538;
+		rType = 0;
+		vrLen = 1291;
+		vrLoc = 0;
+	};
+	7F40C0EB0C417834009EF045 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
+		name = "TKController.m: 791";
+		rLen = 0;
+		rLoc = 27085;
+		rType = 0;
+		vrLen = 1742;
+		vrLoc = 26173;
+	};
+	7F40C0EC0C417834009EF045 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 7F1943100C4054D000C868A0 /* filerow.php */;
 		name = "filerow.php: 22";
