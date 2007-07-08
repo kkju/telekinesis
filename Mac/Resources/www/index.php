@@ -9,52 +9,41 @@
 <div id="icon-container"></div>
 <br clear="all">
 <div class="page-title" align="center">
-<?php
-  //echo exec("whoami") . " @ ";
-  $SERVER_NAME = $_SERVER["SERVER_NAME"];
-  $IP = gethostbyname ($SERVER_NAME);
-  $server = gethostbyaddr($IP);
-  echo $_ENV["COMPUTER_NAME"];
-?>
+  <?=$_ENV["COMPUTER_NAME"];?>
 </div>
 <script type="text/javascript">
 <?php
-$dirs = array("ipps", $_ENV["HOME"]."/Library/Application Support/iPhone Remote/Apps");
-$i = 0;
-// Open a known directory, and proceed to read its contents
+$dirs = array("ipps", $_ENV["HOME"] . "/Library/Application Support/iPhone Remote/Apps");
+
 foreach ($dirs as $dir) {
-  if (is_dir($dir)) {
-    if ($dh = opendir($dir)) {
-      while (($file = readdir($dh)) !== false) {
-        if (substr($file, 0, 1) !=".") {
-          $i++;
+  if (is_dir($dir) && $dh = opendir($dir)) {
+    while (($file = readdir($dh)) !== false) {
+      if (substr($file, -5, 5) == ".tapp") {
+        $name = substr($file, 0, strrpos($file, '.')); // remove Extension
 
-          $name = $file;
-          if (substr($file, -5, 5) == ".tapp") //continue; // Ignore non-tapps
-          $name = substr($name, 0, strrpos($name,'.')); // remove Extension
+        $basepath = basename($dir);
+        $app_path = "$basepath/$file";
 
-          $basepath = basename($dir);
-          $app_path = "$basepath/$file";
-          $imagepath = "$dir/$file/Icon.png";
-          $imagepath = realpath($imagepath);
+        $imagepath = realpath("$dir/$file/Icon.png");
 
-          if (!file_exists($imagepath)) {
-            $imagepath = "$dir/$file/$name.png";
-            $imagepath = realpath($imagepath);
-          }
-
-          if (file_exists($imagepath)) {
-            $imagepath = "/files/" . $imagepath;
-          } else {
-            $imagepath = "/images/GenericApp.png";
-          }
-
-          echo "new Widget('$name', '$app_path', false, '$imagepath');";
+        // if the image doesn't exist, try a different type
+        if (!file_exists($imagepath)) {
+          $imagepath = realpath("$dir/$file/$name.png");
         }
-      }
 
-      closedir($dh);
+        if (file_exists($imagepath)) {
+          // set the path to something a client can use
+          $imagepath = "/files/" . $imagepath;
+        } else {
+          // give the user a generic image
+          $imagepath = "/images/GenericApp.png";
+        }
+
+        echo "new Widget('$name', '$app_path', false, '$imagepath');";
+      }
     }
+
+    closedir($dh);
   }
 }
 ?>
