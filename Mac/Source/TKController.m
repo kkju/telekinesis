@@ -13,12 +13,19 @@
 #import <string.h>
 #import <sys/socket.h>
 
+#import <QuartzCore/QuartzCore.h>
+
+#import <Quartz/Quartz.h>
 #import <CoreFoundation/CoreFoundation.h>
 #include <arpa/inet.h>
 #include <SystemConfiguration/SystemConfiguration.h>
 #import "NSURL+Parameters.h"
 #import "glgrab.h"
 
+#import "NSImage+CIImage.h"
+
+
+#import "NSImage+CIImage.h"
 #import "QSKeyCodeTranslator.h"
 
 @interface TKController (PrivateMethods)
@@ -235,17 +242,104 @@ return [NSArray arrayWithArray:addresses];
   //NSLog(@"request %@", urlString);
   //[[webView mainFrame] loadRequest:request];
 }
+
+- (void)reloadDesktopPicture:(NSNotification *)notif {
+  
+  
+  NSDictionary *displaySettings = [notif userInfo];
+  
+  if (!displaySettings) {
+    NSDictionary *displaysDict = [(NSDictionary *)CFPreferencesCopyValue(CFSTR("Background"), CFSTR("com.apple.Desktop"),
+                                                                         kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
+    
+    displaySettings = [displaysDict objectForKey:[NSString stringWithFormat:@"%d", CGMainDisplayID()]];
+  }
+  
+  NSString *imagePath = [displaySettings objectForKey:@"ImageFilePath"];
+  CIImage *image = [CIImage imageWithContentsOfURL:[NSURL fileURLWithPath:imagePath]];
+  CGRect extent=[image extent];
+		
+		float w=extent.size.width;
+		float h=extent.size.height;
+  
+    CIFilter *f;
+    
+    float scale = 418.0 / h;
+    
+    
+    
+    f = [CIFilter filterWithName:@"CILanczosScaleTransform"];
+		[f setDefaults]; 
+		[f setValue:[NSNumber numberWithFloat:scale] forKey:@"inputScale"];
+		[f setValue:[NSNumber numberWithFloat:1.0] forKey:@"inputAspectRatio"];
+		[f setValue:image forKey:@"inputImage"];
+		image = [f valueForKey:@"outputImage"];
+    
+    extent=[image extent];
+		
+		w=extent.size.width;
+		h=extent.size.height;
+    
+    f = [CIFilter filterWithName:@"CIAffineClamp"];
+		[f setValue:[NSAffineTransform transform]forKey:@"inputTransform"];
+		[f setValue:image forKey:@"inputImage"];
+		image = [f valueForKey:@"outputImage"];
+    
+    f = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [f setDefaults]; 
+    [f setValue:[NSNumber numberWithFloat:3.5] forKey:@"inputRadius"];
+    [f setValue:image forKey:@"inputImage"];
+    image = [f valueForKey:@"outputImage"];
+    
+		f = [CIFilter filterWithName:@"CIExposureAdjust"];
+		[f setValue:image forKey:@"inputImage"];
+		[f setValue:[NSNumber numberWithFloat:-2.0] forKey:@"inputEV"];
+		image = [f valueForKey:@"outputImage"];
+    
+    f = [CIFilter filterWithName:@"CIAffineClamp"];
+		[f setValue:[NSAffineTransform transform]forKey:@"inputTransform"];
+		[f setValue:image forKey:@"inputImage"];
+		image = [f valueForKey:@"outputImage"];
+    
+    f = [CIFilter filterWithName:@"CIColorControls"];
+		[f setValue:[NSNumber numberWithFloat:2.5] forKey:@"inputSaturation"];
+		[f setValue:[NSNumber numberWithFloat:1.0] forKey:@"inputContrast"];
+		[f setValue:image forKey:@"inputImage"];
+		image = [f valueForKey:@"outputImage"];
+    
+    float inset = floor((w - 320.0) / 2.0);
+    CIVector *cropRect =[CIVector vectorWithX:inset Y:0.0 Z:320.0 W: h];
+    f = [CIFilter filterWithName:@"CICrop"];
+    [f setValue:image forKey:@"inputImage"];
+    [f setValue:cropRect forKey:@"inputRectangle"];
+    image = [f valueForKey:@"outputImage"];
+    
+    NSDictionary *formatDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+      [NSNumber numberWithFloat:0.9], NSImageCompressionFactor,
+      nil];
+    
+    
+    NSString *destination = [[self applicationSupportFolder] stringByAppendingPathComponent:@"background.jpg"];
+    NSBitmapImageRep *rep=[NSBitmapImageRep imageRepWithCIImage:image];
+  [[rep representationUsingType:NSJPEGFileType
+                     properties:formatDictionary] writeToFile:destination atomically:NO];
+  
+  NSLog(@"Background %@", destination);
+  //  NSFileManager *fm = [NSFileManager defaultManager];
+  //  [fm copyPath:imagePath toPath:destination handler:nil];   
+}
+
+
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   
-  NSDictionary *displaysDict = [(NSDictionary *)CFPreferencesCopyValue(CFSTR("Background"), CFSTR("com.apple.Desktop"),
-                                                                                  kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
+  [[NSDistributedNotificationCenter defaultCenter] addObserver:self
+                                                      selector:@selector(reloadDesktopPicture:)
+                                                          name:@"com.apple.desktop"
+                                                        object:nil];
+  [self reloadDesktopPicture:nil];
   
-  NSDictionary *displaySettings = [displaysDict objectForKey:[NSString stringWithFormat:@"%d", CGMainDisplayID()]];
-  NSLog(@"displaysDict %@", [displaySettings objectForKey:@"ImageFilePath"]);
   
-  //NSFileManager *fm = [NSFileManager defaultManager];
-  //[fm 
-  // No Status item for now
+ // No Status item for now
   // statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:24] retain];
   [statusItem setHighlightMode:YES];
   [statusItem setMenu:statusMenu];
