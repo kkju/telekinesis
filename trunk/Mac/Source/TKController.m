@@ -269,6 +269,7 @@ return [NSArray arrayWithArray:addresses];
   }
   
   NSString *imagePath = [displaySettings objectForKey:@"ImageFilePath"];
+  if (!imagePath) return;
   CIImage *image = [CIImage imageWithContentsOfURL:[NSURL fileURLWithPath:imagePath]];
   CGRect extent=[image extent];
 		
@@ -314,11 +315,11 @@ return [NSArray arrayWithArray:addresses];
 		[f setValue:image forKey:@"inputImage"];
 		image = [f valueForKey:@"outputImage"];
     
-    f = [CIFilter filterWithName:@"CIColorControls"];
-		[f setValue:[NSNumber numberWithFloat:2.5f] forKey:@"inputSaturation"];
-		[f setValue:[NSNumber numberWithFloat:1.0f] forKey:@"inputContrast"];
-		[f setValue:image forKey:@"inputImage"];
-		image = [f valueForKey:@"outputImage"];
+//    f = [CIFilter filterWithName:@"CIColorControls"];
+//		[f setValue:[NSNumber numberWithFloat:0.0f] forKey:@"inputSaturation"];
+//		[f setValue:[NSNumber numberWithFloat:1.0f] forKey:@"inputContrast"];
+//		[f setValue:image forKey:@"inputImage"];
+//		image = [f valueForKey:@"outputImage"];
     
     float inset = floor((w - 320.0) / 2.0);
     CIVector *cropRect =[CIVector vectorWithX:inset Y:0.0 Z:320.0 W: h];
