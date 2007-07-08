@@ -4,13 +4,11 @@
 	<meta name="viewport" content="width=320" />
         <meta name="viewport" id="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8" />
-	<script src="/js/remote.js" type="text/javascript" charset="utf-8">
-
-  
-  </script>
+	<script src="/js/remote.js" type="text/javascript" charset="utf-8" />
+<script src="/js/hidelocation.js" type="text/javascript" charset="utf-8" />
 </head>
 
-<body style="margin:0;padding:0;" onLoad="setTimeout(function(){window.scrollTo(0, 1);}, 100);" >
+<body style="margin:0;padding:0;" >
 	
     <div style="background-color:black; width:100%; height:20px;"></div>
     <br>

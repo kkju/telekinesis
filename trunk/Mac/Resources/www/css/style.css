@@ -14,13 +14,16 @@ body {
     padding:2px;
 }
 
-#crumbs { list-style: none;
-  background-color:gray;
+#crumbs { 
+list-style: none;
+  background-color:#00A;
+  background-image:url('/images/header-gradient.png');
+  border-bottom:1px solid #006;
 padding:8px;
 margin:0;
    }
-#crumbs li { display: inline; color:white;}
-#crumbs li a { color:white; text-decoration:none;}
+#crumbs li {font-size:80%; display: inline; color:white;}
+#crumbs li a {font-size:125%; color:white; text-decoration:none;}
 
   div.iphonerow {
     

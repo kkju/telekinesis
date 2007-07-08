@@ -13,8 +13,6 @@
 		7F0D27D10C3E872C009FD23E /* TKPref.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D27CF0C3E872C009FD23E /* TKPref.tiff */; };
 		7F0D28040C3E88C0009FD23E /* TKPref.nib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D27FE0C3E88C0009FD23E /* TKPref.nib */; };
 		7F1943990C4060A300C868A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1943790C4060A300C868A0 /* QuartzCore.framework */; };
-		7F1943EE0C40656100C868A0 /* NSImage+CIImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F1943EC0C40656100C868A0 /* NSImage+CIImage.h */; };
-		7F1943EF0C40656100C868A0 /* NSImage+CIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1943ED0C40656100C868A0 /* NSImage+CIImage.m */; };
 		7F1E07330C394AA30049F3DA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
 		7F29996A0C225FAE00227C9E /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2999690C225FAE00227C9E /* ApplicationServices.framework */; };
 		7F299A460C22607500227C9E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F299A450C22607500227C9E /* OpenGL.framework */; };
@@ -44,6 +42,14 @@
 		7F362BBF0C3B504600B24988 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */; };
 		7F362F370C3C48B900B24988 /* Telekinesis_Prefix.pch in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F362F360C3C48B900B24988 /* Telekinesis_Prefix.pch */; };
 		7F362F390C3C48BF00B24988 /* Telekinesis.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F362F380C3C48BF00B24988 /* Telekinesis.icns */; };
+		7F395EB00C411E4F00EC6C2D /* HTTPServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F395EA20C411E4F00EC6C2D /* HTTPServer.h */; };
+		7F395EB10C411E4F00EC6C2D /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F395EA30C411E4F00EC6C2D /* HTTPServer.m */; };
+		7F395EB20C411E4F00EC6C2D /* TCPServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F395EA40C411E4F00EC6C2D /* TCPServer.h */; };
+		7F395EB30C411E4F00EC6C2D /* TCPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F395EA50C411E4F00EC6C2D /* TCPServer.m */; };
+		7F3962D50C41418D00EC6C2D /* NSImage+CIImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F3962D30C41418D00EC6C2D /* NSImage+CIImage.h */; };
+		7F3962D60C41418D00EC6C2D /* NSImage+CIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3962D40C41418D00EC6C2D /* NSImage+CIImage.m */; };
+		7F3962D90C41419600EC6C2D /* HTTPServerRequest+Convenience.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F3962D70C41419600EC6C2D /* HTTPServerRequest+Convenience.h */; };
+		7F3962DA0C41419600EC6C2D /* HTTPServerRequest+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3962D80C41419600EC6C2D /* HTTPServerRequest+Convenience.m */; };
 		7F3A50D10C3F348E0020DD5D /* TKMenu_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A50CF0C3F348E0020DD5D /* TKMenu_disabled.png */; };
 		7F3A50D20C3F348E0020DD5D /* TKMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A50D00C3F348E0020DD5D /* TKMenu.png */; };
 		7F548C5A0C398C4F00569195 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
@@ -67,7 +73,10 @@
 				7F362A7E0C3B352B00B24988 /* QSKeyCodeTranslator.h in CopyFiles */,
 				7F362A800C3B352B00B24988 /* TKController.h in CopyFiles */,
 				7F362F370C3C48B900B24988 /* Telekinesis_Prefix.pch in CopyFiles */,
-				7F1943EE0C40656100C868A0 /* NSImage+CIImage.h in CopyFiles */,
+				7F395EB00C411E4F00EC6C2D /* HTTPServer.h in CopyFiles */,
+				7F395EB20C411E4F00EC6C2D /* TCPServer.h in CopyFiles */,
+				7F3962D50C41418D00EC6C2D /* NSImage+CIImage.h in CopyFiles */,
+				7F3962D90C41419600EC6C2D /* HTTPServerRequest+Convenience.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +96,6 @@
 		7F0D27D40C3E8733009FD23E /* TKPref.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TKPref.h; path = PrefPane/TKPref.h; sourceTree = "<group>"; };
 		7F0D27FF0C3E88C0009FD23E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = PrefPane/English.lproj/TKPref.nib; sourceTree = "<group>"; };
 		7F1943790C4060A300C868A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
-		7F1943EC0C40656100C868A0 /* NSImage+CIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CIImage.h"; sourceTree = "<group>"; };
-		7F1943ED0C40656100C868A0 /* NSImage+CIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CIImage.m"; sourceTree = "<group>"; };
 		7F1E07130C394A8A0049F3DA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../../external/Sparkle.framework; sourceTree = "<group>"; };
 		7F2999690C225FAE00227C9E /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		7F299A450C22607500227C9E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
@@ -118,6 +125,14 @@
 		7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		7F362F360C3C48B900B24988 /* Telekinesis_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Telekinesis_Prefix.pch; path = Source/Telekinesis_Prefix.pch; sourceTree = "<group>"; };
 		7F362F380C3C48BF00B24988 /* Telekinesis.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Telekinesis.icns; path = Resources/Telekinesis.icns; sourceTree = "<group>"; };
+		7F395EA20C411E4F00EC6C2D /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		7F395EA30C411E4F00EC6C2D /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		7F395EA40C411E4F00EC6C2D /* TCPServer.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TCPServer.h; sourceTree = "<group>"; };
+		7F395EA50C411E4F00EC6C2D /* TCPServer.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TCPServer.m; sourceTree = "<group>"; };
+		7F3962D30C41418D00EC6C2D /* NSImage+CIImage.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "NSImage+CIImage.h"; path = "Source/NSImage+CIImage.h"; sourceTree = "<group>"; };
+		7F3962D40C41418D00EC6C2D /* NSImage+CIImage.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSImage+CIImage.m"; path = "Source/NSImage+CIImage.m"; sourceTree = "<group>"; };
+		7F3962D70C41419600EC6C2D /* HTTPServerRequest+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "HTTPServerRequest+Convenience.h"; path = "Source/HTTPServerRequest+Convenience.h"; sourceTree = "<group>"; };
+		7F3962D80C41419600EC6C2D /* HTTPServerRequest+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "HTTPServerRequest+Convenience.m"; path = "Source/HTTPServerRequest+Convenience.m"; sourceTree = "<group>"; };
 		7F3A50CF0C3F348E0020DD5D /* TKMenu_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKMenu_disabled.png; sourceTree = "<group>"; };
 		7F3A50D00C3F348E0020DD5D /* TKMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKMenu.png; sourceTree = "<group>"; };
 		7F67FF550C403709005A66BD /* Tapp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tapp.icns; path = Resources/Tapp.icns; sourceTree = "<group>"; };
@@ -216,10 +231,13 @@
 				7F362A680C3B351F00B24988 /* glgrab.c */,
 				7F362A690C3B351F00B24988 /* glgrab.h */,
 				7F362A6A0C3B351F00B24988 /* main.m */,
+				7F3962D70C41419600EC6C2D /* HTTPServerRequest+Convenience.h */,
+				7F3962D80C41419600EC6C2D /* HTTPServerRequest+Convenience.m */,
+				7F395E990C411E4F00EC6C2D /* CocoaHTTPServer */,
 				7F362A6B0C3B351F00B24988 /* SimpleHTTPConnection.h */,
 				7F362A6C0C3B351F00B24988 /* SimpleHTTPConnection.m */,
-				7F1943EC0C40656100C868A0 /* NSImage+CIImage.h */,
-				7F1943ED0C40656100C868A0 /* NSImage+CIImage.m */,
+				7F3962D30C41418D00EC6C2D /* NSImage+CIImage.h */,
+				7F3962D40C41418D00EC6C2D /* NSImage+CIImage.m */,
 				7F362A6D0C3B351F00B24988 /* SimpleHTTPServer.h */,
 				7F362A6E0C3B351F00B24988 /* SimpleHTTPServer.m */,
 			);
@@ -269,6 +287,18 @@
 				7F0D27FE0C3E88C0009FD23E /* TKPref.nib */,
 			);
 			name = PrefPane;
+			sourceTree = "<group>";
+		};
+		7F395E990C411E4F00EC6C2D /* CocoaHTTPServer */ = {
+			isa = PBXGroup;
+			children = (
+				7F395EA20C411E4F00EC6C2D /* HTTPServer.h */,
+				7F395EA30C411E4F00EC6C2D /* HTTPServer.m */,
+				7F395EA40C411E4F00EC6C2D /* TCPServer.h */,
+				7F395EA50C411E4F00EC6C2D /* TCPServer.m */,
+			);
+			name = CocoaHTTPServer;
+			path = Source/CocoaHTTPServer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,7 +429,10 @@
 				7F362A7D0C3B352B00B24988 /* NSURL+Parameters.m in Sources */,
 				7F362A7F0C3B352B00B24988 /* QSKeyCodeTranslator.m in Sources */,
 				7F362A810C3B352B00B24988 /* TKController.m in Sources */,
-				7F1943EF0C40656100C868A0 /* NSImage+CIImage.m in Sources */,
+				7F395EB10C411E4F00EC6C2D /* HTTPServer.m in Sources */,
+				7F395EB30C411E4F00EC6C2D /* TCPServer.m in Sources */,
+				7F3962D60C41418D00EC6C2D /* NSImage+CIImage.m in Sources */,
+				7F3962DA0C41419600EC6C2D /* HTTPServerRequest+Convenience.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

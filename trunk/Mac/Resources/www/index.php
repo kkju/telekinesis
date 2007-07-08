@@ -8,17 +8,22 @@
   <meta name="viewport" content="width=320, height=418" />
   <link rel="stylesheet" href="css/menu.css" type="text/css" media="screen" charset="utf-8">
   <script src="js/menu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/hidelocation.js" type="text/javascript" charset="utf-8" />
 </head>
 
 <?
 
-$img_path = $_ENV["HOME"]."/Library/Application Support/iPhone Remote/background.jpg";
+$img_path = $_ENV["HOME"]."/Library/Application Support/iPhone Remote/Background.jpg";
+
+if (!file_exists($img_path))
+	$img_path = $_ENV["HOME"]."/Library/Application Support/iPhone Remote/Background.default.jpg";
+
 //echo $img_path;
-//if (!file_exists($img_path)) {
-//  echo '<body>';
-//} else {
-  echo "<body style=\"background:url('/files/$img_path');\">";
-//}
+if (!file_exists($img_path)) {
+  echo '<body>';
+} else {
+  echo "<body style=\"background: black url('/files/$img_path');\">";
+}
 
 ?>
 
@@ -27,7 +32,7 @@ $img_path = $_ENV["HOME"]."/Library/Application Support/iPhone Remote/background
 <div id="icon-container"></div>
 <br clear="all">
 <div class="page-title" align="center">
-  <?=$_ENV["COMPUTER_NAME"];?>
+  <?=$_ENV["COMPUTER_NAME"];?> - <?=$_ENV["USER_FULLNAME"];?>
 </div>
 <script type="text/javascript">
 <?php

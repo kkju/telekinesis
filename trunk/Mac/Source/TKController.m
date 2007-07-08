@@ -7,8 +7,8 @@
 //
 
 #import "TKController.h"
-#import "SimpleHTTPConnection.h"
-#import "SimpleHTTPServer.h"
+#import "HTTPServer.h"
+#import "HTTPServerRequest+Convenience.h"
 #import <stdio.h>
 #import <string.h>
 #import <sys/socket.h>
@@ -97,8 +97,22 @@ return [NSArray arrayWithArray:addresses];
 - (id) init {
   self = [super init];
   if (self != nil) {
-    [self setServer:[[[SimpleHTTPServer alloc] initWithTCPPort:[self telePortNumber]
-                                                      delegate:self] autorelease]];
+  
+    server = [[HTTPServer alloc] init];
+    [server setType:@"_http._tcp."];
+    [server setName:@"Cocoa HTTP Server"];
+    [server setDelegate:self];
+    [server setPort:[self telePortNumber]];
+    [server setDocumentRoot:[NSURL fileURLWithPath:@"/"]];
+    
+    NSError *startError = nil;
+    if (![server start:&startError] ) {
+      NSLog(@"Error starting server: %@", startError);
+    } else {
+      NSLog(@"Starting server on port %d", [server port]);
+    }
+    
+
     
     [self applicationSupportFolder];
     
@@ -245,7 +259,9 @@ return [NSArray arrayWithArray:addresses];
 
 - (void)reloadDesktopPicture:(NSNotification *)notif {
   
-  
+  if ([[NSFileManager defaultManager] fileExistsAtPath:[[self applicationSupportFolder] stringByAppendingPathComponent:@"Background.jpg"]]) {
+    return;
+}
   NSDictionary *displaySettings = [notif userInfo];
   
   if (!displaySettings) {
@@ -319,7 +335,7 @@ return [NSArray arrayWithArray:addresses];
       nil];
     
     
-    NSString *destination = [[self applicationSupportFolder] stringByAppendingPathComponent:@"background.jpg"];
+    NSString *destination = [[self applicationSupportFolder] stringByAppendingPathComponent:@"Background.default.jpg"];
     NSBitmapImageRep *rep=[NSBitmapImageRep imageRepWithCIImage:image];
   [[rep representationUsingType:NSJPEGFileType
                      properties:formatDictionary] writeToFile:destination atomically:NO];
@@ -487,6 +503,9 @@ return [NSArray arrayWithArray:addresses];
   NSString *rootVolumeName = [[NSFileManager defaultManager] displayNameAtPath:@"/"];
   NSMutableDictionary *environment = [[[[NSProcessInfo processInfo] environment] mutableCopy] autorelease];
   
+  
+  [environment setValue:NSUserName() forKey:@"USER_NAME"];
+  [environment setValue:NSFullUserName() forKey:@"USER_FULLNAME"];
   [environment setValue:computerName forKey:@"COMPUTER_NAME"];
   [environment setValue:[NSString stringWithFormat:@"%d", [self mediaPortNumber]] forKey:@"MEDIA_PORT"];
   [environment  setValue:rootVolumeName forKey:@"ROOT_VOLUME_NAME"];
@@ -627,13 +646,13 @@ return [NSArray arrayWithArray:addresses];
 
 
 
-- (void)setServer:(SimpleHTTPServer *)sv
+- (void)setServer:(HTTPServer *)sv
 {
   [server autorelease];
   server = [sv retain];
 }
 
-- (SimpleHTTPServer *)server { return server; }
+- (HTTPServer *)server { return server; }
 
 
 - (void)processTelekinesis:(NSDictionary *)params connection:(SimpleHTTPConnection *)connection {
@@ -671,11 +690,20 @@ return [NSArray arrayWithArray:addresses];
 
 
 
-
+- (void)HTTPConnection:(HTTPConnection *)conn didSendResponse:(HTTPServerRequest *)request {
+//  NSLog(@"     finish %@", [request url]); 
+  //[conn invalidate];
+  // For some reason connections never release themselves. To get around this, force them to close after 5 seconds
+  // This may have something to do with SSL and keep-alive, but I'm not sure....
+  
+  [conn performSelector:@selector(invalidate) withObject:nil afterDelay:1.0];
+}
 
 // Nasty function that handles most of the advanced functionality
-
-- (void)processURL:(NSURL *)url connection:(SimpleHTTPConnection *)connection {
+  
+- (void)HTTPConnection:(HTTPConnection *)conn didReceiveRequest:(HTTPServerRequest *)request {
+//  NSLog(@"     start %@", conn, [[[request url] path] lastPathComponent]); 
+  NSURL *url = [request url];    
   
   NSData *data = nil;
   NSString *mime = nil;
@@ -713,7 +741,7 @@ return [NSArray arrayWithArray:addresses];
       [NSString stringWithFormat:@"name=%d+%d", (int)rect.origin.x, (int)rect.origin.y], @"Set-Cookie",
       nil];
     
-    [server replyWithStatusCode:200 headers:headers body:data];  // 200 = 'OK'
+    [request replyWithStatusCode:200 headers:headers body:data];  // 200 = 'OK'
     usleep(100000);
     return;
     
@@ -769,7 +797,7 @@ return [NSArray arrayWithArray:addresses];
     mime = @"text/plain";
     
     if (!data) {
-      [server replyWithStatusCode:200 message:@""];
+      [request replyWithStatusCode:200 message:@""];
       return;
     }
     
@@ -778,7 +806,7 @@ return [NSArray arrayWithArray:addresses];
     
     NSDictionary *params =  [url parameterDictionary];
     NSString *ident = [params objectForKey:@"id"];
-    [server replyWithStatusCode:200 message:[NSString stringWithFormat:@"found(%@)",ident]];
+    [request replyWithStatusCode:200 message:[NSString stringWithFormat:@"found(%@)",ident]];
     
     
   } else if ([[url path] hasPrefix:@"/icon"]) {
@@ -809,7 +837,7 @@ return [NSArray arrayWithArray:addresses];
   
   CGPostMouseEvent(p, 0, 1, 1);
   CGPostMouseEvent(p, 0, 1, 0);    
-  [server replyWithStatusCode:200 message:@""];
+  [request replyWithStatusCode:200 message:@""];
   
   return;
 #pragma mark move
@@ -822,7 +850,7 @@ return [NSArray arrayWithArray:addresses];
   p.y = [[params objectForKey:@"y"] intValue];
   CGWarpMouseCursorPosition(p);
   
-  [server replyWithStatusCode:200 message:@""];
+  [request replyWithStatusCode:200 message:@""];
   
   return;
   
@@ -848,7 +876,7 @@ return [NSArray arrayWithArray:addresses];
         if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, false ); // 'shift up
     }
   }
-  [server replyWithStatusCode:200 message:@""];
+  [request replyWithStatusCode:200 message:@""];
   
   return;
   
@@ -866,19 +894,16 @@ return [NSArray arrayWithArray:addresses];
 } 
 
 if(data && mime) {
-  [server replyWithData: data
+  [request replyWithData: data
                MIMEType: mime];
 } else {
   NSString *errorMsg = [NSString stringWithFormat:@"Error in URL: %@", url];
   
-  [server replyWithStatusCode:400 // Bad Request
+  [request replyWithStatusCode:400 // Bad Request
                       message:errorMsg];
 }
 }
 
-- (void)stopProcessing {
-  
-}
 
 @end
 

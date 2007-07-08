@@ -9,10 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
-@class SimpleHTTPServer, SimpleHTTPConnection;
+@class HTTPServer, SimpleHTTPConnection;
 
 @interface TKController : NSObject {
-  SimpleHTTPServer *server;
+  HTTPServer *server;
   NSTask *apacheTask;
   
   int region;
@@ -31,11 +31,11 @@
 - (IBAction)savePass:(id)sender;
 - (IBAction)choosePass:(id)sender;
 - (IBAction)showPrefs:(id) sender;
-- (void)setServer:(SimpleHTTPServer *)sv;
-- (SimpleHTTPServer *)server;
+- (void)setServer:(HTTPServer *)sv;
+- (HTTPServer *)server;
 
-- (void)processURL:(NSURL *)path connection:(SimpleHTTPConnection *)connection;
-- (void)stopProcessing;
+//- (void)processURL:(NSURL *)path connection:(SimpleHTTPConnection *)connection;
+//- (void)stopProcessing;
 
 - (IBAction) restartServices:(id)sender;
 - (IBAction) toggleServices:(id)sender;
