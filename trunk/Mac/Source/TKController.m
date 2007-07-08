@@ -59,9 +59,9 @@ void CatchInterrupt (int signum) {
   
   NSMutableDictionary *newDefaults = [NSMutableDictionary dictionary];
   [newDefaults addEntriesFromDictionary:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSUserDefaults"]];
-  [newDefaults setObject:[NSNumber numberWithBool:NO]
+  [newDefaults  setValue:[NSNumber numberWithBool:NO]
                   forKey:@"headersHidden"];
-  [newDefaults setObject:@"./Contents/Resources/style.css"
+  [newDefaults  setValue:@"./Contents/Resources/style.css"
                   forKey:@"stylePath"];
   
   [[NSUserDefaults standardUserDefaults] registerDefaults:newDefaults];
@@ -170,8 +170,8 @@ return [NSArray arrayWithArray:addresses];
     NSString *infoPath = [path stringByAppendingPathComponent:@"Info.plist"];
     NSMutableDictionary *info = [NSMutableDictionary dictionaryWithContentsOfFile:infoPath];
     if (!info) info = [NSMutableDictionary dictionary];
-    [info setObject:path forKey:@"path"];
-    [info setObject:[[path lastPathComponent] stringByDeletingPathExtension] forKey:@"name"];
+    [info  setValue:path forKey:@"path"];
+    [info  setValue:[[path lastPathComponent] stringByDeletingPathExtension] forKey:@"name"];
     if (info) [applications addObject:info];
   }
   NSLog(@"Applications installed: %@", [[applications valueForKey:@"name"] componentsJoinedByString:@","]);
@@ -329,6 +329,19 @@ return [NSArray arrayWithArray:addresses];
   //  [fm copyPath:imagePath toPath:destination handler:nil];   
 }
 
+- (void)pingServer {
+   NSArray *interfaces = [[self class] currentIP4Addresses];
+  NSArray *addresses = [interfaces valueForKeyPath:@"@distinctUnionOfArrays.Addresses"];
+  NSString *urlString = [NSString stringWithFormat:
+                                            @"http://tele.glenmurphy.com/submit.php?name=%@&uid=%@&ips=%@&ports=%@",
+    [(id)SCDynamicStoreCopyComputerName(NULL, NULL) autorelease],
+    NSUserName(),
+    [addresses componentsJoinedByString:@","],
+    [NSString stringWithFormat:@"%d:main",[self portNumber]]
+    ];
+  NSLog(@"ping %@", [NSURL URLWithString:urlString]);
+  NSLog(@"Ping: %@", [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString]]);
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   
@@ -337,6 +350,7 @@ return [NSArray arrayWithArray:addresses];
                                                           name:@"com.apple.desktop"
                                                         object:nil];
   [self reloadDesktopPicture:nil];
+    [self pingServer];
   
   
  // No Status item for now
@@ -419,7 +433,7 @@ return [NSArray arrayWithArray:addresses];
     NSDictionary *startTaskOptions =  [info objectForKey:@"startTask"];
     NSTask *task = [self taskWithDictionary:startTaskOptions basePath:path];
     if (task) {
-      [info setObject:task forKey:@"task"];
+      [info  setValue:task forKey:@"task"];
       
       NSLog(@"Starting task for %@", [info objectForKey:@"name"]);
       [task launch];
@@ -473,9 +487,9 @@ return [NSArray arrayWithArray:addresses];
   NSString *rootVolumeName = [[NSFileManager defaultManager] displayNameAtPath:@"/"];
   NSMutableDictionary *environment = [[[[NSProcessInfo processInfo] environment] mutableCopy] autorelease];
   
-  [environment setObject:computerName forKey:@"COMPUTER_NAME"];
-  [environment setObject:[NSString stringWithFormat:@"%d", [self mediaPortNumber]] forKey:@"MEDIA_PORT"];
-  [environment setObject:rootVolumeName forKey:@"ROOT_VOLUME_NAME"];
+  [environment setValue:computerName forKey:@"COMPUTER_NAME"];
+  [environment setValue:[NSString stringWithFormat:@"%d", [self mediaPortNumber]] forKey:@"MEDIA_PORT"];
+  [environment  setValue:rootVolumeName forKey:@"ROOT_VOLUME_NAME"];
   apacheTask = [[NSTask alloc] init];
   [apacheTask setLaunchPath:@"/usr/sbin/httpd"];
   [apacheTask setArguments:arguments];
@@ -704,6 +718,12 @@ return [NSArray arrayWithArray:addresses];
     return;
     
     
+#pragma mark Open something
+  } else if ([[url path] hasPrefix:@"/open"]) {
+    NSDictionary *params = [url parameterDictionary];
+    NSString *path = [[params objectForKey:@"path"] stringByStandardizingPath];
+    [[NSWorkspace sharedWorkspace] openFile:path];
+    
 #pragma mark Run a script
   } else if ([[url path] hasPrefix:@"/runscript"]) {
     NSDictionary *params =  [url parameterDictionary];
@@ -754,7 +774,14 @@ return [NSArray arrayWithArray:addresses];
     }
     
 #pragma mark Get an icon
-} else if ([[url path] hasPrefix:@"/icon"]) {
+  } else if ([[url path] hasPrefix:@"/test"]) {
+    
+    NSDictionary *params =  [url parameterDictionary];
+    NSString *ident = [params objectForKey:@"id"];
+    [server replyWithStatusCode:200 message:[NSString stringWithFormat:@"found(%@)",ident]];
+    
+    
+  } else if ([[url path] hasPrefix:@"/icon"]) {
   NSDictionary *params =  [url parameterDictionary];
   
   NSString *path = [params objectForKey:@"path"];
