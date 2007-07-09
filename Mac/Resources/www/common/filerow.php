@@ -29,7 +29,8 @@ function file_row($file, $dir) {
 	  case "m4b":
 	  case "mp4":
 	  case "m4v":
-      case "mp3": 
+      case "mp3":
+	  case "m4p":
        $server = ereg_replace("\:[0-9]{4,4}", ":".$_ENV["MEDIA_PORT"], $_SERVER["HTTP_HOST"]); 
         $link = "http://".$server."/files". str_replace("%2F","/",rawurlencode($path)); // keep slashes safe in this case
       break;
