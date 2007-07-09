@@ -6,9 +6,8 @@ Interested in helping create more apps? Let us know what you are interested in a
  
 Feel like helping others? Lend a hand on the [http://code.google.com/p/telekinesis/issues/list issues]
 
-
 === Development ===
-  * Full apple remote emulation
+  * Full apple remote emulation  [Neil D]
   * Full iTunes Browsing & Now Playing screen
   * Dashboard widget (for access from other macs)
 
@@ -16,6 +15,12 @@ Feel like helping others? Lend a hand on the [http://code.google.com/p/telekines
   * A full security review by Someone Who Knows
   * Authentication against the account user name and password
 
-=== Visual design ===
-  * Better default background picture. Something similar to what's there, but cleaner.
-  * ~~Proper (monochrome, vector) icon for scripts~~ Thanks Has AND Dain!
+=== Tapp Developers ===
+To make all of the apps feel refined, we'd like to get developers interested in being point person for the internal ones:
+
+Screen/VNC - ???
+File Browser - ???
+Camera - bwhitman
+Trackpad - gmurphy
+Remote - Neil D.
+Spotlight - ksmarshall
