@@ -5,7 +5,6 @@
 		activeExecutable = 7F2998B10C224C3700227C9E /* iPhone Remote */;
 		activeTarget = 8D1107260486CEB800E47090 /* iPhone Remote */;
 		addToTargets = (
-			8D1107260486CEB800E47090 /* iPhone Remote */,
 		);
 		breakpoints = (
 			7FFBFF1C0C3749C200C1B8EB /* TKController.m:166 */,
@@ -213,6 +212,11 @@
 		name = filerow.php;
 		path = /Volumes/Lux/telekinesis/trunk/Mac/Resources/www/common/filerow.php;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {934, 924}}";
+			sepNavSelRange = "{688, 0}";
+			sepNavVisRect = "{{0, 2}, {934, 677}}";
+		};
 	};
 	7F1E07000C3941F40049F3DA /* TKController.h:29 */ = {
 		isa = PBXFileBreakpoint;
@@ -569,7 +573,7 @@
 		fRef = 7F67FDFC0C401087005A66BD /* dirlist.php */;
 		name = "dirlist.php: 53";
 		rLen = 0;
-		rLoc = 1642;
+		rLoc = 1699;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 810;
@@ -579,7 +583,7 @@
 		fRef = 7F1943100C4054D000C868A0 /* filerow.php */;
 		name = "filerow.php: 21";
 		rLen = 0;
-		rLoc = 559;
+		rLoc = 586;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 0;
@@ -599,7 +603,7 @@
 		fRef = 7F67FDFC0C401087005A66BD /* dirlist.php */;
 		name = "dirlist.php: 53";
 		rLen = 0;
-		rLoc = 1642;
+		rLoc = 1699;
 		rType = 0;
 		vrLen = 1571;
 		vrLoc = 810;
@@ -609,7 +613,7 @@
 		fRef = 7F1943100C4054D000C868A0 /* filerow.php */;
 		name = "filerow.php: 21";
 		rLen = 0;
-		rLoc = 559;
+		rLoc = 586;
 		rType = 0;
 		vrLen = 1233;
 		vrLoc = 0;
@@ -847,6 +851,11 @@
 		name = dirlist.php;
 		path = /Volumes/Lux/telekinesis/trunk/Mac/Resources/www/common/dirlist.php;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1586, 1148}}";
+			sepNavSelRange = "{1406, 0}";
+			sepNavVisRect = "{{0, 50}, {934, 677}}";
+		};
 	};
 	7F67FF030C402F43005A66BD /* TKController.m:133 */ = {
 		isa = PBXFileBreakpoint;
