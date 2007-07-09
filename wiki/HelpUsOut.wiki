@@ -1,4 +1,4 @@
-|| http://telekinesis.googlecode.com/svn/site/images/HelpWanted.png|| Want to make iPhone Remote better? Feel free to review the code and offer suggestions or lend a hand on the [http://code.google.com/p/telekinesis/issues/list issues] ||
+|| http://telekinesis.googlecode.com/svn/site/images/HelpWanted.png|| Want to make iPhone Remote better? Feel free to [http://code.google.com/p/telekinesis/source review the code] and offer suggestions or lend a hand on the [http://code.google.com/p/telekinesis/issues/list issues] ||
 
 
 
@@ -25,4 +25,3 @@ To make all of the apps feel refined, we'd like to get developers who'd be inter
   * _Trackpad_ - gmurphy
 
 Let us know if you are interested in contributing to any of these or if you have an app that we should include in the application.
-
