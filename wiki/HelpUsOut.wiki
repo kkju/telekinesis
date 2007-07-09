@@ -18,9 +18,9 @@ Feel like helping others? Lend a hand on the [http://code.google.com/p/telekines
 === Tapp Developers ===
 To make all of the apps feel refined, we'd like to get developers interested in being point person for the internal ones:
 
-Screen/VNC - ???
-File Browser - ???
-Camera - bwhitman
-Trackpad - gmurphy
-Remote - Neil D.
-Spotlight - ksmarshall
+  * Screen/VNC - ???
+  * File Browser - ???
+  * Camera - bwhitman
+  * _Trackpad_ - gmurphy
+  * Remote - Neil D.
+  * _Spotlight_ - ksmarshall
