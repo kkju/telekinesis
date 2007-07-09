@@ -16,7 +16,7 @@
 To make all of the apps feel refined, we'd like to get developers who'd be interested in working on each area:
 
   * Server - jnjitkoff
-  * Menu -gmurphy/jnjitkoff
+  * Menu - gmurphy/jnjitkoff
   * Screen/VNC - ???
   * File Browser - ???
   * Camera - bwhitman
