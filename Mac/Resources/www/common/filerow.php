@@ -9,7 +9,7 @@ function file_row($file, $dir) {
       $extension = end($components);
     }
     
-    $link =  addslashes("/files/$path");
+    $link =  str_replace("%2F","/",rawurlencode("/files/$path"));
     $rlink =  "/t/open?path=".rawurlencode($path);
     $rlink_name =  "Open";
     
