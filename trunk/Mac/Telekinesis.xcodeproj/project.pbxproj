@@ -127,6 +127,7 @@
 		7F3A50D00C3F348E0020DD5D /* TKMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKMenu.png; sourceTree = "<group>"; };
 		7F67FF550C403709005A66BD /* Tapp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tapp.icns; path = Resources/Tapp.icns; sourceTree = "<group>"; };
 		7F73C4C90C3802C9002E8A31 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		7FCB9FE30C41FC9F002F2538 /* site */ = {isa = PBXFileReference; lastKnownFileType = folder; name = site; path = ../../site; sourceTree = SOURCE_ROOT; };
 		8D1107320486CEB800E47090 /* iPhone Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -207,6 +208,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				7F0D27930C3E8364009FD23E /* PrefPane */,
+				7FCB9FE30C41FC9F002F2538 /* site */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
