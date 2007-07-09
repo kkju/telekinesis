@@ -272,14 +272,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
-									<integer>15</integer>
-									<integer>8</integer>
+									<integer>47</integer>
+									<integer>23</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {394, 780}}</string>
+							<string>{{0, 278}, {394, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -326,7 +325,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7F40C20C0C41A00E009EF045</string>
+										<string>7FCB9F2F0C41C6BE002F2538</string>
 										<key>history</key>
 										<array>
 											<string>7F40C0C10C417497009EF045</string>
@@ -342,7 +341,7 @@
 											<string>7F40C0FE0C419071009EF045</string>
 											<string>7F40C0FF0C419071009EF045</string>
 											<string>7F40C1000C419071009EF045</string>
-											<string>7F40C0FD0C419071009EF045</string>
+											<string>7F40C20C0C41A00E009EF045</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -418,9 +417,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>7F40C2060C419761009EF045</string>
+				<string>7FCB9EAA0C41C629002F2538</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>7F40C2070C419761009EF045</string>
+				<string>7FCB9EAB0C41C629002F2538</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -636,7 +635,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>7F30A88C0C2AD5EC00CF2882</string>
-				<string>7F40C2080C419761009EF045</string>
+				<string>7FCB9F300C41C6BE002F2538</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -998,9 +997,9 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C0AD2B3069F1EA900FABCE6</string>
-				<string>7F40C2030C419758009EF045</string>
+				<string>7FCB9F310C41C6BE002F2538</string>
 				<string>1CD0528B0623707200166675</string>
-				<string>7F40C2040C419758009EF045</string>
+				<string>7FCB9F320C41C6BE002F2538</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.run</string>
@@ -1009,7 +1008,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

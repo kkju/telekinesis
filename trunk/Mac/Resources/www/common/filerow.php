@@ -9,8 +9,8 @@ function file_row($file, $dir) {
       $extension = end($components);
     }
     
-    $link =  "/files/$path";
-    $rlink =  "/t/open?path=$path";
+    $link =  addslashes("/files/$path");
+    $rlink =  "/t/open?path=".rawurlencode($path);
     $rlink_name =  "Open";
     
     switch($extension) {
@@ -31,7 +31,7 @@ function file_row($file, $dir) {
 	  case "m4v":
       case "mp3": 
        $server = ereg_replace("\:[0-9]{4,4}", ":".$_ENV["MEDIA_PORT"], $_SERVER["HTTP_HOST"]); 
-        $link = "http://".$server."/files/$path";
+        $link = "http://".$server."/files". str_replace("%2F","/",rawurlencode($path)); // keep slashes safe in this case
       break;
       case "app":
         $rlink_name = "Launch";
@@ -40,7 +40,7 @@ function file_row($file, $dir) {
       default:
       if (is_dir($path)) {
         $show_arrow = true;
-        $link =  "?dir=$path/";
+        $link =  "?dir=".rawurlencode($path)."/";
         $rlink = NULL;
       } 
       //  else if (is_executable($path)) {
@@ -55,7 +55,7 @@ function file_row($file, $dir) {
       
       <? if ($show_arrow) { echo '<img class="arrow" align="right" src="/images/ChildArrow.png">';} ?>   
       <a style="display:block; color:black; text-decoration:none; font-family:lucida grande;" href="<?=$link?>">
-<img class="icon" src="/t/icon?path=<?=urlencode($path)?>&size={32,32}" width="32" height="32">
+<img class="icon" src="/t/icon?path=<?=rawurlencode($path)?>&size={32,32}" width="32" height="32">
       <span><?=$name?></span> 
     
     </a>

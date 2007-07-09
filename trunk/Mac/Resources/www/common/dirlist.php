@@ -3,7 +3,11 @@ $dir = $_GET["dir"];
 if (!isset($dir)) $dir = $_ENV["HOME"];
 
 if ($dir == "") $dir = "/Volumes/";
+
+$dir = stripslashes($dir);
+
 $dir = realpath($dir);
+
 include("filerow.php");
 ?>
 
@@ -40,7 +44,7 @@ echo "<li> &#x25B6; <a href=\"?dir=/\">" . $_ENV["ROOT_VOLUME_NAME"] . "</a></li
 		for ($i = 1; $i <= $key; $i++) 
 			{ $url .= $parts[$i] . "/"; }
     if ($url == "Volumes/") continue;
-
+    $url = urlencode($url);
 		if ($component != "") 
 			echo "<li> &#x25B6; <a href=\"?dir=/$url\">$label</a></li>";
 	}
