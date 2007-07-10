@@ -190,24 +190,24 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>7FD3CFD00C433D34009457B2</string>
+				<string>7FD3CFEE0C433E73009457B2</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>TKController.m</string>
+				<string>httpd.telekinesis.conf</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>7FD3CFD10C433D34009457B2</string>
+						<string>7FD3CFEF0C433E73009457B2</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>TKController.m</string>
+						<string>httpd.telekinesis.conf</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>7FD3CFD70C433D81009457B2</string>
+						<string>7FD3CFF00C433E73009457B2</string>
 						<key>history</key>
 						<array>
-							<string>7FD3CF820C433D28009457B2</string>
+							<string>7FD3CFEA0C433E6B009457B2</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -219,11 +219,11 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {1231, 649}}</string>
+				<string>{{0, 20}, {1276, 673}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>66 56 1231 690 0 0 1440 878 </string>
+				<string>648 37 1276 714 0 0 1440 878 </string>
 			</dict>
 		</dict>
 	</array>
@@ -316,13 +316,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
-									<integer>1</integer>
+									<integer>52</integer>
+									<integer>26</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 25}, {256, 746}}</string>
+							<string>{{0, 408}, {256, 746}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -357,7 +357,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>dirlist.php</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -365,11 +365,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>dirlist.php</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7FD3CFD60C433D81009457B2</string>
+										<string>7FD3CFED0C433E73009457B2</string>
 										<key>history</key>
 										<array>
 											<string>7F40C0F80C419071009EF045</string>
@@ -383,7 +383,6 @@
 											<string>7FCBA07A0C42EB7C002F2538</string>
 											<string>7FD3CF860C433D34009457B2</string>
 											<string>7FD3CF870C433D34009457B2</string>
-											<string>7FD3CF880C433D34009457B2</string>
 											<string>7FD3CF890C433D34009457B2</string>
 											<string>7FD3CF8A0C433D34009457B2</string>
 											<string>7FD3CF8C0C433D34009457B2</string>
@@ -392,7 +391,10 @@
 											<string>7FD3CF920C433D34009457B2</string>
 											<string>7FD3CF940C433D34009457B2</string>
 											<string>7FD3CF950C433D34009457B2</string>
-											<string>7FD3CF960C433D34009457B2</string>
+											<string>7FD3CFDF0C433E54009457B2</string>
+											<string>7FD3CFE00C433E54009457B2</string>
+											<string>7FD3CFE10C433E54009457B2</string>
+											<string>7FD3CFE20C433E54009457B2</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -456,6 +458,9 @@
 											<string>7FD3CFCC0C433D34009457B2</string>
 											<string>7FD3CFCD0C433D34009457B2</string>
 											<string>7FD3CFCE0C433D34009457B2</string>
+											<string>7FD3CFE30C433E54009457B2</string>
+											<string>7FD3CFE40C433E54009457B2</string>
+											<string>7FD3CFE50C433E54009457B2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -649,10 +654,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C0AD2B3069F1EA900FABCE6</string>
 		<string>7F30A88C0C2AD5EC00CF2882</string>
 		<string>/Volumes/Lux/telekinesis/trunk/Mac/Telekinesis.xcodeproj</string>
-		<string>7FD3CFD00C433D34009457B2</string>
-		<string>1C0AD2B3069F1EA900FABCE6</string>
+		<string>7FD3CFEE0C433E73009457B2</string>
 	</array>
 	<key>WindowString</key>
 	<string>222 36 1131 805 0 0 1440 878 </string>
@@ -1107,7 +1112,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C0AD2B3069F1EA900FABCE6</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
