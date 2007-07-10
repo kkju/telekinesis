@@ -1,7 +1,10 @@
 <?
-function file_row($file, $dir) {
+function file_row($path) {detail_file_row($path, NULL);}
+function detail_file_row($path, $details) {
+  echo $show_path;
+  $dir = dirname($path);
+  $file = basename($path);
   if (substr($file, 0, 1)!=".") {
-    $path = realpath("$dir/$file");
     $name = $file;
     if ($path == "/") $name = $_ENV["ROOT_VOLUME_NAME"];
     $components = explode('.',$path);
@@ -35,6 +38,7 @@ function file_row($file, $dir) {
         $link = "http://".$server."/files". str_replace("%2F","/",rawurlencode($path)); // keep slashes safe in this case
       break;
       case "app":
+        $link = NULL;
         $rlink_name = "Launch";
         $name = substr($file, 0, strlen($file) - strlen($extension) - 1);
       break;
@@ -51,16 +55,20 @@ function file_row($file, $dir) {
     }
     ?>
 
-<div class="iphonerow">
+<li class="iphonerow">
       <? if ($rlink) { ?> <a href="#" onclick="loadURL('<?=$rlink?>'); return false;" class="rlink-button"><?=$rlink_name?></a><?}?>
       
       <? if ($show_arrow) { echo '<img class="arrow" align="right" src="/images/ChildArrow.png">';} ?>   
-      <a style="display:block; color:black; text-decoration:none; font-family:lucida grande;" href="<?=$link?>">
+      <a style="display:block; color:black; text-decoration:none; font-family:lucida grande;" 
+      <?= $link ? "" : 'onclick="return false;"'?>
+      href="<?=$link?>">
 <img class="icon" src="/t/icon?path=<?=rawurlencode($path)?>&size={32,32}" width="32" height="32">
-      <span><?=$name?></span> 
-    
+      <span class="name"><?=$name?></span> 
+      
+      <? if ($details) { ?><br><span class="details"><?=$details?></span><?}?>
+      
     </a>
-  </div>
+  </li>
 <?
 }
 }

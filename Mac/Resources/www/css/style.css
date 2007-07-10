@@ -20,27 +20,43 @@ body {
 }
 
 #crumbs { 
-list-style: none;
-  background-color:#00A;
+  list-style: none;
   background-image:url('/images/header-gradient.png');
   border-bottom:1px solid #006;
-padding:8px;
-margin:0;
+  padding:8px;
+  margin:0;
+  width: 100%;
+  min-height: 28px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #006;
+  border-bottom: 1px solid rgb(73, 95, 144);
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.6) 0 -1px 0;
+font-weight:bold;
    }
 #crumbs li {font-size:80%; display: inline; color:white;}
 #crumbs li a {font-size:125%; color:white; text-decoration:none;}
 
-div.iphonerow img.icon{
+
+ul.iphonelist {
+list-style-type:none;
+ 
+    margin: 0;
+    padding: 0;
+}
+li.iphonerow img.icon{
 float:left;
 margin-left:-44px;
 margin-top:-3px;
-
+display: inline
 }
-div.iphonerow img.arrow{
+li.iphonerow img.arrow{
 margin-top:8px;
 
 }
-div.iphonerow {
+li.iphonerow {
   border-bottom: 1px solid lightgray;
   padding:8px 5px 5px 54px;
   overflow:hidden;
@@ -49,10 +65,15 @@ div.iphonerow {
     font-weight:bolder;
 
 }
-div.iphonerow span {
+li.iphonerow span.name {
 margin-top:10px;
 
 }
+li.iphonerow span.details {
+font-size:50%;
+font-weight:normal;
+}
+
 
   div.titlebar {
   padding:3px;

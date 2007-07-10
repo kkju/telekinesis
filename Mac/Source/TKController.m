@@ -453,11 +453,34 @@ return [NSArray arrayWithArray:addresses];
     }
     
     NSNumber *proxyPort = [info objectForKey:@"proxyPort"];
+    
+    
+    // Read proxy port from user defaults
+    if (!proxyPort) {
+      NSDictionary *proxyDict = [info objectForKey:@"proxyTargetDefaults"];
+      id value = [(NSDictionary *)CFPreferencesCopyValue((CFStringRef)[proxyDict objectForKey:@"key"],
+                                                                    (CFStringRef)[proxyDict objectForKey:@"applicationID"],
+                                                                           kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
+      if ([value isKindOfClass:[NSString class]] && [value hasPrefix:@"http"]) {
+        proxyPort = [(NSURL *)[NSURL URLWithString:value] port];
+      } else {
+        proxyPort = value;
+      }
+      NSLog(@"value %@", proxyPort);
+    }
+    
+    // Allow a subpath to be proxied
+    NSString *targetPath = [path lastPathComponent];
+    NSString *proxyPath = [info objectForKey:@"proxyPath"];
+    if (proxyPath) targetPath = [targetPath stringByAppendingPathComponent:proxyPath];
+    
+    
     if (proxyPort) {
       NSLog(@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort);
-      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/Apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
-      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/Apps/%@\" http://localhost:%@", targetPath, proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@\" http://localhost:%@", targetPath, proxyPort]];
     }
+    NSLog(@"dire %@", directives);
   }
 
   
