@@ -466,7 +466,6 @@ return [NSArray arrayWithArray:addresses];
       } else {
         proxyPort = value;
       }
-      NSLog(@"value %@", proxyPort);
     }
     
     // Allow a subpath to be proxied
@@ -480,7 +479,6 @@ return [NSArray arrayWithArray:addresses];
       [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/Apps/%@\" http://localhost:%@", targetPath, proxyPort]];
       [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@\" http://localhost:%@", targetPath, proxyPort]];
     }
-    NSLog(@"dire %@", directives);
   }
 
   
