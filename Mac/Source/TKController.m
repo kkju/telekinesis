@@ -301,13 +301,13 @@ return [NSArray arrayWithArray:addresses];
     
     f = [CIFilter filterWithName:@"CIGaussianBlur"];
     [f setDefaults]; 
-    [f setValue:[NSNumber numberWithFloat:3.5f] forKey:@"inputRadius"];
+    [f setValue:[NSNumber numberWithFloat:2.5f] forKey:@"inputRadius"];
     [f setValue:image forKey:@"inputImage"];
     image = [f valueForKey:@"outputImage"];
     
 		f = [CIFilter filterWithName:@"CIExposureAdjust"];
 		[f setValue:image forKey:@"inputImage"];
-		[f setValue:[NSNumber numberWithFloat:-2.0f] forKey:@"inputEV"];
+		[f setValue:[NSNumber numberWithFloat:-2.5f] forKey:@"inputEV"];
 		image = [f valueForKey:@"outputImage"];
     
     f = [CIFilter filterWithName:@"CIAffineClamp"];
