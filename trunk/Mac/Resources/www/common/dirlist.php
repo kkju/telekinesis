@@ -7,7 +7,6 @@ if ($dir == "") $dir = "/Volumes/";
 $dir = stripslashes($dir);
 
 $dir = realpath($dir);
-
 include("filerow.php");
 ?>
 
@@ -49,7 +48,7 @@ echo "<li> &#x25B6; <a href=\"?dir=/\">" . $_ENV["ROOT_VOLUME_NAME"] . "</a></li
 			echo "<li> &#x25B6; <a href=\"?dir=/$url\">$label</a></li>";
 	}
 	echo "</ul>";
-
+echo "<ul class=\"iphonelist\">";
 	// Open a known directory, and proceed to read its contents
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
@@ -62,14 +61,13 @@ echo "<li> &#x25B6; <a href=\"?dir=/\">" . $_ENV["ROOT_VOLUME_NAME"] . "</a></li
       while (($file = readdir($dh)) !== false) {
         if (in_array($file, $ignoredNames)) continue;
      
-        
-        file_row($file, $dir);
+        file_row("$dir/$file");
 			
       }
 		closedir($dh);
 	}
 }
-
+echo "</ul>";
 ?>
 <!--
 	// /t/icon?path=<?=$path?>&size={32,32}
