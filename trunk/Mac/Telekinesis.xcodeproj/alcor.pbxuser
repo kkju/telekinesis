@@ -229,6 +229,18 @@
 			7FD3CFD20C433D34009457B2 /* PBXTextBookmark */ = 7FD3CFD20C433D34009457B2 /* PBXTextBookmark */;
 			7FD3CFD60C433D81009457B2 /* PBXTextBookmark */ = 7FD3CFD60C433D81009457B2 /* PBXTextBookmark */;
 			7FD3CFD70C433D81009457B2 /* PBXTextBookmark */ = 7FD3CFD70C433D81009457B2 /* PBXTextBookmark */;
+			7FD3CFDA0C433E47009457B2 /* PBXTextBookmark */ = 7FD3CFDA0C433E47009457B2 /* PBXTextBookmark */;
+			7FD3CFDF0C433E54009457B2 /* PBXTextBookmark */ = 7FD3CFDF0C433E54009457B2 /* PBXTextBookmark */;
+			7FD3CFE00C433E54009457B2 /* PBXBookmark */ = 7FD3CFE00C433E54009457B2 /* PBXBookmark */;
+			7FD3CFE10C433E54009457B2 /* PBXTextBookmark */ = 7FD3CFE10C433E54009457B2 /* PBXTextBookmark */;
+			7FD3CFE20C433E54009457B2 /* PBXBookmark */ = 7FD3CFE20C433E54009457B2 /* PBXBookmark */;
+			7FD3CFE30C433E54009457B2 /* PBXTextBookmark */ = 7FD3CFE30C433E54009457B2 /* PBXTextBookmark */;
+			7FD3CFE40C433E54009457B2 /* PBXBookmark */ = 7FD3CFE40C433E54009457B2 /* PBXBookmark */;
+			7FD3CFE50C433E54009457B2 /* PBXTextBookmark */ = 7FD3CFE50C433E54009457B2 /* PBXTextBookmark */;
+			7FD3CFE60C433E54009457B2 /* PBXTextBookmark */ = 7FD3CFE60C433E54009457B2 /* PBXTextBookmark */;
+			7FD3CFEA0C433E6B009457B2 /* PBXBookmark */ = 7FD3CFEA0C433E6B009457B2 /* PBXBookmark */;
+			7FD3CFED0C433E73009457B2 /* PBXTextBookmark */ = 7FD3CFED0C433E73009457B2 /* PBXTextBookmark */;
+			7FD3CFF00C433E73009457B2 /* PBXTextBookmark */ = 7FD3CFF00C433E73009457B2 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 7F2998BE0C224C3D00227C9E /* Source Control */;
 		userBuildSettings = {
@@ -236,10 +248,10 @@
 	};
 	7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {771, 1638}}";
-			sepNavSelRange = "{1940, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1231, 1638}}";
+			sepNavSelRange = "{1946, 0}";
 			sepNavVisRange = "{621, 430}";
-			sepNavVisRect = "{{0, 280}, {1231, 641}}";
+			sepNavVisRect = "{{0, 997}, {1231, 641}}";
 			sepNavWindowFrame = "{{648, -19}, {1276, 770}}";
 		};
 	};
@@ -503,10 +515,10 @@
 	};
 	7F362A900C3B356E00B24988 /* httpd.1.3.33.conf */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {785, 15540}}";
+			sepNavIntBoundsRect = "{{0, 0}, {806, 15540}}";
 			sepNavSelRange = "{10931, 7}";
 			sepNavVisRange = "{37430, 1082}";
-			sepNavVisRect = "{{0, 3343}, {785, 749}}";
+			sepNavVisRect = "{{0, 3397}, {806, 643}}";
 			sepNavWindowFrame = "{{645, -14}, {830, 878}}";
 		};
 	};
@@ -521,9 +533,9 @@
 	};
 	7F362A920C3B356E00B24988 /* Info.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {785, 994}}";
-			sepNavSelRange = "{633, 0}";
-			sepNavVisRect = "{{0, 0}, {785, 749}}";
+			sepNavIntBoundsRect = "{{0, 0}, {806, 994}}";
+			sepNavSelRange = "{1314, 0}";
+			sepNavVisRect = "{{0, 155}, {806, 643}}";
 			sepNavWindowFrame = "{{466, 0}, {830, 878}}";
 		};
 	};
@@ -2014,6 +2026,102 @@
 		rType = 0;
 		vrLen = 1820;
 		vrLoc = 9725;
+	};
+	7FD3CFDA0C433E47009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7FD3CEC40C4325A2009457B2 /* NSURL.h */;
+		name = "NSURL.h: 48";
+		rLen = 0;
+		rLoc = 2173;
+		rType = 0;
+		vrLen = 2611;
+		vrLoc = 627;
+	};
+	7FD3CFDF0C433E54009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FDFC0C401087005A66BD /* dirlist.php */;
+		name = "dirlist.php: 20";
+		rLen = 0;
+		rLoc = 549;
+		rType = 0;
+		vrLen = 1406;
+		vrLoc = 0;
+	};
+	7FD3CFE00C433E54009457B2 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F67FF550C403709005A66BD /* Tapp.icns */;
+	};
+	7FD3CFE10C433E54009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A900C3B356E00B24988 /* httpd.1.3.33.conf */;
+		name = rewrite;
+		rLen = 7;
+		rLoc = 10931;
+		rType = 0;
+		vrLen = 1235;
+		vrLoc = 10259;
+	};
+	7FD3CFE20C433E54009457B2 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F362A920C3B356E00B24988 /* Info.plist */;
+	};
+	7FD3CFE30C433E54009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F67FDFC0C401087005A66BD /* dirlist.php */;
+		name = "dirlist.php: 20";
+		rLen = 0;
+		rLoc = 549;
+		rType = 0;
+		vrLen = 1406;
+		vrLoc = 0;
+	};
+	7FD3CFE40C433E54009457B2 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F67FF550C403709005A66BD /* Tapp.icns */;
+	};
+	7FD3CFE50C433E54009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A900C3B356E00B24988 /* httpd.1.3.33.conf */;
+		name = rewrite;
+		rLen = 7;
+		rLoc = 10931;
+		rType = 0;
+		vrLen = 1235;
+		vrLoc = 10259;
+	};
+	7FD3CFE60C433E54009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A920C3B356E00B24988 /* Info.plist */;
+		name = "Info.plist: 43";
+		rLen = 0;
+		rLoc = 1208;
+		rType = 0;
+		vrLen = 1236;
+		vrLoc = 344;
+	};
+	7FD3CFEA0C433E6B009457B2 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+	};
+	7FD3CFED0C433E73009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F362A920C3B356E00B24988 /* Info.plist */;
+		name = "Info.plist: 47";
+		rLen = 0;
+		rLoc = 1314;
+		rType = 0;
+		vrLen = 1236;
+		vrLoc = 344;
+	};
+	7FD3CFF00C433E73009457B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */;
+		name = "httpd.telekinesis.conf: 115";
+		rLen = 0;
+		rLoc = 1946;
+		rType = 0;
+		vrLen = 942;
+		vrLoc = 1026;
 	};
 	7FFBFF1C0C3749C200C1B8EB /* TKController.m:166 */ = {
 		isa = PBXFileBreakpoint;
