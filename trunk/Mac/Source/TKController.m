@@ -852,56 +852,72 @@ return [NSArray arrayWithArray:addresses];
   mime = @"image/png";    
   
 #pragma mark click
-} else if ([[url path] hasPrefix: @"/click"]) {
+} else if ([[url path] hasPrefix: @"/mouseevent"]) {
   
   NSDictionary *params =  [url parameterDictionary];
   //;hi?31,191
   //NSArray *points = [[url query] componentsSeparatedByString:@","];
-  CGPoint p;
-  p.x = [[params objectForKey:@"x"] intValue];
-  p.y = [[params objectForKey:@"y"] intValue];
-  CGWarpMouseCursorPosition(p);
+  CGPoint p1;
+  p1.x = [[params objectForKey:@"x1"] intValue];
+  p1.y = [[params objectForKey:@"y1"] intValue];
   
-  CGPostMouseEvent(p, 0, 1, 1);
-  CGPostMouseEvent(p, 0, 1, 0);    
-  [request replyWithStatusCode:200 message:@""];
+  CGPoint p2;
+  p2.x = [[params objectForKey:@"x2"] intValue];
+  p2.y = [[params objectForKey:@"y2"] intValue];
   
-  return;
-#pragma mark move
-} else if ([[url path] hasPrefix: @"/mousemove"]) {
+  NSString *type=[params objectForKey:@"type"];
+  CGWarpMouseCursorPosition(p1);
   
-  NSDictionary *params =  [url parameterDictionary];
-  //;hi?31,191
-  CGPoint p;
-  p.x = [[params objectForKey:@"x"] intValue];
-  p.y = [[params objectForKey:@"y"] intValue];
-  CGWarpMouseCursorPosition(p);
+  if ([type isEqualToString:@"click"]) {
+    CGPostMouseEvent(p1, 0, 1, 1);
+    CGPostMouseEvent(p1, 0, 1, 0);    
+  } else if ([type isEqualToString:@"rightclick"]) {
+    CGPostMouseEvent(p1, 0, 2, 0, 1);
+    CGPostMouseEvent(p1, 0, 2, 0, 0);    
+  } else if ([type isEqualToString:@"drag"]) {
+    
+    CGPostMouseEvent(p1, 0, 1, 1);
+    usleep(100000);
+    CGWarpMouseCursorPosition(p2);
+    CGPostMouseEvent(p2, 0, 1, 0); 
+    
+  }
+  
+  
+  
+  
   
   [request replyWithStatusCode:200 message:@""];
   
   return;
   
 #pragma mark keypress
-} else if ([[url path] hasPrefix: @"/telekinesis"]) {
+} else if ([[url path] hasPrefix: @"/keyevent"]) {
   NSDictionary *params =  [url parameterDictionary];
+  
+  NSLog(@"params %@", params);
+  
   if (1 || [[params objectForKey:@"t"] isEqualToString:@"keyup"]) {
     
     NSString *string = [params objectForKey:@"string"];
-    
+    if (![string length]) string = @"\r";
     
     int i;
+    
+    CGEnableEventStateCombining(false);
     for (i = 0; i < [string length]; i++) {
       unichar c = [string characterAtIndex:i];
       
       BOOL shift = isupper(c);//[[params objectForKey:@"s"] isEqualToString:@"true"];
         
         short code = [QSKeyCodeTranslator AsciiToKeyCode:c];
-        
         if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, true ); // shift down
         CGPostKeyboardEvent(0, code, YES);
         CGPostKeyboardEvent(0, code, NO);
         if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, false ); // 'shift up
+      
     }
+      CGEnableEventStateCombining(true);
   }
   [request replyWithStatusCode:200 message:@""];
   
