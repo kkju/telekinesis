@@ -79,7 +79,7 @@
 	
 	function reloadImage() {
 		clearTimeout(ctime);
-		ctime = setTimeout("loadImage()", 100);
+		ctime = setTimeout("loadImage()", 400);
 	}
 	
 	function sendString(str) {
