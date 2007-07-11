@@ -55,7 +55,8 @@
 
  		
 		$('cursor').style.display = "none";
-		reloadImage();
+		//reloadImage();
+    loadImage();
 	}
 	
 	function moveMouse(e) {
