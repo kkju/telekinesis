@@ -26,6 +26,8 @@
   BOOL shouldShowHomepage;
   BOOL servicesRunning;
   NSStatusItem *statusItem;
+  
+  BOOL switchedOut;
 }
 - (IBAction)cancelPass:(id)sender;
 - (IBAction)savePass:(id)sender;

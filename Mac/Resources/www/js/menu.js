@@ -46,7 +46,7 @@ function loadWidget(title) {
   }
 }
 
-function Widget(title, appPath, isWidget, imagePath) {
+function Widget(title, appPath, isWidget, imagePath, useTabs) {
   this.title = title;
   this.appPath = appPath;
   this.imagePath = imagePath;
@@ -58,7 +58,8 @@ function Widget(title, appPath, isWidget, imagePath) {
 
   this.icoLink_ = document.createElement('a');
   this.icoLink_.href = this.appPath;
-  this.icoLink_.target = 'app_'+this.title;
+  if (useTabs)
+    this.icoLink_.target = 'app_'+this.title;
   addEvent(this.icoLink_, 'click', this.handleClick_.bind(this), true)
 
   this.icoImg_ = document.createElement('img');

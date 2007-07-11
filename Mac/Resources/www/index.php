@@ -25,9 +25,10 @@ if (!file_exists($img_path)) {
   echo "<body style=\"background: black url('/files/$img_path');\">";
 }
 
+include("common/defaults.php");
+$useTabs = readDefault("openAppsInNewTab");
+if (!$useTabs) $useTabs = 0;
 ?>
-
-
 
 <div id="icon-container"></div>
 <br clear="all">
@@ -62,7 +63,7 @@ foreach ($dirs as $dir) {
           $imagepath = "/images/GenericApp.png";
         }
 
-        echo "new Widget('$name', '$app_path', false, '$imagepath');";
+        echo "new Widget('$name', '$app_path', false, '$imagepath', $useTabs);";
       }
     }
 
