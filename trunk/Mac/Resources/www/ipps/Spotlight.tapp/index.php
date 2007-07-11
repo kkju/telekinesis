@@ -82,14 +82,17 @@ if($_REQUEST['find']){
 	$sKind = $_REQUEST['kind'];
 	exec('mdfind -onlyin / "'.$sFind.' '.$sKind.'"', $aFind);
 	
-	echo count($aFind);
-	echo " matches";
+//	echo count($aFind);
+//	echo " matches";
 	echo "<ul class=\"iphonelist\">";
 
+  $i = 0;
 	foreach($aFind as $path){
+    $i++;
 		$file = basename($path);
 		$dir = dirname($path);
 		file_row("$path");
+    if ($i > 50) break;
 	}
 	echo "</ul>";
 }
