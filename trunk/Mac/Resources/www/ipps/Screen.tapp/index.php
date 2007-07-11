@@ -34,7 +34,7 @@
 		//	var c = document.cookie.split("=")[1].split("+");
 		//ctx.drawImage(img, parseInt(c[0]), parseInt(c[1]), img.width, img.height);
 		
-		//ctime = setTimeout("loadImage()", 5000);
+		ctime = setTimeout("loadImage()", 5000);
 	}
 
 	function loadImage() {

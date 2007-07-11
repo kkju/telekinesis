@@ -123,9 +123,15 @@ return [NSArray arrayWithArray:addresses];
     [fm createDirectoryAtPath:[self appsFolder] attributes:nil];
     [fm createDirectoryAtPath:[self serverRootFolder] attributes:nil];
     
+    
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sessionBecameActive) name:NSWorkspaceSessionDidBecomeActiveNotification object:nil];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sessionResignedActive) name:NSWorkspaceSessionDidResignActiveNotification object:nil];
+    
   }
   return self;
 }
+- (void)sessionResignedActive { switchedOut = YES; }
+- (void)sessionBecameActive { switchedOut = NO; }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
   NSEnumerator *e = [filenames objectEnumerator];
@@ -452,21 +458,21 @@ return [NSArray arrayWithArray:addresses];
       [task launch];
     }
     
-    NSNumber *proxyPort = [info objectForKey:@"proxyPort"];
-    
-    
+    NSNumber *proxyPort = nil;
     // Read proxy port from user defaults
-    if (!proxyPort) {
-      NSDictionary *proxyDict = [info objectForKey:@"proxyTargetDefaults"];
-      id value = [(NSDictionary *)CFPreferencesCopyValue((CFStringRef)[proxyDict objectForKey:@"key"],
-                                                                    (CFStringRef)[proxyDict objectForKey:@"applicationID"],
-                                                                           kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
-      if ([value isKindOfClass:[NSString class]] && [value hasPrefix:@"http"]) {
-        proxyPort = [(NSURL *)[NSURL URLWithString:value] port];
-      } else {
-        proxyPort = value;
-      }
+    
+    NSDictionary *proxyDict = [info objectForKey:@"proxyTargetDefaults"];
+    id value = [(NSDictionary *)CFPreferencesCopyValue((CFStringRef)[proxyDict objectForKey:@"key"],
+                                                       (CFStringRef)[proxyDict objectForKey:@"applicationID"],
+                                                       kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
+    if ([value isKindOfClass:[NSString class]] && [value hasPrefix:@"http"]) {
+      proxyPort = [(NSURL *)[NSURL URLWithString:value] port];
+    } else {
+      proxyPort = value;
     }
+    
+    if (!proxyPort) proxyPort = [info objectForKey:@"proxyPort"];
+    
     
     // Allow a subpath to be proxied
     NSString *targetPath = [path lastPathComponent];
@@ -475,9 +481,9 @@ return [NSArray arrayWithArray:addresses];
     
     
     if (proxyPort) {
-      NSLog(@"ProxyPass \"/apps/%@\" http://localhost:%@", [path lastPathComponent], proxyPort);
-      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/Apps/%@\" http://localhost:%@", targetPath, proxyPort]];
-      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@\" http://localhost:%@", targetPath, proxyPort]];
+      NSLog(@"ProxyPass \"/Apps/%@/\" http://localhost:%@", targetPath, proxyPort);
+      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/Apps/%@/\" http://localhost:%@/", targetPath, proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@/\" http://localhost:%@/", targetPath, proxyPort]];
     }
   }
 
@@ -525,6 +531,9 @@ return [NSArray arrayWithArray:addresses];
   [environment setValue:NSUserName() forKey:@"USER_NAME"];
   [environment setValue:NSFullUserName() forKey:@"USER_FULLNAME"];
   [environment setValue:computerName forKey:@"COMPUTER_NAME"];
+  [environment setValue:[[NSBundle mainBundle]bundlePath] forKey:@"BUNDLE_PATH"];
+  [environment setValue:[[NSBundle mainBundle]bundlePath] forKey:@"RESOURCE_PATH"];
+  [environment setValue:documentRoot forKey:@"DOCUMENT_ROOT"];
   [environment setValue:[NSString stringWithFormat:@"%d", [self mediaPortNumber]] forKey:@"MEDIA_PORT"];
   [environment  setValue:rootVolumeName forKey:@"ROOT_VOLUME_NAME"];
   apacheTask = [[NSTask alloc] init];
@@ -734,6 +743,11 @@ return [NSArray arrayWithArray:addresses];
   if ([path isEqualToString:@"/"]) path = @"/index.html";
 #pragma mark Get the screen
   if ([[url path] isEqualToString:@"/screen.png"] || [[url path] hasPrefix: @"/grabscreen"]) {
+    if (switchedOut) {
+      [request replyWithStatusCode:200 message:@""];
+      return;
+    }
+    
     NSString *mode = [[url parameterDictionary] objectForKey:@"mode"];
     CGRect rect;
     
@@ -804,7 +818,7 @@ return [NSArray arrayWithArray:addresses];
     }
     
     
-    if (![[path pathExtension] caseInsensitiveCompare:@"scpt"]) {
+    if (path && ![[path pathExtension] caseInsensitiveCompare:@"scpt"]) {
       NSAppleScript *script = nil;
       script = [[[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
                                                        error:nil] autorelease];
@@ -853,7 +867,10 @@ return [NSArray arrayWithArray:addresses];
   
 #pragma mark click
 } else if ([[url path] hasPrefix: @"/mouseevent"]) {
-  
+  if (switchedOut) {
+      [request replyWithStatusCode:200 message:@""];
+    return;
+  }
   NSDictionary *params =  [url parameterDictionary];
   //;hi?31,191
   //NSArray *points = [[url query] componentsSeparatedByString:@","];
@@ -893,6 +910,11 @@ return [NSArray arrayWithArray:addresses];
   
 #pragma mark keypress
 } else if ([[url path] hasPrefix: @"/keyevent"]) {
+  if (switchedOut) {
+    [request replyWithStatusCode:200 message:@""];
+    return;
+  }
+  
   NSDictionary *params =  [url parameterDictionary];
   
   NSLog(@"params %@", params);

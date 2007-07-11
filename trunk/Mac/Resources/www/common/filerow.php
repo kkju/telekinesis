@@ -1,11 +1,35 @@
 <?
-function file_row($path) {detail_file_row($path, NULL);}
-function detail_file_row($path, $details) {
-  echo $show_path;
+function file_row($path) {detail_file_row($path, NULL, NULL);}
+function detail_file_row($path, $name, $details) {
+  if (!strncmp($path, "http://", 5)  ){
+    $url = $path;
+    if (!$name) $name = basename($path);
+    ?>
+    
+    <li class="iphonerow">
+    <img class="arrow" align="right" src="/images/ChildArrow.png">  
+    <a class="rowlink" href="<?=$url?>">
+    <img class="icon" src="/images/BookmarkGlobe.png" width="32" height="32">
+    <span class="name"><?=$name?></span> 
+      <br><span class="details"><?=$url?></span>
+    
+    </a>
+    </li>
+    <?
+    return ;
+  }
+  
+  if (!strncmp($path, "file://", 5)  ){
+      $path = parse_url($path);
+      $path = urldecode($path['path']);
+      $path = realpath($path);
+  }
+  
   $dir = dirname($path);
   $file = basename($path);
   if (substr($file, 0, 1)!=".") {
-    $name = $file;
+    if (!$name)
+      $name = $file;
     if ($path == "/") $name = $_ENV["ROOT_VOLUME_NAME"];
     $components = explode('.',$path);
     if (count($components)>1) {
@@ -59,7 +83,7 @@ function detail_file_row($path, $details) {
       <? if ($rlink) { ?> <a href="#" onclick="loadURL('<?=$rlink?>'); return false;" class="rlink-button"><?=$rlink_name?></a><?}?>
       
       <? if ($show_arrow) { echo '<img class="arrow" align="right" src="/images/ChildArrow.png">';} ?>   
-      <a style="display:block; color:black; text-decoration:none; font-family:lucida grande;" 
+      <a class="rowlink"  
       <?= $link ? "" : 'onclick="return false;"'?>
       href="<?=$link?>">
 <img class="icon" src="/t/icon?path=<?=rawurlencode($path)?>&size={32,32}" width="32" height="32">
