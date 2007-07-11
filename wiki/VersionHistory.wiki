@@ -1,4 +1,7 @@
-0.9.17 (7/9/07)
+0.9.18 (7/11/07)
+  * Basic Spotlight support
+
+0.9.17 (7/10/07)
   * Screen now supports moving mouse, right clicks, drags
   * Tabs are no longer used by default, enable in preferences
 
