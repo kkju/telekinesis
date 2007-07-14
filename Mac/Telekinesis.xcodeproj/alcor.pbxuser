@@ -6,6 +6,7 @@
 		activeExecutable = 7F2998B10C224C3700227C9E /* iPhone Remote */;
 		activeTarget = 8D1107260486CEB800E47090 /* iPhone Remote */;
 		addToTargets = (
+			8D1107260486CEB800E47090 /* iPhone Remote */,
 		);
 		breakpoints = (
 			7FFBFF1C0C3749C200C1B8EB /* TKController.m:166 */,
@@ -14,7 +15,6 @@
 			7F67FF030C402F43005A66BD /* TKController.m:140 */,
 			7F3960610C412BBB00EC6C2D /* HTTPServer.m:254 */,
 			7F3960750C412CC100EC6C2D /* HTTPServer.m:114 */,
-			7F214E8C0C41932A00857FE0 /* TKController.m:273 */,
 		);
 		codeSenseManager = 7F2998BF0C224C3D00227C9E /* Code sense */;
 		executables = (
@@ -102,18 +102,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 206081905;
-			PBXWorkspaceStateSaveDate = 206081905;
-		};
-		perUserProjectItems = {
-			7F2E29B70C488D5B00FA65AA = 7F2E29B70C488D5B00FA65AA /* PBXBookmark */;
-			7F2E29B90C488D7800FA65AA = 7F2E29B90C488D7800FA65AA /* PBXBookmark */;
-			7F2E29DA0C488DC800FA65AA = 7F2E29DA0C488DC800FA65AA /* PBXTextBookmark */;
-			7F2E29DE0C488DC800FA65AA = 7F2E29DE0C488DC800FA65AA /* PBXTextBookmark */;
-			7F2E29FC0C488E7C00FA65AA = 7F2E29FC0C488E7C00FA65AA /* PBXTextBookmark */;
-			7F2E29FD0C488E7C00FA65AA = 7F2E29FD0C488E7C00FA65AA /* PBXTextBookmark */;
-			7F2E29FE0C488E7C00FA65AA = 7F2E29FE0C488E7C00FA65AA /* PBXTextBookmark */;
-			7F2E29FF0C488E7C00FA65AA = 7F2E29FF0C488E7C00FA65AA /* PBXTextBookmark */;
+			PBXPerProjectTemplateStateSaveDate = 206135713;
+			PBXWorkspaceStateSaveDate = 206135713;
 		};
 		sourceControlManager = 7F2998BE0C224C3D00227C9E /* Source Control */;
 		userBuildSettings = {
@@ -191,27 +181,10 @@
 		countType = 0;
 		delayBeforeContinue = 0;
 		fileReference = 7F2998C50C224D7300227C9E /* TKController.h */;
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 29;
-		modificationTime = 206081534.070254;
-		state = 1;
-	};
-	7F214E8C0C41932A00857FE0 /* TKController.m:273 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 7F362A7B0C3B352B00B24988 /* TKController.m */;
-		functionName = "-reloadDesktopPicture:";
-		hitCount = 1;
-		ignoreCount = 0;
-		lineNumber = 273;
-		location = "iPhone Remote";
-		modificationTime = 206081401.164938;
+		modificationTime = 206082250.874196;
 		state = 1;
 	};
 	7F2998B10C224C3700227C9E /* iPhone Remote */ = {
@@ -223,7 +196,7 @@
 			"-useSourceWebDirectory YES",
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -270,82 +243,6 @@
 		lastKnownFileType = sourcecode.c.objc;
 		name = TKController.m;
 		path = /Volumes/Lux/telekinesis/trunk/TKController.m;
-		sourceTree = "<absolute>";
-	};
-	7F2E29B70C488D5B00FA65AA /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
-	};
-	7F2E29B90C488D7800FA65AA /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 7F362A690C3B351F00B24988 /* glgrab.h */;
-	};
-	7F2E29DA0C488DC800FA65AA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 7F362A680C3B351F00B24988 /* glgrab.c */;
-		rLen = 1;
-		rLoc = 108;
-		rType = 1;
-	};
-	7F2E29DE0C488DC800FA65AA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 7F2E29DF0C488DC800FA65AA /* CGImageDestination.h */;
-		rLen = 1;
-		rLoc = 64;
-		rType = 1;
-	};
-	7F2E29DF0C488DC800FA65AA /* CGImageDestination.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = CGImageDestination.h;
-		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Headers/CGImageDestination.h;
-		sourceTree = "<absolute>";
-	};
-	7F2E29FC0C488E7C00FA65AA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 7F362A690C3B351F00B24988 /* glgrab.h */;
-		name = "glgrab.h: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 2462;
-		vrLoc = 0;
-	};
-	7F2E29FD0C488E7C00FA65AA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 7F362A7B0C3B352B00B24988 /* TKController.m */;
-		name = "TKController.m: 772";
-		rLen = 0;
-		rLoc = 26956;
-		rType = 0;
-		vrLen = 1579;
-		vrLoc = 26086;
-	};
-	7F2E29FE0C488E7C00FA65AA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 7F362A680C3B351F00B24988 /* glgrab.c */;
-		name = CFRelease;
-		rLen = 9;
-		rLoc = 4403;
-		rType = 0;
-		vrLen = 1583;
-		vrLoc = 3950;
-	};
-	7F2E29FF0C488E7C00FA65AA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 7F2E2A000C488E7C00FA65AA /* CGImageDestination.h */;
-		name = CGImageDestinationCreateWithData;
-		rLen = 32;
-		rLoc = 2650;
-		rType = 0;
-		vrLen = 2948;
-		vrLoc = 1350;
-	};
-	7F2E2A000C488E7C00FA65AA /* CGImageDestination.h */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.h;
-		name = CGImageDestination.h;
-		path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Headers/CGImageDestination.h;
 		sourceTree = "<absolute>";
 	};
 	7F362A680C3B351F00B24988 /* glgrab.c */ = {
@@ -412,9 +309,9 @@
 	};
 	7F362A7B0C3B352B00B24988 /* TKController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1232, 13678}}";
-			sepNavSelRange = "{26956, 0}";
-			sepNavVisRange = "{2729, 1427}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 9912}}";
+			sepNavSelRange = "{9652, 0}";
+			sepNavVisRange = "{9004, 1093}";
 			sepNavVisRect = "{{0, 10459}, {1186, 617}}";
 			sepNavWindowFrame = "{{66, 0}, {1231, 746}}";
 		};
@@ -461,8 +358,9 @@
 	};
 	7F362A920C3B356E00B24988 /* Info.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {757, 994}}";
-			sepNavSelRange = "{1409, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {771, 994}}";
+			sepNavSelRange = "{927, 0}";
+			sepNavVisRange = "{509, 1228}";
 			sepNavVisRect = "{{0, 388}, {757, 596}}";
 			sepNavWindowFrame = "{{466, 97}, {830, 781}}";
 		};
@@ -482,10 +380,10 @@
 		continueAfterActions = 0;
 		countType = 0;
 		delayBeforeContinue = 0;
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		location = Foundation;
-		modificationTime = 206081399.442906;
+		modificationTime = 206082250.874173;
 		state = 1;
 		symbolName = "-[NSException raise]";
 	};
@@ -531,11 +429,11 @@
 		delayBeforeContinue = 0;
 		fileReference = 7F395EA30C411E4F00EC6C2D /* HTTPServer.m */;
 		functionName = "-processOutgoingBytes";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 254;
 		location = "iPhone Remote";
-		modificationTime = 206081396.315914;
+		modificationTime = 206082203.56986;
 		state = 1;
 	};
 	7F3960750C412CC100EC6C2D /* HTTPServer.m:114 */ = {
@@ -548,11 +446,11 @@
 		delayBeforeContinue = 0;
 		fileReference = 7F395EA30C411E4F00EC6C2D /* HTTPServer.m */;
 		functionName = "-invalidate";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 114;
 		location = "iPhone Remote";
-		modificationTime = 206081396.315921;
+		modificationTime = 206082203.569866;
 		state = 1;
 	};
 	7F3962D30C41418D00EC6C2D /* NSImage+CIImage.h */ = {
@@ -587,11 +485,11 @@
 		delayBeforeContinue = 0;
 		fileReference = 7F362A7B0C3B352B00B24988 /* TKController.m */;
 		functionName = "-application:openFiles:";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 140;
 		location = "iPhone Remote";
-		modificationTime = 206081396.315902;
+		modificationTime = 206082203.569854;
 		state = 1;
 	};
 	7FFBFF1C0C3749C200C1B8EB /* TKController.m:166 */ = {
@@ -604,10 +502,10 @@
 		delayBeforeContinue = 0;
 		fileReference = 7F2998C60C224D7300227C9E /* TKController.m */;
 		functionName = "-generateCertificate";
-		hitCount = 1;
+		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 166;
-		modificationTime = 206081396.315861;
+		modificationTime = 206082203.569808;
 		state = 2;
 	};
 	8D1107260486CEB800E47090 /* iPhone Remote */ = {
