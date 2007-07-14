@@ -12,7 +12,7 @@
 			<string>/bin/sh</string>
 		</array>
 		<key>path</key>
-		<string>./web-shell/ajaxterm.py</string>
+		<string>./web-shell/webshell.py</string>
 	</dict>
 </dict>
 </plist>

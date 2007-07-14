@@ -177,12 +177,29 @@ return [NSArray arrayWithArray:addresses];
   [applications removeAllObjects];
   NSString *externalAppsPath = [[self applicationSupportFolder] stringByAppendingPathComponent:@"Apps"];
   
+  NSMutableArray *allApps = [NSMutableArray array];
   NSArray *paths = [[NSFileManager defaultManager] directoryContentsAtPath:externalAppsPath];
   paths = [paths pathsMatchingExtensions:[NSArray arrayWithObject:@"tapp"]];
   NSEnumerator *de = [paths objectEnumerator];
   NSString *path;
+  
   while (path = [de nextObject]) {
-    path = [externalAppsPath stringByAppendingPathComponent:path];
+    [allApps addObject:[externalAppsPath stringByAppendingPathComponent:path]];
+  }
+  
+  NSString *internalAppsPath = [[[NSBundle mainBundle] pathForResource:@"www" ofType:nil] stringByAppendingPathComponent:@"tapps"];
+  NSLog(@"internal apps %@", internalAppsPath);
+  paths = [[NSFileManager defaultManager] directoryContentsAtPath:internalAppsPath];
+  paths = [paths pathsMatchingExtensions:[NSArray arrayWithObject:@"tapp"]];
+  de = [paths objectEnumerator];
+
+  while (path = [de nextObject]) {
+    [allApps addObject:[internalAppsPath stringByAppendingPathComponent:path]];
+  }
+  
+  
+  de = [allApps objectEnumerator];
+  while (path = [de nextObject]) {
     NSString *infoPath = [path stringByAppendingPathComponent:@"Info.plist"];
     NSMutableDictionary *info = [NSMutableDictionary dictionaryWithContentsOfFile:infoPath];
     if (!info) info = [NSMutableDictionary dictionary];
@@ -452,7 +469,7 @@ return [NSArray arrayWithArray:addresses];
     NSString *path = [info objectForKey:@"path"];
     NSDictionary *startTaskOptions =  [info objectForKey:@"startTask"];
     NSTask *task = [self taskWithDictionary:startTaskOptions basePath:path];
-    if (task) {
+    if (task && [[NSFileManager defaultManager] fileExistsAtPath:[task launchPath]] ) {
       [info  setValue:task forKey:@"task"];
       
       NSLog(@"Starting task for %@", [info objectForKey:@"name"]);
@@ -482,13 +499,13 @@ return [NSArray arrayWithArray:addresses];
     NSString *proxyPath = [info objectForKey:@"proxyPath"];
     if (proxyPath) targetPath = [targetPath stringByAppendingPathComponent:proxyPath];
     
-    
+    NSString *appDirectory = [[path stringByDeletingLastPathComponent] lastPathComponent];
     if (proxyPort) {
-      NSLog(@"ProxyPass \"/Apps/%@/\" http://localhost:%@", targetPath, proxyPort);
-      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/Apps/%@/\" http://localhost:%@/", targetPath, proxyPort]];
-      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/Apps/%@/\" http://localhost:%@/", targetPath, proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/%@/%@/\" http://localhost:%@/", appDirectory, targetPath, proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/%@/%@/\" http://localhost:%@/", appDirectory, targetPath, proxyPort]];
     }
   }
+  
 
   
   NSString *configPath = [[NSBundle mainBundle] pathForResource:@"httpd.telekinesis" ofType:@"conf"];

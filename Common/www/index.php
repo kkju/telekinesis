@@ -37,7 +37,7 @@ if (!$useTabs) $useTabs = 0;
 </div>
 <script type="text/javascript">
 <?php
-$dirs = array("ipps", $_ENV["HOME"] . "/Library/Application Support/iPhone Remote/Apps");
+$dirs = array("tapps", $_ENV["HOME"] . "/Library/Application Support/iPhone Remote/Apps");
 
 foreach ($dirs as $dir) {
   if (is_dir($dir) && $dh = opendir($dir)) {
