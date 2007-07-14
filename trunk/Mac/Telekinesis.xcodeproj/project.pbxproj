@@ -394,7 +394,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "touch $SRCROOT/Resources/www\ntouch $SRCROOT/Resources/cgi-bin\ntouch $SRCROOT/Resources/scripts";
+			shellScript = "touch $SRCROOT/../Common/www\ntouch $SRCROOT/Resources/cgi-bin\ntouch $SRCROOT/Resources/scripts";
 		};
 /* End PBXShellScriptBuildPhase section */
 
