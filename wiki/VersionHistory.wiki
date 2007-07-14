@@ -1,4 +1,8 @@
 0.9.18 (7/11/07)
+  * Fixed memory leaks
+  * Fixed bug that prevented server from launching when Logs didn't exist.
+
+0.9.18 (7/11/07)
   * Basic Spotlight support
 
 0.9.17 (7/10/07)
