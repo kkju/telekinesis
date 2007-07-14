@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>proxyPort</key>
+	<integer>8022</integer>
+	<key>startTask</key>
+	<dict>
+		<key>arguments</key>
+		<array>
+			<string>-c</string>
+			<string>/bin/sh</string>
+		</array>
+		<key>path</key>
+		<string>./WebShell/ajaxterm.py</string>
+	</dict>
+</dict>
+</plist>
