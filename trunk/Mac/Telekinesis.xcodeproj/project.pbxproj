@@ -46,11 +46,11 @@
 		7F3962D60C41418D00EC6C2D /* NSImage+CIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3962D40C41418D00EC6C2D /* NSImage+CIImage.m */; };
 		7F3962D90C41419600EC6C2D /* HTTPServerRequest+Convenience.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F3962D70C41419600EC6C2D /* HTTPServerRequest+Convenience.h */; };
 		7F3962DA0C41419600EC6C2D /* HTTPServerRequest+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3962D80C41419600EC6C2D /* HTTPServerRequest+Convenience.m */; };
-		7F3A50D10C3F348E0020DD5D /* TKMenu_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A50CF0C3F348E0020DD5D /* TKMenu_disabled.png */; };
-		7F3A50D20C3F348E0020DD5D /* TKMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A50D00C3F348E0020DD5D /* TKMenu.png */; };
 		7F548C5A0C398C4F00569195 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
 		7F67FF560C40370A005A66BD /* Tapp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F67FF550C403709005A66BD /* Tapp.icns */; };
 		7F73C4CA0C3802C9002E8A31 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F73C4C90C3802C9002E8A31 /* WebKit.framework */; };
+		7F9A7BEE0C49625500B5912D /* TKMenu_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A7BEC0C49625500B5912D /* TKMenu_disabled.png */; };
+		7F9A7BEF0C49625500B5912D /* TKMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A7BED0C49625500B5912D /* TKMenu.png */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,7 +111,7 @@
 		7F362A920C3B356E00B24988 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		7F362AA10C3B35AF00B24988 /* cgi-bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "cgi-bin"; path = "Resources/cgi-bin"; sourceTree = "<group>"; };
 		7F362AA50C3B35AF00B24988 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = Resources/scripts; sourceTree = "<group>"; };
-		7F362AAD0C3B35AF00B24988 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = Resources/www; sourceTree = "<group>"; };
+		7F362AAD0C3B35AF00B24988 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../Common/www; sourceTree = "<group>"; };
 		7F362BBE0C3B504600B24988 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		7F362F360C3C48B900B24988 /* Telekinesis_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Telekinesis_Prefix.pch; path = Source/Telekinesis_Prefix.pch; sourceTree = "<group>"; };
 		7F362F380C3C48BF00B24988 /* Telekinesis.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Telekinesis.icns; path = Resources/Telekinesis.icns; sourceTree = "<group>"; };
@@ -123,10 +123,10 @@
 		7F3962D40C41418D00EC6C2D /* NSImage+CIImage.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "NSImage+CIImage.m"; path = "Source/NSImage+CIImage.m"; sourceTree = "<group>"; };
 		7F3962D70C41419600EC6C2D /* HTTPServerRequest+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "HTTPServerRequest+Convenience.h"; path = "Source/HTTPServerRequest+Convenience.h"; sourceTree = "<group>"; };
 		7F3962D80C41419600EC6C2D /* HTTPServerRequest+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "HTTPServerRequest+Convenience.m"; path = "Source/HTTPServerRequest+Convenience.m"; sourceTree = "<group>"; };
-		7F3A50CF0C3F348E0020DD5D /* TKMenu_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKMenu_disabled.png; sourceTree = "<group>"; };
-		7F3A50D00C3F348E0020DD5D /* TKMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TKMenu.png; sourceTree = "<group>"; };
 		7F67FF550C403709005A66BD /* Tapp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tapp.icns; path = Resources/Tapp.icns; sourceTree = "<group>"; };
 		7F73C4C90C3802C9002E8A31 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		7F9A7BEC0C49625500B5912D /* TKMenu_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TKMenu_disabled.png; path = Resources/TKMenu_disabled.png; sourceTree = "<group>"; };
+		7F9A7BED0C49625500B5912D /* TKMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TKMenu.png; path = Resources/TKMenu.png; sourceTree = "<group>"; };
 		7FCB9FE30C41FC9F002F2538 /* site */ = {isa = PBXFileReference; lastKnownFileType = folder; name = site; path = ../../site; sourceTree = SOURCE_ROOT; };
 		8D1107320486CEB800E47090 /* iPhone Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhone Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -242,8 +242,8 @@
 				7F362AAD0C3B35AF00B24988 /* www */,
 				7F362A890C3B356E00B24988 /* certificate.cfg */,
 				7F362A8A0C3B356E00B24988 /* certificate.sh */,
-				7F3A50CF0C3F348E0020DD5D /* TKMenu_disabled.png */,
-				7F3A50D00C3F348E0020DD5D /* TKMenu.png */,
+				7F9A7BEC0C49625500B5912D /* TKMenu_disabled.png */,
+				7F9A7BED0C49625500B5912D /* TKMenu.png */,
 				7F362A8C0C3B356E00B24988 /* InfoPlist.strings */,
 				7F362A8E0C3B356E00B24988 /* MainMenu.nib */,
 				7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */,
@@ -373,9 +373,9 @@
 				7F362AE70C3B35AF00B24988 /* www in Resources */,
 				7F362F390C3C48BF00B24988 /* Telekinesis.icns in Resources */,
 				7F0017470C3F139700C757C6 /* httpd.telekinesis.conf in Resources */,
-				7F3A50D10C3F348E0020DD5D /* TKMenu_disabled.png in Resources */,
-				7F3A50D20C3F348E0020DD5D /* TKMenu.png in Resources */,
 				7F67FF560C40370A005A66BD /* Tapp.icns in Resources */,
+				7F9A7BEE0C49625500B5912D /* TKMenu_disabled.png in Resources */,
+				7F9A7BEF0C49625500B5912D /* TKMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
