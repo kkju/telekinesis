@@ -463,7 +463,6 @@ return [NSArray arrayWithArray:addresses];
     // Read proxy port from user defaults
     
     NSDictionary *proxyDict = [info objectForKey:@"proxyTargetDefaults"];
-	NSLog(@"ProxyDict : %@", proxyDict);
 	if(proxyDict != nil) {
 		id value = [(NSDictionary *)CFPreferencesCopyValue((CFStringRef)[proxyDict objectForKey:@"key"],
                                                        (CFStringRef)[proxyDict objectForKey:@"applicationID"],
