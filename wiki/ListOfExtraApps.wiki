@@ -1,0 +1,13 @@
+#summary Downloadable .tapps to extend your telekinesis experience
+
+= Introduction =
+
+Please add a comment or let us know if you've made a .tapp we can link here. 
+
+= List of extra .tapps =
+
+ * [http://groups.google.com/group/telekinesis-discuss/web/now-playing Now Playing]
+ * [http://groups.google.com/group/telekinesis-discuss/web/uniremote Uniremote]
+ * [http://groups.google.com/group/telekinesis-discuss/browse_thread/thread/c1055f2d47cbc3ab W2 Wiki]
+
+
