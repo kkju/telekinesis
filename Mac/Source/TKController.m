@@ -122,6 +122,7 @@ return [NSArray arrayWithArray:addresses];
     [fm createDirectoryAtPath:[self applicationSupportFolder] attributes:nil];
     [fm createDirectoryAtPath:[self appsFolder] attributes:nil];
     [fm createDirectoryAtPath:[self serverRootFolder] attributes:nil];
+    [fm createDirectoryAtPath:[@"~/Library/Logs" stringByStandardizingPath] attributes:nil];
     
     
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sessionBecameActive) name:NSWorkspaceSessionDidBecomeActiveNotification object:nil];
@@ -769,9 +770,10 @@ return [NSArray arrayWithArray:addresses];
     CGImageDestinationRef destCG = CGImageDestinationCreateWithData((CFMutableDataRef)imageData,  kUTTypeJPEG,1,NULL);
     CGImageDestinationAddImage(destCG, theCGImage, NULL);
     CGImageDestinationFinalize(destCG);
+    CFRelease(theCGImage);
+    CFRelease(destCG);
     data = imageData;
     mime = @"image/jpeg";
-    
     NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
       mime, @"Content-Type",
       [NSString stringWithFormat:@"name=%d+%d", (int)rect.origin.x, (int)rect.origin.y], @"Set-Cookie",
