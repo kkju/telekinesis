@@ -463,14 +463,17 @@ return [NSArray arrayWithArray:addresses];
     // Read proxy port from user defaults
     
     NSDictionary *proxyDict = [info objectForKey:@"proxyTargetDefaults"];
-    id value = [(NSDictionary *)CFPreferencesCopyValue((CFStringRef)[proxyDict objectForKey:@"key"],
+	NSLog(@"ProxyDict : %@", proxyDict);
+	if(proxyDict != nil) {
+		id value = [(NSDictionary *)CFPreferencesCopyValue((CFStringRef)[proxyDict objectForKey:@"key"],
                                                        (CFStringRef)[proxyDict objectForKey:@"applicationID"],
-                                                       kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
-    if ([value isKindOfClass:[NSString class]] && [value hasPrefix:@"http"]) {
-      proxyPort = [(NSURL *)[NSURL URLWithString:value] port];
-    } else {
-      proxyPort = value;
-    }
+														kCFPreferencesCurrentUser, kCFPreferencesAnyHost) autorelease];
+		if ([value isKindOfClass:[NSString class]] && [value hasPrefix:@"http"]) {
+		proxyPort = [(NSURL *)[NSURL URLWithString:value] port];
+		} else {
+			proxyPort = value;
+		}
+	}
     
     if (!proxyPort) proxyPort = [info objectForKey:@"proxyPort"];
     
