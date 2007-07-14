@@ -5,6 +5,8 @@ Please add a comment or let us know if you've made a .tapp we can link here.
 = List of extra .tapps =
 
  * [http://groups.google.com/group/telekinesis-discuss/web/now-playing Now Playing]
+   * See the current playing song in iTunes.
  * [http://groups.google.com/group/telekinesis-discuss/web/uniremote Uniremote]
+   * Based of the included iTunes remote, Uniremote can control more things. It imitates the real Apple Remote, and everything is done with AppleScript.
  * [http://groups.google.com/group/telekinesis-discuss/browse_thread/thread/c1055f2d47cbc3ab W2 Wiki]
-
+    * Edit and view a wiki hosted on your Mac from your iPhone anywhere. (a port of Steven Frank's W2)
