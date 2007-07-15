@@ -1,4 +1,8 @@
-0.9.18 (7/11/07)
+0.9.20 (testing)
+  * Support for handlers in applescripts
+  * Added Terminal application (web-shell).
+
+0.9.19 (7/13/07)
   * Fixed memory leaks
   * Fixed bug that prevented server from launching when Logs didn't exist.
 
