@@ -189,7 +189,6 @@ return [NSArray arrayWithArray:addresses];
   }
   
   NSString *internalAppsPath = [[[NSBundle mainBundle] pathForResource:@"www" ofType:nil] stringByAppendingPathComponent:@"tapps"];
-  NSLog(@"internal apps %@", internalAppsPath);
   paths = [[NSFileManager defaultManager] directoryContentsAtPath:internalAppsPath];
   paths = [paths pathsMatchingExtensions:[NSArray arrayWithObject:@"tapp"]];
   de = [paths objectEnumerator];
@@ -844,9 +843,7 @@ return [NSArray arrayWithArray:addresses];
     NSTask *task = [info objectForKey:@"task"];
     if (!task && [info objectForKey:@"startTask"]) 
       [self startTaskForApplicationInfo:info];
-    
-    
-    NSLog(@"server %@", serverPath);
+        
     NSDictionary *headers = [NSDictionary dictionaryWithObject:serverPath forKey:@"Location"];
     [request replyWithStatusCode:302 headers:headers body:nil];
     return;
