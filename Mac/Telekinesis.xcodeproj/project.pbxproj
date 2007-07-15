@@ -49,6 +49,8 @@
 		7F548C5A0C398C4F00569195 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1E07130C394A8A0049F3DA /* Sparkle.framework */; };
 		7F67FF560C40370A005A66BD /* Tapp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F67FF550C403709005A66BD /* Tapp.icns */; };
 		7F73C4CA0C3802C9002E8A31 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F73C4C90C3802C9002E8A31 /* WebKit.framework */; };
+		7F7F97140C4A4A9300DE6B89 /* NSAppleScript+QSSubroutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F97120C4A4A9300DE6B89 /* NSAppleScript+QSSubroutine.m */; };
+		7F7F97180C4A4AEA00DE6B89 /* NSAppleEventDescriptor+QSTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F97170C4A4AEA00DE6B89 /* NSAppleEventDescriptor+QSTranslation.m */; };
 		7F9A7BEE0C49625500B5912D /* TKMenu_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A7BEC0C49625500B5912D /* TKMenu_disabled.png */; };
 		7F9A7BEF0C49625500B5912D /* TKMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9A7BED0C49625500B5912D /* TKMenu.png */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -125,6 +127,10 @@
 		7F3962D80C41419600EC6C2D /* HTTPServerRequest+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = "HTTPServerRequest+Convenience.m"; path = "Source/HTTPServerRequest+Convenience.m"; sourceTree = "<group>"; };
 		7F67FF550C403709005A66BD /* Tapp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tapp.icns; path = Resources/Tapp.icns; sourceTree = "<group>"; };
 		7F73C4C90C3802C9002E8A31 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		7F7F97120C4A4A9300DE6B89 /* NSAppleScript+QSSubroutine.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSAppleScript+QSSubroutine.m"; sourceTree = "<group>"; };
+		7F7F97130C4A4A9300DE6B89 /* NSAppleScript+QSSubroutine.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSAppleScript+QSSubroutine.h"; sourceTree = "<group>"; };
+		7F7F97160C4A4AEA00DE6B89 /* NSAppleEventDescriptor+QSTranslation.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSAppleEventDescriptor+QSTranslation.h"; sourceTree = "<group>"; };
+		7F7F97170C4A4AEA00DE6B89 /* NSAppleEventDescriptor+QSTranslation.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSAppleEventDescriptor+QSTranslation.m"; sourceTree = "<group>"; };
 		7F9A7BEC0C49625500B5912D /* TKMenu_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TKMenu_disabled.png; path = Resources/TKMenu_disabled.png; sourceTree = "<group>"; };
 		7F9A7BED0C49625500B5912D /* TKMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TKMenu.png; path = Resources/TKMenu.png; sourceTree = "<group>"; };
 		7FCB9FE30C41FC9F002F2538 /* site */ = {isa = PBXFileReference; lastKnownFileType = folder; name = site; path = ../../site; sourceTree = SOURCE_ROOT; };
@@ -166,6 +172,10 @@
 				7F362A790C3B352B00B24988 /* QSKeyCodeTranslator.m */,
 				7F362A7A0C3B352B00B24988 /* TKController.h */,
 				7F362A7B0C3B352B00B24988 /* TKController.m */,
+				7F7F97160C4A4AEA00DE6B89 /* NSAppleEventDescriptor+QSTranslation.h */,
+				7F7F97170C4A4AEA00DE6B89 /* NSAppleEventDescriptor+QSTranslation.m */,
+				7F7F97120C4A4A9300DE6B89 /* NSAppleScript+QSSubroutine.m */,
+				7F7F97130C4A4A9300DE6B89 /* NSAppleScript+QSSubroutine.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -420,6 +430,8 @@
 				7F395EB30C411E4F00EC6C2D /* TCPServer.m in Sources */,
 				7F3962D60C41418D00EC6C2D /* NSImage+CIImage.m in Sources */,
 				7F3962DA0C41419600EC6C2D /* HTTPServerRequest+Convenience.m in Sources */,
+				7F7F97140C4A4A9300DE6B89 /* NSAppleScript+QSSubroutine.m in Sources */,
+				7F7F97180C4A4AEA00DE6B89 /* NSAppleEventDescriptor+QSTranslation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

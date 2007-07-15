@@ -47,7 +47,7 @@ foreach ($dirs as $dir) {
 
         $basepath = basename($dir);
         $app_path = "$basepath/$file";
-
+        
         $imagepath = realpath("$dir/$file/Icon.png");
 
         // if the image doesn't exist, try a different type
@@ -62,7 +62,12 @@ foreach ($dirs as $dir) {
           // give the user a generic image
           $imagepath = "/images/GenericApp.png";
         }
-
+        
+        
+        $info_path = realpath("$dir/$file/Info.plist");
+        if (file_exists($info_path))
+          $app_path = '/t/tapp?path=/' . $app_path;
+        
         echo "new Widget('$name', '$app_path', false, '$imagepath', $useTabs);";
       }
     }
