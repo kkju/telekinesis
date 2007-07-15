@@ -23,10 +23,11 @@
 #import "glgrab.h"
 
 #import "NSImage+CIImage.h"
-
-
-#import "NSImage+CIImage.h"
 #import "QSKeyCodeTranslator.h"
+
+#import "NSAppleScript+QSSubroutine.h"
+#import "NSAppleEventDescriptor+QSTranslation.h"
+
 
 @interface TKController (PrivateMethods)
 - (NSString *)applicationSupportFolder;
@@ -204,6 +205,14 @@ return [NSArray arrayWithArray:addresses];
     NSMutableDictionary *info = [NSMutableDictionary dictionaryWithContentsOfFile:infoPath];
     if (!info) info = [NSMutableDictionary dictionary];
     [info  setValue:path forKey:@"path"];
+    
+    
+    NSString *serverPath = @"/";
+    serverPath = [serverPath stringByAppendingPathComponent:[[path stringByDeletingLastPathComponent] lastPathComponent]];
+    serverPath = [serverPath stringByAppendingPathComponent:[path lastPathComponent]];
+    [info  setValue:serverPath forKey:@"serverPath"];
+    
+    NSLog(@"server %@", [info objectForKey:@"serverPath"]);
     [info  setValue:[[path lastPathComponent] stringByDeletingPathExtension] forKey:@"name"];
     if (info) [applications addObject:info];
   }
@@ -429,6 +438,35 @@ return [NSArray arrayWithArray:addresses];
   }
 }
 
+- (NSMutableDictionary *)applicationInfoForPath:(NSString *)path {
+  NSArray *matches = [applications filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"path LIKE %@", path]];
+  return [matches count] ? [matches lastObject] : nil;
+}
+
+- (NSMutableDictionary *)applicationInfoForServerPath:(NSString *)path {
+  NSArray *matches = [applications filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"serverPath LIKE %@", path]];
+  return [matches count] ? [matches lastObject] : nil;
+}
+
+- (NSMutableDictionary *)applicationInfoForName:(NSString *)name {
+  NSArray *matches = [applications filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name LIKE %@", name]];
+  return [matches count] ? [matches lastObject] : nil;
+}
+
+
+- (void) startTaskForApplicationInfo:(NSMutableDictionary *)info {
+  NSString *path = [info objectForKey:@"path"];
+    
+  NSDictionary *startTaskOptions =  [info objectForKey:@"startTask"];
+  NSTask *task = [self taskWithDictionary:startTaskOptions basePath:path];
+  if (task && [[NSFileManager defaultManager] fileExistsAtPath:[task launchPath]] ) {
+    [info setValue:task forKey:@"task"];
+    
+    NSLog(@"Starting task for %@", [info objectForKey:@"name"]);
+    [task launch];
+  }
+}
+
 - (void) startServices {
   if (servicesRunning) return;
   
@@ -467,15 +505,6 @@ return [NSArray arrayWithArray:addresses];
   NSMutableDictionary *info;
   while (info = [e nextObject]) {
     NSString *path = [info objectForKey:@"path"];
-    NSDictionary *startTaskOptions =  [info objectForKey:@"startTask"];
-    NSTask *task = [self taskWithDictionary:startTaskOptions basePath:path];
-    if (task && [[NSFileManager defaultManager] fileExistsAtPath:[task launchPath]] ) {
-      [info  setValue:task forKey:@"task"];
-      
-      NSLog(@"Starting task for %@", [info objectForKey:@"name"]);
-      [task launch];
-    }
-    
     NSNumber *proxyPort = nil;
     // Read proxy port from user defaults
     
@@ -499,10 +528,10 @@ return [NSArray arrayWithArray:addresses];
     NSString *proxyPath = [info objectForKey:@"proxyPath"];
     if (proxyPath) targetPath = [targetPath stringByAppendingPathComponent:proxyPath];
     
-    NSString *appDirectory = [[path stringByDeletingLastPathComponent] lastPathComponent];
+    NSString *serverPath = [info objectForKey:@"serverPath"];
     if (proxyPort) {
-      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"/%@/%@/\" http://localhost:%@/", appDirectory, targetPath, proxyPort]];
-      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"/%@/%@/\" http://localhost:%@/", appDirectory, targetPath, proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPass \"%@/\" http://localhost:%@/", serverPath, proxyPort]];
+      [directives addObject:[NSString stringWithFormat:@"ProxyPassReverse \"%@/\" http://localhost:%@/", serverPath, proxyPort]];
     }
   }
   
@@ -803,6 +832,24 @@ return [NSArray arrayWithArray:addresses];
     return;
     
     
+    
+    
+#pragma mark Launch Tapp
+  } else if ([[url path] hasPrefix:@"/tapp"]) {
+
+    NSDictionary *params = [url parameterDictionary];
+    NSString *path = [[params objectForKey:@"path"] stringByStandardizingPath];
+    NSMutableDictionary *info = [self applicationInfoForServerPath:path];
+    NSString *serverPath = [info objectForKey:@"serverPath"];
+    NSTask *task = [info objectForKey:@"task"];
+    if (!task && [info objectForKey:@"startTask"]) 
+      [self startTaskForApplicationInfo:info];
+    
+    
+    NSLog(@"server %@", serverPath);
+    NSDictionary *headers = [NSDictionary dictionaryWithObject:serverPath forKey:@"Location"];
+    [request replyWithStatusCode:302 headers:headers body:nil];
+    return;
 #pragma mark Open something
   } else if ([[url path] hasPrefix:@"/open"]) {
     NSDictionary *params = [url parameterDictionary];
@@ -838,15 +885,39 @@ return [NSArray arrayWithArray:addresses];
       
     }
     
+    NSString *returnType = [params objectForKey:@"return"];
     
     if (path && ![[path pathExtension] caseInsensitiveCompare:@"scpt"]) {
       NSAppleScript *script = nil;
       script = [[[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]
                                                        error:nil] autorelease];
       
-      NSAppleEventDescriptor *descriptor = [script executeAndReturnError:nil];
-      data = [[descriptor stringValue] dataUsingEncoding:NSUTF8StringEncoding];
-      mime = @"text/plain";
+      NSDictionary *error = nil;
+      NSAppleEventDescriptor *descriptor;
+      
+      NSString *subroutine = [params objectForKey:@"handler"];
+      
+      if (!subroutine) {
+        descriptor = [script executeAndReturnError:&error];
+      } else {
+        NSArray *arguments = [[url parameterArray] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"key LIKE 'argument'"]];
+        arguments = [arguments valueForKey:@"value"];
+        descriptor = [script executeSubroutine:subroutine
+                                     arguments:arguments
+                                         error:&error];
+      }
+      
+      
+      
+      if (error) {
+        [request replyWithStatusCode:500 message:[error description]];
+        return;
+      }
+      
+      if ([returnType isEqualToString:@"string"]) {
+        data = [[descriptor stringValue] dataUsingEncoding:NSUTF8StringEncoding];
+        mime = @"text/plain";
+      }
     } else if ([[NSFileManager defaultManager] isExecutableFileAtPath:path]) {
       [NSTask launchedTaskWithLaunchPath:path arguments:[NSArray array]]; 
     }
@@ -859,6 +930,7 @@ return [NSArray arrayWithArray:addresses];
     //  }
     
     if (!data) {
+      
       [request replyWithStatusCode:200 message:nil];
       return;
     }

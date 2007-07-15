@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface NSURL (Parameters) 
+@interface NSURL (QSParameters) 
+- (NSArray *)parameterArray;
 - (NSDictionary *)parameterDictionary;
 @end
