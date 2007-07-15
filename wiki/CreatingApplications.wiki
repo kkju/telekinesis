@@ -49,13 +49,14 @@ iPhone Remote is able to launch another program and proxy traffic to its port. A
 </plist>
 }}}
 
-A "stopTask" key with the same structure will be used to shut down the serever. If none is specified, the original task will just be terminated.
+This task is run the first time the application is clicked after the server starts. A "stopTask" key with the same structure will be used to shut down the server. If none is specified, the original task will just be terminated. 
 
 == Built in functionality ==
 
 The iPhone Remote server supports some basic functionality that may be useful in any application:
 
   * Running Applescripts: /t/runscript?path=<relative path>&app=<App Name>
+    * Optional arguments: &handler=<handler_name>&argument=<argument1>&argument=<argument2>....
   * Screen capture: /t/grabscreen
   * Move click: /t/click?x=100&y=100
   * Move mouse: /t/mousemove?x=100&y=100
