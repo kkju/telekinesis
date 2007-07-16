@@ -1,3 +1,4 @@
+#labels Featured
 0.9.20 (testing)
   * Support for handlers in applescripts
   * Added Terminal application (web-shell).
