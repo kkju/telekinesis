@@ -6,7 +6,7 @@ Adding functionality to iPhone Remote is simple, there are two approaches, basic
 
 Both of these are still very much in flux, advice and suggestions are welcome!
 
-Make sure to let us know about .tapps you've made -- we'll add them to the ListOfExtraApps
+Make sure to let us know about .tapps you've made -- we'll add them to the [http://code.google.com/p/telekinesis-tapps/ telekinesis-tapps project].
 
 
 
