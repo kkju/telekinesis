@@ -1,3 +1,4 @@
+#labels Featured,Phase-Requirements
 || http://telekinesis.googlecode.com/svn/site/images/HelpWanted.png|| Want to make iPhone Remote better? Feel free to [http://code.google.com/p/telekinesis/source review the code] and offer suggestions or lend a hand on the [http://code.google.com/p/telekinesis/issues/list issues] ||
 
 
