@@ -1,4 +1,5 @@
 #summary How to add functionality to iPhone Remote with 'tapps'
+#labels Featured,Phase-Implementation
 
 = Introduction =
 
