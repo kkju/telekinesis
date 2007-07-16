@@ -398,7 +398,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/www",
+				"$(SRCROOT)/../Common/www",
 			);
 			outputPaths = (
 			);
