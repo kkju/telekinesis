@@ -211,7 +211,7 @@ return [NSArray arrayWithArray:addresses];
     serverPath = [serverPath stringByAppendingPathComponent:[path lastPathComponent]];
     [info  setValue:serverPath forKey:@"serverPath"];
     
-    NSLog(@"server %@", [info objectForKey:@"serverPath"]);
+    //NSLog(@"server %@", [info objectForKey:@"serverPath"]);
     [info  setValue:[[path lastPathComponent] stringByDeletingPathExtension] forKey:@"name"];
     if (info) [applications addObject:info];
   }
@@ -869,7 +869,7 @@ return [NSArray arrayWithArray:addresses];
         if (appName) {
           NSArray *matches = [applications filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name LIKE %@", appName]];
           if ([matches count]) 
-            basePath = [[applications lastObject] objectForKey:@"path"];
+            basePath = [[matches lastObject] objectForKey:@"path"];
         }
         if (!basePath) {
           basePath = [[NSBundle mainBundle] resourcePath];
