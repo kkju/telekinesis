@@ -1,4 +1,5 @@
 #summary Media streaming with telekinesis
+#labels Featured,Phase-Deploy
 
 == Streaming video and audio ==
 
