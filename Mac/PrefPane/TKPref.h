@@ -12,8 +12,22 @@
 @interface TKPref : NSPreferencePane 
 {
 
+	IBOutlet NSTextField *statusField;
+	
+	IBOutlet NSButton *startStopButton;
+	
+	NSString *helperPath;
+	
 }
 
 - (void) mainViewDidLoad;
+
+- (IBAction) startStop:(id)sender;
+
+- (BOOL) helperRunning;
+- (void) setHelperRunning:(BOOL)run;
+
+- (BOOL) runsAtLogin;
+- (void) setRunsAtLogin:(BOOL)runs;
 
 @end

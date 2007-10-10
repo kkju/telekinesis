@@ -1,17 +1,33 @@
 {
-    IBClasses = (
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
-        {
-            CLASS = NSPreferencePane; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                "_firstKeyView" = id; 
-                "_initialKeyView" = id; 
-                "_lastKeyView" = id; 
-                "_window" = id; 
-            }; 
-            SUPERCLASS = NSObject; 
+    IBClasses =     (
+                {
+            CLASS = FirstResponder;
+            LANGUAGE = ObjC;
+            SUPERCLASS = NSObject;
+        },
+                {
+            CLASS = NSPreferencePane;
+            LANGUAGE = ObjC;
+            OUTLETS =             {
+                "_firstKeyView" = id;
+                "_initialKeyView" = id;
+                "_lastKeyView" = id;
+                "_window" = id;
+            };
+            SUPERCLASS = NSObject;
+        },
+                {
+            ACTIONS =             {
+                startStop = id;
+            };
+            CLASS = TKPref;
+            LANGUAGE = ObjC;
+            OUTLETS =             {
+                startStopButton = NSButton;
+                statusField = NSTextField;
+            };
+            SUPERCLASS = NSPreferencePane;
         }
-    ); 
-    IBVersion = 1; 
+    );
+    IBVersion = 1;
 }
