@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78DC0C1F0CBC242600A4D88A /* LoginItemsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DC0C1E0CBC242600A4D88A /* LoginItemsController.m */; };
+		78DC0C240CBC260F00A4D88A /* iPhone Remote.app in Resources */ = {isa = PBXBuildFile; fileRef = 8D1107320486CEB800E47090 /* iPhone Remote.app */; };
 		7F0017470C3F139700C757C6 /* httpd.telekinesis.conf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */; };
 		7F0D27A70C3E85AB009FD23E /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0D27A30C3E85AB009FD23E /* PreferencePanes.framework */; };
 		7F0D27D00C3E872C009FD23E /* TKPref.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D27CE0C3E872C009FD23E /* TKPref.m */; };
@@ -56,6 +58,16 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		78DC0C250CBC261100A4D88A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
+			remoteInfo = "iPhone Remote";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		7F1E07310C394A9B0049F3DA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -83,6 +95,8 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		78DC0C1D0CBC242600A4D88A /* LoginItemsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginItemsController.h; path = PrefPane/LoginItemsController.h; sourceTree = "<group>"; };
+		78DC0C1E0CBC242600A4D88A /* LoginItemsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginItemsController.m; path = PrefPane/LoginItemsController.m; sourceTree = "<group>"; };
 		7F0017050C3F10D300C757C6 /* httpd.telekinesis.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = httpd.telekinesis.conf; sourceTree = "<group>"; };
 		7F0D27820C3E82F0009FD23E /* iPhone Remote.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPhone Remote.prefPane"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0D27A30C3E85AB009FD23E /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
@@ -280,6 +294,8 @@
 			children = (
 				7F0D27D40C3E8733009FD23E /* TKPref.h */,
 				7F0D27CE0C3E872C009FD23E /* TKPref.m */,
+				78DC0C1D0CBC242600A4D88A /* LoginItemsController.h */,
+				78DC0C1E0CBC242600A4D88A /* LoginItemsController.m */,
 				7F0D27CF0C3E872C009FD23E /* TKPref.tiff */,
 				7F0D27D30C3E8733009FD23E /* PrefPane-Info.plist */,
 				7F0D27FE0C3E88C0009FD23E /* TKPref.nib */,
@@ -313,6 +329,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				78DC0C260CBC261100A4D88A /* PBXTargetDependency */,
 			);
 			name = PrefPane;
 			productName = "iPhone Remote Pref";
@@ -351,8 +368,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* iPhone Remote */,
 				7F0D27810C3E82F0009FD23E /* PrefPane */,
+				8D1107260486CEB800E47090 /* iPhone Remote */,
 			);
 		};
 /* End PBXProject section */
@@ -362,6 +379,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78DC0C240CBC260F00A4D88A /* iPhone Remote.app in Resources */,
 				7F0D27D10C3E872C009FD23E /* TKPref.tiff in Resources */,
 				7F0D28040C3E88C0009FD23E /* TKPref.nib in Resources */,
 			);
@@ -414,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0D27D00C3E872C009FD23E /* TKPref.m in Sources */,
+				78DC0C1F0CBC242600A4D88A /* LoginItemsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +455,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78DC0C260CBC261100A4D88A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D1107260486CEB800E47090 /* iPhone Remote */;
+			targetProxy = 78DC0C250CBC261100A4D88A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7F0D27FE0C3E88C0009FD23E /* TKPref.nib */ = {
