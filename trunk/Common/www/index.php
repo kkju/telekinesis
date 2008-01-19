@@ -5,10 +5,10 @@
 <html>
 <head>
   <title><?=$_ENV["COMPUTER_NAME"]?></title>
-  <meta name="viewport" content="width=320, height=418" />
-  <link rel="stylesheet" href="css/menu.css" type="text/css" media="screen" charset="utf-8">
-  <script src="js/menu.js" type="text/javascript" charset="utf-8"></script>
-<script src="/js/hidelocation.js" type="text/javascript" charset="utf-8" />
+  <meta name="viewport" content="width=320, height=418"/>
+  <link rel="stylesheet" href="css/menu.css" type="text/css" media="screen" charset="utf-8"/>
+  <script src="/js/hidelocation.js" type="text/javascript"> </script>
+  <script src="/js/menu.js" type="text/javascript"> </script>
 </head>
 
 <?
@@ -30,7 +30,7 @@ $useTabs = readDefault("openAppsInNewTab");
 if (!$useTabs) $useTabs = 0;
 ?>
 
-<div id="icon-container"></div>
+<div id="icon-container"> </div>
 <br clear="all">
 <div class="page-title" align="center">
   <?=$_ENV["COMPUTER_NAME"];?> - <?=$_ENV["USER_FULLNAME"];?>
