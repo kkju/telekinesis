@@ -35,6 +35,18 @@
 	warmUpCounter ++;
 	if (warmUpCounter >= WARM_UP_FRAMES)
 	{
+		[aFrame lockFocus];
+		NSString* myString = [[NSCalendarDate calendarDate] descriptionWithCalendarFormat:@"%a %m/%d/%y %I:%M %p"];
+		
+		int r = 0;
+		int g = 250;
+		int b = 0;
+		NSFont * font = [NSFont fontWithName:@"Helvetica" size:24];
+		NSMutableDictionary * fontAttributes = [[NSMutableDictionary alloc] initWithObjectsAndKeys:font, NSFontAttributeName, [NSColor colorWithCalibratedRed:(float)r/255.0 green:(float)g/255.0 blue:(float)b/255.0 alpha:1.0], NSForegroundColorAttributeName, nil];
+
+		[myString drawAtPoint: NSMakePoint(0, 0) withAttributes: fontAttributes]; 
+		[aFrame unlockFocus];
+		
 		NSBitmapImageRep        *bitmapRep =  [NSBitmapImageRep imageRepWithData:[aFrame TIFFRepresentation]];
 		NSData * JPEG = [bitmapRep representationUsingType:NSJPEGFileType 
 								   properties:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:COMPRESSION_RATIO], NSImageCompressionFactor, nil]];
