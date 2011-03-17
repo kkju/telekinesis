@@ -7,6 +7,8 @@ if ($dir == "") $dir = "/Volumes/";
 $dir = stripslashes($dir);
 
 $dir = realpath($dir);
+
+$iPhoneMode = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
 include("filerow.php");
 ?>
 
