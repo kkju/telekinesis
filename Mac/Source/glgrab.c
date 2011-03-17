@@ -134,7 +134,7 @@ CGImageRef grabViaOpenGL(CGDirectDisplayID display, CGRect srcRect)
     
     
     /* Build a full-screen GL context */
-    CGLChoosePixelFormat( attribs, &pixelFormatObj, &numPixelFormats );
+    CGLChoosePixelFormat( attribs, &pixelFormatObj, (GLint *)&numPixelFormats );
     if ( pixelFormatObj == NULL )    // No full screen context support
         return NULL;
     CGLCreateContext( pixelFormatObj, NULL, &glContextObj ) ;

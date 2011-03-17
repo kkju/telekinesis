@@ -102,7 +102,7 @@
 		7F0D27A30C3E85AB009FD23E /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = /System/Library/Frameworks/PreferencePanes.framework; sourceTree = "<absolute>"; };
 		7F0D27CE0C3E872C009FD23E /* TKPref.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = TKPref.m; path = PrefPane/TKPref.m; sourceTree = "<group>"; };
 		7F0D27CF0C3E872C009FD23E /* TKPref.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = TKPref.tiff; path = PrefPane/TKPref.tiff; sourceTree = "<group>"; };
-		7F0D27D30C3E8733009FD23E /* PrefPane-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = "PrefPane-Info.plist"; path = "PrefPane/PrefPane-Info.plist"; sourceTree = "<group>"; };
+		7F0D27D30C3E8733009FD23E /* PrefPane-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = "PrefPane-Info.plist"; path = "PrefPane/PrefPane-Info.plist"; sourceTree = "<group>"; };
 		7F0D27D40C3E8733009FD23E /* TKPref.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = TKPref.h; path = PrefPane/TKPref.h; sourceTree = "<group>"; };
 		7F0D27FF0C3E88C0009FD23E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = PrefPane/English.lproj/TKPref.nib; sourceTree = "<group>"; };
 		7F1943790C4060A300C868A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
@@ -124,7 +124,7 @@
 		7F362A8F0C3B356E00B24988 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
 		7F362A900C3B356E00B24988 /* httpd.1.3.33.conf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = httpd.1.3.33.conf; path = Resources/httpd.1.3.33.conf; sourceTree = "<group>"; };
 		7F362A910C3B356E00B24988 /* httpd.2.0.conf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = httpd.2.0.conf; path = Resources/httpd.2.0.conf; sourceTree = "<group>"; };
-		7F362A920C3B356E00B24988 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		7F362A920C3B356E00B24988 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		7F362AA10C3B35AF00B24988 /* cgi-bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "cgi-bin"; path = "Resources/cgi-bin"; sourceTree = "<group>"; };
 		7F362AA50C3B35AF00B24988 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = Resources/scripts; sourceTree = "<group>"; };
 		7F362AAD0C3B35AF00B24988 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../Common/www; sourceTree = "<group>"; };
@@ -363,7 +363,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Telekinesis" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Telekinesis */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -589,6 +593,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
@@ -601,6 +606,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
