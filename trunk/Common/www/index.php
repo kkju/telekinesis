@@ -5,10 +5,23 @@
 <html>
 <head>
   <title><?=$_ENV["COMPUTER_NAME"]?></title>
-  <meta name="viewport" content="width=320, height=418"/>
-  <link rel="stylesheet" href="css/menu.css" type="text/css" media="screen" charset="utf-8"/>
-  <script src="/js/hidelocation.js" type="text/javascript"> </script>
-  <script src="/js/menu.js" type="text/javascript"> </script>
+  <meta name="viewport" content="width=320, height=418" />
+  <link rel="stylesheet" href="css/menu.css" type="text/css" media="screen" charset="utf-8">
+<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png"/> 
+
+<meta name="application-name" content="Telekinesis"/>
+<meta name="application-url" content=""/>
+<meta name="description" content="Pull the strings."/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<link rel="icon" href="images/telekinesis_16.png" sizes="16x16">
+<link rel="icon" href="images/telekinesis_32.png" sizes="32x32">
+<link rel="icon" href="images/telekinesis_128.png" sizes="128x128"> 
+<link rel="icon" href="images/telekinesis_512.png" sizes="512x512"> 
+
+  <script src="js/menu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/hidelocation.js" type="text/javascript" charset="utf-8" />
 </head>
 
 <?
