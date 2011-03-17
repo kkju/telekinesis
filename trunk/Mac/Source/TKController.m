@@ -23,7 +23,7 @@
 #import "glgrab.h"
 
 #import "NSImage+CIImage.h"
-#import "QSKeyCodeTranslator.h"
+//#import "QSKeyCodeTranslator.h"
 
 #import "NSAppleScript+QSSubroutine.h"
 #import "NSAppleEventDescriptor+QSTranslation.h"
@@ -38,6 +38,7 @@
 - (void) generateCertificateIfNeeded;
 - (void)getPasswordIfNeeded;
 - (NSTask *)taskWithDictionary:(NSDictionary *)taskOptions basePath:(NSString *)basePath;
+- (BOOL) killHttpd;
 @end
 
 
@@ -56,7 +57,7 @@ void CatchInterrupt (int signum) {
 
 @implementation TKController
 + (void) initialize {
-  signal(SIGTERM, CatchInterrupt);  
+  signal(SIGTERM, CatchInterrupt);
   
   NSMutableDictionary *newDefaults = [NSMutableDictionary dictionary];
   [newDefaults addEntriesFromDictionary:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSUserDefaults"]];
@@ -100,7 +101,6 @@ return [NSArray arrayWithArray:addresses];
   if (self != nil) {
   
     server = [[HTTPServer alloc] init];
-    [server setType:@"_http._tcp."];
     [server setName:@"Cocoa HTTP Server"];
     [server setDelegate:self];
     [server setPort:[self telePortNumber]];
@@ -215,7 +215,7 @@ return [NSArray arrayWithArray:addresses];
     [info  setValue:[[path lastPathComponent] stringByDeletingPathExtension] forKey:@"name"];
     if (info) [applications addObject:info];
   }
-  NSLog(@"Applications installed: %@", [[applications valueForKey:@"name"] componentsJoinedByString:@","]);
+  NSLog(@"Applications installed: %@", [[applications valueForKey:@"name"] componentsJoinedByString:@", "]);
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
@@ -277,7 +277,7 @@ return [NSArray arrayWithArray:addresses];
   NSString *urlString = [NSString stringWithFormat:@"https://%@:%d", ([addresses count] ? [addresses lastObject] : @"localhost"), [self portNumber]];
   [[NSWorkspace sharedWorkspace] openURLs:[NSArray arrayWithObject:[NSURL URLWithString:urlString]]
                   withAppBundleIdentifier:@"com.apple.Safari"
-                                  options:nil additionalEventParamDescriptor:nil launchIdentifiers:nil];
+                                  options:0 additionalEventParamDescriptor:nil launchIdentifiers:nil];
   //
   //NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
   //NSLog(@"request %@", urlString);
@@ -385,7 +385,7 @@ return [NSArray arrayWithArray:addresses];
     [NSString stringWithFormat:@"%d:main",[self portNumber]]
     ];
   NSLog(@"ping %@", [NSURL URLWithString:urlString]);
-  NSLog(@"Ping: %@", [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString]]);
+  NSLog(@"Ping: %@", [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] encoding:NSUTF8StringEncoding error:nil]);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
@@ -404,8 +404,10 @@ return [NSArray arrayWithArray:addresses];
   [statusItem setMenu:statusMenu];
   [statusItem setImage:[NSImage imageNamed:@"TKMenu"]];
   
-  [self startServices];  
-  if (shouldShowHomepage) [self performSelector:@selector(goHome:) withObject:nil afterDelay:0.4];
+  BOOL killed = [self killHttpd];
+  
+  [self performSelector:@selector(startServices) withObject:nil afterDelay:killed ? 5.0 : 0.0];
+  if (shouldShowHomepage) [self performSelector:@selector(goHome:) withObject:nil afterDelay:killed ? 5.4 : 0.4];
   
 }
 - (void)dealloc
@@ -534,10 +536,11 @@ return [NSArray arrayWithArray:addresses];
     }
   }
   
+  NSString *computerName = [(id)SCDynamicStoreCopyComputerName(NULL, NULL) autorelease];
 
   
   NSString *configPath = [[NSBundle mainBundle] pathForResource:@"httpd.telekinesis" ofType:@"conf"];
-  NSString *customConfig = [NSString stringWithContentsOfFile:configPath];
+  NSString *customConfig = [NSString stringWithContentsOfFile:configPath encoding:NSUTF8StringEncoding error:nil];
   
   customConfig = [NSString stringWithFormat:customConfig,
     [self portNumber],
@@ -546,12 +549,13 @@ return [NSArray arrayWithArray:addresses];
     [[NSBundle mainBundle] bundlePath],
     [self applicationSupportFolder],
     [self serverRootFolder],
-    documentRoot];
+    documentRoot,
+                  computerName];
   
   customConfig = [NSString stringWithFormat:customConfig, [self portNumber], [self mediaPortNumber]];
   NSString *customConfigPath = [[self serverRootFolder] stringByAppendingPathComponent:@"custom.conf"];
   
-  [customConfig writeToFile:customConfigPath atomically:NO];
+  [customConfig writeToFile:customConfigPath atomically:NO encoding:NSUTF8StringEncoding error:nil];
   
   //  [directives addObject:[NSString stringWithFormat:@"Include \"%@\"", configPath]];
   
@@ -570,8 +574,6 @@ return [NSArray arrayWithArray:addresses];
     [arguments addObject:@"EnableMediaPort"];
   }
   
-  
-  NSString *computerName = [(id)SCDynamicStoreCopyComputerName(NULL, NULL) autorelease];
   NSString *rootVolumeName = [[NSFileManager defaultManager] displayNameAtPath:@"/"];
   NSMutableDictionary *environment = [[[[NSProcessInfo processInfo] environment] mutableCopy] autorelease];
   
@@ -579,8 +581,8 @@ return [NSArray arrayWithArray:addresses];
   [environment setValue:NSUserName() forKey:@"USER_NAME"];
   [environment setValue:NSFullUserName() forKey:@"USER_FULLNAME"];
   [environment setValue:computerName forKey:@"COMPUTER_NAME"];
-  [environment setValue:[[NSBundle mainBundle]bundlePath] forKey:@"BUNDLE_PATH"];
-  [environment setValue:[[NSBundle mainBundle]bundlePath] forKey:@"RESOURCE_PATH"];
+  [environment setValue:[[NSBundle mainBundle] bundlePath] forKey:@"BUNDLE_PATH"];
+  [environment setValue:[[NSBundle mainBundle] resourcePath] forKey:@"RESOURCE_PATH"];
   [environment setValue:documentRoot forKey:@"DOCUMENT_ROOT"];
   [environment setValue:[NSString stringWithFormat:@"%d", [self mediaPortNumber]] forKey:@"MEDIA_PORT"];
   [environment  setValue:rootVolumeName forKey:@"ROOT_VOLUME_NAME"];
@@ -593,6 +595,30 @@ return [NSArray arrayWithArray:addresses];
   
   servicesRunning = YES;
   [statusItem setImage:[NSImage imageNamed:@"TKMenu"]];
+  
+  
+  NSString *name = [NSString stringWithFormat:@"%@ - Telekinesis", computerName];
+  
+  
+  if (service) [service release];
+  service = [[NSNetService alloc] initWithDomain:@""// 4
+                                  type:@"_http._tcp"
+                                  name:name port:[self portNumber]];
+  
+  NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
+                      @"/moons/",@"path",
+                      nil];
+  
+  //NSLog(@"updateGameState %@ %@",localService,[NSNetService dataFromTXTRecordDictionary:dict]);
+  
+  [service setTXTRecordData:[NSNetService dataFromTXTRecordDictionary:dict]];
+  
+  if(service)
+  {
+    [service setDelegate:self];// 5
+    [service publish];// 6
+  }
+  
 }
 
 - (NSTask *)taskWithDictionary:(NSDictionary *)taskOptions basePath:(NSString *)basePath {
@@ -611,9 +637,23 @@ return [NSArray arrayWithArray:addresses];
   return task;
 }
 
+
+- (BOOL) killHttpd {
+  NSString *pidFile = [[[self applicationSupportFolder] stringByAppendingPathComponent:@"Server"] stringByAppendingPathComponent:@"httpd.pid"];
+  NSString *pidString = [NSString stringWithContentsOfFile:pidFile  encoding:NSUTF8StringEncoding error:nil];
+  if (pidString) {
+    NSLog(@"Stopping server %@", pidString);
+    pid_t pid = [pidString intValue];
+    if (pid) return !kill(pid,SIGTERM);
+  }
+  return NO;
+}
+
+
 - (void) stopServices {   
   if (!servicesRunning) return;
-  
+  if (service) [service release];
+
   // Stop application services
   
   NSEnumerator *e = [applications objectEnumerator];
@@ -633,10 +673,7 @@ return [NSArray arrayWithArray:addresses];
     
   } 
   
-  
-  NSString *pidString = [NSString stringWithContentsOfFile:[[[self applicationSupportFolder] stringByAppendingPathComponent:@"Server"] stringByAppendingPathComponent:@"httpd.pid"]];
-  pid_t pid = [pidString intValue];
-  if (pid) kill(pid,SIGTERM);
+  [self killHttpd];
   [apacheTask waitUntilExit];
   
   [apacheTask release];
@@ -746,7 +783,7 @@ return [NSArray arrayWithArray:addresses];
   return [[self applicationSupportFolder]stringByAppendingPathComponent:@"Apps"];
 }
 - (NSString *)applicationSupportFolder {
-	NSString *appSupportFolder = [@"~/Library/Application Support/iPhone Remote/" stringByStandardizingPath];
+	NSString *appSupportFolder = [@"~/Library/Application Support/Telekinesis/" stringByStandardizingPath];
   NSFileManager *manager = [NSFileManager defaultManager];
   
   if( ![manager fileExistsAtPath:appSupportFolder] )
@@ -1022,7 +1059,7 @@ return [NSArray arrayWithArray:addresses];
       
       BOOL shift = isupper(c);//[[params objectForKey:@"s"] isEqualToString:@"true"];
         
-        short code = [QSKeyCodeTranslator AsciiToKeyCode:c];
+      short code = 0;//[QSKeyCodeTranslator AsciiToKeyCode:c];
         if (shift) CGPostKeyboardEvent( (CGCharCode)0, (CGKeyCode)56, true ); // shift down
         CGPostKeyboardEvent(0, code, YES);
         CGPostKeyboardEvent(0, code, NO);

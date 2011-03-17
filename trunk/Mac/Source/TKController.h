@@ -28,6 +28,7 @@
   NSStatusItem *statusItem;
   
   BOOL switchedOut;
+  NSNetService *service;
 }
 - (IBAction)cancelPass:(id)sender;
 - (IBAction)savePass:(id)sender;
